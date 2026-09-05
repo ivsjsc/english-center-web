@@ -3,8 +3,19 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { TeacherCard } from "@/components/public/TeacherCard";
 
+interface TeacherItem {
+  id?: string;
+  name?: string;
+  fullName?: string;
+  nationality?: string | null;
+  yearsExperience?: number;
+  bio?: string | null;
+  specialization?: string;
+  avatarUrl?: string | null;
+}
+
 interface TeacherShowcaseProps {
-  teachers?: any[];
+  teachers?: TeacherItem[];
 }
 
 export function TeacherShowcase({ teachers = [] }: TeacherShowcaseProps) {

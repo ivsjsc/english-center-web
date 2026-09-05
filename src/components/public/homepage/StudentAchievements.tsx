@@ -1,8 +1,18 @@
 import React from "react";
 import Image from "next/image";
 
+interface AchievementItem {
+  id?: string;
+  studentName?: string;
+  school?: string | null;
+  examType?: string;
+  score?: string;
+  testimonial?: string | null;
+  studentAvatar?: string | null;
+}
+
 interface StudentAchievementsProps {
-  achievements?: any[];
+  achievements?: AchievementItem[];
 }
 
 export function StudentAchievements({ achievements = [] }: StudentAchievementsProps) {
@@ -114,7 +124,7 @@ export function StudentAchievements({ achievements = [] }: StudentAchievementsPr
 
                 {/* Testimonial Quote */}
                 <p className="text-xs sm:text-sm text-text-default italic leading-relaxed">
-                  "{item.quote}"
+                  &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
             </div>

@@ -3,8 +3,17 @@
 import React, { useState } from "react";
 import { CenterCard } from "@/components/public/CenterCard";
 
+interface CenterItem {
+  id?: string;
+  name: string;
+  address: string;
+  province: string;
+  phone?: string | null;
+  operatingHours?: string | null;
+}
+
 interface CenterFinderSectionProps {
-  centers?: any[];
+  centers?: CenterItem[];
 }
 
 export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) {

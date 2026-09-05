@@ -5,12 +5,24 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CourseCard } from "@/components/public/CourseCard";
 
-interface CourseDiscoveryProps {
-  categories?: { id: string; slug: string; name: string }[];
-  courses?: any[];
+interface CourseItem {
+  id?: string;
+  slug: string;
+  name: string;
+  shortDescription?: string | null;
+  description?: string;
+  ageRange?: string | null;
+  thumbnailUrl?: string | null;
+  category?: { slug: string; name: string } | null;
+  outcomes?: { description: string }[];
 }
 
-export function CourseDiscovery({ categories = [], courses = [] }: CourseDiscoveryProps) {
+interface CourseDiscoveryProps {
+  categories?: { id: string; slug: string; name: string }[];
+  courses?: CourseItem[];
+}
+
+export function CourseDiscovery({ categories: _categories = [], courses = [] }: CourseDiscoveryProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
 
   // Canonical default 8 courses from Stitch approved specification if db courses are fewer

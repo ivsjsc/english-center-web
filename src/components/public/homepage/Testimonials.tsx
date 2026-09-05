@@ -1,8 +1,16 @@
 import React from "react";
 import { Star } from "lucide-react";
 
+interface TestimonialItem {
+  id?: string;
+  authorName?: string;
+  authorRole?: string;
+  rating?: number;
+  content?: string;
+}
+
 interface TestimonialsProps {
-  testimonials?: any[];
+  testimonials?: TestimonialItem[];
 }
 
 export function Testimonials({ testimonials = [] }: TestimonialsProps) {
@@ -76,7 +84,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
                 </div>
 
                 <p className="text-sm text-text-default leading-relaxed italic">
-                  "{item.content}"
+                  &ldquo;{item.content}&rdquo;
                 </p>
               </div>
 

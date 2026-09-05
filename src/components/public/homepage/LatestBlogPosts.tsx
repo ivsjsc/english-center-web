@@ -3,8 +3,19 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BlogCard } from "@/components/public/BlogCard";
 
+interface BlogPostItem {
+  id?: string;
+  slug: string;
+  title: string;
+  excerpt?: string | null;
+  category?: { slug: string; name: string } | null;
+  readTimeMinutes?: number;
+  publishedAt?: string | Date;
+  coverImage?: string | null;
+}
+
 interface LatestBlogPostsProps {
-  posts?: any[];
+  posts?: BlogPostItem[];
 }
 
 export function LatestBlogPosts({ posts = [] }: LatestBlogPostsProps) {
