@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>IVS Academy</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#001c37", "on-surface-variant": "#444653", "inverse-primary": "#b8c4ff", "on-secondary-fixed-variant": "#314865", "background": "#f8f9ff", "on-error-container": "#93000a", "secondary-fixed": "#d2e4ff", "on-primary-fixed-variant": "#173bab", "royal-blue-vibrant": "#2563EB", "surface-container-high": "#dde9ff", "on-primary-container": "#a8b8ff", "error": "#ba1a1a", "border-subtle": "#E2E8F0", "error-container": "#ffdad6", "inverse-surface": "#233144", "surface-container-highest": "#d5e3fd", "on-tertiary-fixed": "#2a1700", "outline-variant": "#c4c5d5", "on-tertiary": "#ffffff", "surface-container-low": "#eff4ff", "on-error": "#ffffff", "on-tertiary-container": "#ffa929", "emerald-growth": "#10B981", "surface-dim": "#ccdbf4", "primary-light": "#EFF6FF", "surface-container": "#e6eeff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "tertiary-container": "#6b4200", "secondary-fixed-dim": "#b0c8eb", "text-heading": "#0F172A", "surface-subtle": "#F8FAFC", "amber-hover": "#D97706", "text-muted": "#64748B", "tertiary": "#4c2e00", "surface-bright": "#f8f9ff", "secondary": "#49607e", "on-background": "#0d1c2f", "inverse-on-surface": "#ebf1ff", "primary-fixed": "#dde1ff", "secondary-container": "#c4dcff", "emerald-growth-dark": "#059669", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#3755c3", "surface-variant": "#d5e3fd", "primary-highlight": "#DBEAFE", "on-primary-fixed": "#001453", "on-secondary-container": "#49617f", "primary-fixed-dim": "#b8c4ff", "on-surface": "#0d1c2f", "primary": "#00288e", "tertiary-fixed": "#ffddb8", "primary-container": "#1e40af", "surface": "#f8f9ff", "outline": "#757684" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin-desktop": "3rem", "space-xl": "2rem", "space-3xl": "4.5rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "margin-tablet": "2rem", "space-2xs": "0.25rem", "space-md": "1rem" }, "fontFamily": { "body-sm": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "body-base": ["Be Vietnam Pro"], "headline-md": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "headline-lg-mobile": ["Be Vietnam Pro"], "caption-badge": ["Be Vietnam Pro"], "display-hero": ["Be Vietnam Pro"], "display-hero-mobile": ["Be Vietnam Pro"], "headline-lg": ["Be Vietnam Pro"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }], "body-base": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "1.35", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }], "caption-badge": ["12px", { "lineHeight": "1.3", "letterSpacing": "0.05em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "800" }], "headline-lg": ["36px", { "lineHeight": "1.25", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-base text-body-base text-on-surface flex flex-col min-h-screen relative selection:bg-primary-highlight"><header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="icon.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold leading-none text-primary">IVS</span><span class="font-caption-badge text-caption-badge uppercase tracking-wider text-secondary leading-tight">Academy</span></div></div><div class="flex items-center gap-space-xs"><a class="h-9 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" data-path="consultation-booking" href="#"><span class="material-symbols-outlined text-[16px]">edit_calendar</span><span>Tư vấn</span></a><button aria-label="Menu" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="document.getElementById('mobile-nav-drawer').classList.remove('translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0','pointer-events-none');"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop" onclick="document.getElementById('mobile-nav-drawer').classList.add('translate-x-full'); this.classList.add('opacity-0','pointer-events-none');"></div><aside class="fixed top-0 right-0 bottom-0 w-[85vw] max-w-[340px] z-50 bg-surface-container-lowest shadow-[0_20px_40px_-6px_rgba(15,23,42,0.16)] translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="mobile-nav-drawer"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="icon.png" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><span class="font-label-md text-label-md text-primary font-bold">Danh mục IVS</span></div><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container" onclick="document.getElementById('mobile-nav-drawer').classList.add('translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0','pointer-events-none');"><span class="material-symbols-outlined text-[22px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><details class="group"><summary class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low cursor-pointer list-none"><div class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-primary text-[20px]">menu_book</span><span class="font-label-md text-label-md font-semibold">Khóa học</span></div><span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform text-[20px]">expand_more</span></summary><div class="pl-space-lg pr-space-xs py-space-xs flex flex-col gap-1"><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-preschool" href="#">Tiếng Anh Mầm non</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-primary" href="#">Tiếng Anh Tiểu học</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-secondary" href="#">Tiếng Anh THCS</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-highschool" href="#">Tiếng Anh THPT</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-ielts" href="#">Luyện thi IELTS Target 7.5+</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-toeic" href="#">Luyện thi TOEIC</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-communication" href="#">Tiếng Anh Giao tiếp</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-corporate" href="#">Đào tạo Doanh nghiệp</a></div></details><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="methodology" href="#"><span class="material-symbols-outlined text-primary text-[20px]">psychology</span><span>Phương pháp giảng dạy</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="teachers" href="#"><span class="material-symbols-outlined text-primary text-[20px]">groups</span><span>Đội ngũ giáo viên</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="campuses" href="#"><span class="material-symbols-outlined text-primary text-[20px]">location_city</span><span>Hệ thống cơ sở</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="blog" href="#"><span class="material-symbols-outlined text-primary text-[20px]">article</span><span>Góc học tập &amp; Blog</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="about-us" href="#"><span class="material-symbols-outlined text-primary text-[20px]">info</span><span>Giới thiệu IVS Academy</span></a></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center gap-space-xs text-text-muted text-caption-badge font-caption-badge mb-2"><span class="material-symbols-outlined text-[14px]">verified</span><span>Hệ thống chuẩn Quốc tế Cambridge</span></div><p class="text-body-sm font-body-sm text-on-surface-variant font-medium">Hotline: 1900 6868</p></div></aside><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="px-margin-mobile pt-space-md pb-space-xs flex items-center"><h1 class="font-headline-md text-headline-md text-text-heading">Home Page</h1></div><div class="flex flex-col w-full">
+<!-- BREADCRUMB & INTRO HEADER (Clean, authority-led) -->
+<section class="px-margin-mobile lg:px-margin-desktop py-space-sm">
+<div class="max-w-[1440px] mx-auto">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-caption-badge font-caption-badge text-text-muted mb-space-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>
+          Trang chủ
+        </a>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-semibold">Hệ thống cơ sở đào tạo</span>
+</nav>
+<!-- Hero Title & Context -->
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container-high/40 to-surface-subtle p-space-lg lg:p-space-2xl rounded-2xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-primary-highlight/40 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-primary font-caption-badge text-caption-badge uppercase tracking-wider mb-space-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-growth animate-pulse"></span>
+            Mạng Lưới Toàn Quốc • 35+ Chi Nhánh Chuẩn Cambridge
+          </div>
+<h1 class="font-headline-lg text-headline-lg lg:text-[42px] lg:leading-[1.2] text-text-heading font-bold mb-space-xs">
+            Hệ Thống 35+ Trung Tâm IVS Academy Trên Toàn Quốc
+          </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl leading-relaxed">
+            Môi trường giáo dục hiện đại, phòng học chuẩn quốc tế Cambridge, trang bị bảng tương tác đa điểm và ứng dụng hệ thống số hóa kết nối phụ huynh độc quyền <span class="text-royal-blue-vibrant font-semibold">CenterCare™</span>.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md mt-space-md pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-emerald-growth-dark text-[20px]">verified_user</span>
+<span class="font-label-md text-label-md">100% Đạt kiểm định Sở GD&amp;ĐT</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[20px]">stay_current_portrait</span>
+<span class="font-label-md text-label-md">Điểm danh &amp; giám sát qua App</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-amber-hover text-[20px]">workspace_premium</span>
+<span class="font-label-md text-label-md">Khảo thí IDP &amp; British Council</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEARCH & FILTER BAR -->
+<section class="px-margin-mobile lg:px-margin-desktop py-space-sm">
+<div class="max-w-[1440px] mx-auto">
+<div class="bg-surface-container-lowest p-space-md lg:p-space-lg rounded-2xl shadow-sm">
+<form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-space-sm items-end" onsubmit="event.preventDefault();">
+<!-- Keyword input -->
+<div class="lg:col-span-4 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-heading flex items-center gap-1.5" for="search-input">
+<span class="material-symbols-outlined text-[18px] text-royal-blue-vibrant">search</span>
+              Tìm theo tên đường hoặc quận
+            </label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl bg-surface-subtle text-text-heading placeholder:text-text-muted text-body-sm font-body-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-highlight" id="search-input" placeholder="VD: Nguyễn Thị Minh Khai, Cầu Giấy, Quận 3..." type="text" value="Nguyễn Thị Minh Khai"/>
+<button class="absolute right-3 top-3 text-text-muted hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+</div>
+<!-- City Selector -->
+<div class="lg:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-heading flex items-center gap-1.5" for="city-select">
+<span class="material-symbols-outlined text-[18px] text-primary">location_city</span>
+              Tỉnh / Thành phố
+            </label>
+<select class="w-full h-12 px-3 rounded-xl bg-surface-subtle text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="city-select">
+<option selected="" value="hcm">TP. Hồ Chí Minh (18)</option>
+<option value="hn">Hà Nội (12)</option>
+<option value="dn">Đà Nẵng (3)</option>
+<option value="ct">Cần Thơ (2)</option>
+<option value="all">Tất cả tỉnh thành</option>
+</select>
+</div>
+<!-- District Selector -->
+<div class="lg:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-heading flex items-center gap-1.5" for="district-select">
+<span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span>
+              Quận / Huyện
+            </label>
+<select class="w-full h-12 px-3 rounded-xl bg-surface-subtle text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="district-select">
+<option selected="" value="q3">Quận 3 (Trụ sở)</option>
+<option value="q1">Quận 1</option>
+<option value="q7">Quận 7</option>
+<option value="bt">Bình Thạnh</option>
+<option value="tb">Tân Bình</option>
+<option value="all">Tất cả quận/huyện</option>
+</select>
+</div>
+<!-- Program Selector -->
+<div class="lg:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-heading flex items-center gap-1.5" for="program-select">
+<span class="material-symbols-outlined text-[18px] text-primary">school</span>
+              Chương trình học
+            </label>
+<select class="w-full h-12 px-3 rounded-xl bg-surface-subtle text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="program-select">
+<option selected="" value="all">Tất cả chương trình</option>
+<option value="ielts">Luyện thi IELTS Target 7.5+</option>
+<option value="kids">Tiếng Anh Mầm non &amp; Tiểu học</option>
+<option value="sec">Tiếng Anh THCS &amp; THPT</option>
+<option value="comm">Tiếng Anh Giao tiếp quốc tế</option>
+</select>
+</div>
+<!-- Action Button -->
+<div class="lg:col-span-2">
+<button class="w-full h-12 px-4 rounded-xl bg-amber-hover text-on-secondary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm hover:brightness-105 active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">filter_alt</span>
+<span>Tìm trung tâm</span>
+</button>
+</div>
+</form>
+<!-- Quick filter chips -->
+<div class="flex flex-wrap items-center gap-2 pt-space-sm mt-space-sm">
+<span class="font-caption-badge text-caption-badge text-text-muted uppercase">Gợi ý nhanh:</span>
+<button class="px-3 py-1 rounded-full bg-primary-light text-primary font-caption-badge text-caption-badge hover:bg-primary-highlight transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">near_me</span> Gần vị trí của tôi
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-subtle text-on-surface-variant font-caption-badge text-caption-badge hover:bg-surface-container-high transition-colors">
+            Có phòng khảo thí máy tính
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-subtle text-on-surface-variant font-caption-badge text-caption-badge hover:bg-surface-container-high transition-colors">
+            Có bãi đỗ xe ô tô
+          </button>
+<button class="px-3 py-1 rounded-full bg-surface-subtle text-on-surface-variant font-caption-badge text-caption-badge hover:bg-surface-container-high transition-colors">
+            Lớp học cuối tuần
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN 2-COLUMN INTERACTIVE CONTENT (List + Live Campus Map & Insight) -->
+<section class="px-margin-mobile lg:px-margin-desktop py-space-md">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-space-lg items-start">
+<!-- LEFT COLUMN: Campus List (~45% on desktop) -->
+<div class="w-full lg:w-[46%] flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-text-heading font-bold">Danh sách cơ sở</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-caption-badge text-caption-badge font-bold">5 kết quả phù hợp</span>
+</div>
+<div class="flex items-center gap-1 text-caption-badge font-caption-badge text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-emerald-growth-dark">check_circle</span>
+              Đang mở cửa hoạt động
+            </div>
+</div>
+<!-- CARD 1 (Active / Selected Campus) -->
+<article class="p-space-md rounded-2xl bg-surface-container-lowest shadow-md transition-all relative overflow-hidden" style="outline: 2px solid #2563EB;">
+<div class="absolute top-0 right-0 bg-primary text-on-primary px-3 py-1 rounded-bl-xl font-caption-badge text-caption-badge uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed">star</span>
+              Trụ sở chính &amp; trung tâm khảo thí
+            </div>
+<div class="pr-20 mb-2">
+<div class="flex items-center gap-1.5 text-royal-blue-vibrant font-caption-badge text-caption-badge uppercase">
+<span>Cơ Sở 01 • Quận 3, TP.HCM</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold mt-0.5">
+                IVS Academy Nguyễn Thị Minh Khai
+              </h2>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm text-on-surface-variant my-space-sm bg-surface-subtle p-3 rounded-xl">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-royal-blue-vibrant shrink-0 mt-0.5">pin_drop</span>
+<span class="text-text-heading font-medium">128 Nguyễn Thị Minh Khai, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-royal-blue-vibrant shrink-0">call</span>
+<span>Hotline: <strong class="text-text-heading font-semibold">028 7300 xxxx (Ext 101)</strong> • 1900 6868</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-emerald-growth-dark shrink-0">schedule</span>
+<span>08:00 - 21:30 (Thứ 2 - Chủ Nhật, không nghỉ trưa)</span>
+</div>
+</div>
+<!-- Facilities Pill List -->
+<div class="mb-space-sm">
+<span class="text-caption-badge font-caption-badge text-text-muted block mb-1.5 font-semibold">TIỆN ÍCH CƠ SỞ:</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface text-caption-badge font-caption-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">meeting_room</span> 18 phòng chuẩn Cambridge
+                </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface text-caption-badge font-caption-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">computer</span> Phòng Lab Computer Test
+                </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface text-caption-badge font-caption-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">local_library</span> Thư viện Anh ngữ mở
+                </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface text-caption-badge font-caption-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-emerald-growth-dark">toys</span> Kid Creative Zone
+                </span>
+</div>
+</div>
+<!-- Active Enrollments -->
+<div class="flex items-center justify-between pt-space-xs pb-space-xs mb-space-sm text-caption-badge font-caption-badge text-on-surface-variant">
+<span>Đang tuyển sinh: <strong class="text-primary font-bold">IELTS Master, SmartKids, Giao tiếp</strong></span>
+<span class="text-emerald-growth-dark font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[15px]">event_available</span> Khai giảng hàng tuần
+              </span>
+</div>
+<!-- Action buttons -->
+<div class="grid grid-cols-3 gap-2 pt-space-xs">
+<a class="h-10 px-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md flex items-center justify-center gap-1 text-center transition-all" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-[16px]">directions</span>
+<span class="truncate">Chỉ đường</span>
+</a>
+<a class="h-10 px-2 rounded-xl bg-surface-subtle hover:bg-surface-container text-text-heading font-label-md text-label-md flex items-center justify-center gap-1 text-center transition-all" href="tel:02873006868">
+<span class="material-symbols-outlined text-[16px] text-royal-blue-vibrant">call</span>
+<span class="truncate">Gọi ngay</span>
+</a>
+<a class="h-10 px-2 rounded-xl bg-primary text-on-primary hover:bg-royal-blue-vibrant font-label-md text-label-md font-semibold flex items-center justify-center gap-1 text-center transition-all" data-path="campus-detail-q3" href="#">
+<span class="truncate">Chi tiết</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- CARD 2: Cầu Giấy (Xuân Thủy - Hà Nội) -->
+<article class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-royal-blue-vibrant font-caption-badge text-caption-badge uppercase">Cơ Sở 02 • Cầu Giấy, Hà Nội</span>
+<h3 class="font-headline-md text-headline-md text-text-heading font-bold mt-0.5 hover:text-primary transition-colors">
+                  IVS Academy Xuân Thủy - Cầu Giấy
+                </h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-growth/10 text-emerald-growth-dark font-caption-badge text-caption-badge font-semibold">Mở cửa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant my-2 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+              Tòa nhà IVS Tower, 126 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội
+            </p>
+<div class="flex flex-wrap gap-2 text-caption-badge font-caption-badge text-text-muted mb-space-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span> 024 7300 xxxx</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">meeting_room</span> 22 phòng học đa phương tiện</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">local_parking</span> Bãi đỗ xe ô tô miễn phí</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-[11px] font-medium text-text-muted">IELTS Test Prep</span>
+<span class="px-2 py-0.5 rounded bg-surface-subtle text-[11px] font-medium text-text-muted">Teen Leaders</span>
+</div>
+<a class="text-primary font-label-md text-label-md font-semibold flex items-center gap-0.5 hover:underline" data-path="campus-detail-caugiay" href="#">
+                Xem chi tiết <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- CARD 3: Đống Đa (Xã Đàn - Hà Nội) -->
+<article class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-royal-blue-vibrant font-caption-badge text-caption-badge uppercase">Cơ Sở 03 • Đống Đa, Hà Nội</span>
+<h3 class="font-headline-md text-headline-md text-text-heading font-bold mt-0.5 hover:text-primary transition-colors">
+                  IVS Academy Xã Đàn - Đống Đa
+                </h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-growth/10 text-emerald-growth-dark font-caption-badge text-caption-badge font-semibold">Mở cửa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant my-2 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+              245 Xã Đàn, Phường Nam Đồng, Quận Đống Đa, TP. Hà Nội
+            </p>
+<div class="flex flex-wrap gap-2 text-caption-badge font-caption-badge text-text-muted mb-space-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span> 024 7300 245x</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_stories</span> Thư viện IELTS 5000+ đầu sách</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-caption-badge font-caption-badge text-on-surface-variant">Khai giảng lớp mới: <strong>03 ngày tới</strong></span>
+<a class="text-primary font-label-md text-label-md font-semibold flex items-center gap-0.5 hover:underline" data-path="campus-detail-xadan" href="#">
+                Xem chi tiết <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- CARD 4: Quận 7 (Nguyễn Thị Thập - TP.HCM) -->
+<article class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-royal-blue-vibrant font-caption-badge text-caption-badge uppercase">Cơ Sở 04 • Quận 7, TP.HCM</span>
+<h3 class="font-headline-md text-headline-md text-text-heading font-bold mt-0.5 hover:text-primary transition-colors">
+                  IVS Academy Nguyễn Thị Thập - Quận 7
+                </h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-growth/10 text-emerald-growth-dark font-caption-badge text-caption-badge font-semibold">Mở cửa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant my-2 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+              450 Nguyễn Thị Thập, Phường Tân Quy, Quận 7, TP. Hồ Chí Minh
+            </p>
+<div class="flex flex-wrap gap-2 text-caption-badge font-caption-badge text-text-muted mb-space-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span> 028 7300 450x</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">child_care</span> Khu trải nghiệm tiếng Anh Mầm non</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-caption-badge font-caption-badge text-emerald-growth-dark font-semibold">Học bổng trải nghiệm 25% tháng này</span>
+<a class="text-primary font-label-md text-label-md font-semibold flex items-center gap-0.5 hover:underline" data-path="campus-detail-q7" href="#">
+                Xem chi tiết <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- CARD 5: Hải Châu (Nguyễn Văn Linh - Đà Nẵng) -->
+<article class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-royal-blue-vibrant font-caption-badge text-caption-badge uppercase">Cơ Sở 05 • Hải Châu, Đà Nẵng</span>
+<h3 class="font-headline-md text-headline-md text-text-heading font-bold mt-0.5 hover:text-primary transition-colors">
+                  IVS Academy Nguyễn Văn Linh - Hải Châu
+                </h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-growth/10 text-emerald-growth-dark font-caption-badge text-caption-badge font-semibold">Mở cửa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant my-2 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+              104 Nguyễn Văn Linh, Phường Nam Dương, Quận Hải Châu, TP. Đà Nẵng
+            </p>
+<div class="flex flex-wrap gap-2 text-caption-badge font-caption-badge text-text-muted mb-space-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">call</span> 0236 730 6868</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">cast_for_education</span> Phòng thi thử chuẩn khảo thí IDP</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-caption-badge font-caption-badge text-on-surface-variant">Lớp giao tiếp người đi làm • IELTS 6.5+</span>
+<a class="text-primary font-label-md text-label-md font-semibold flex items-center gap-0.5 hover:underline" data-path="campus-detail-danang" href="#">
+                Xem chi tiết <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</article>
+<!-- PAGINATION -->
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-lowest p-space-sm rounded-xl">
+<span class="text-body-sm font-body-sm text-text-muted">Hiển thị 1 - 5 trong tổng số 35 cơ sở</span>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg bg-surface-subtle text-text-muted hover:text-on-surface flex items-center justify-center transition-colors disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center">1</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center">2</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center">3</button>
+<span class="px-1 text-text-muted">...</span>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center">7</button>
+<button class="w-9 h-9 rounded-lg bg-surface-subtle text-on-surface hover:bg-surface-container flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Interactive Campus Map & Selected Highlight (~54% on desktop) -->
+<div class="w-full lg:w-[54%] sticky top-20 flex flex-col space-y-space-md">
+<!-- MAP CONTAINER with Google Maps Static API integration -->
+<div class="relative w-full h-[580px] rounded-3xl overflow-hidden shadow-lg bg-surface-container">
+<!-- Map Component using data-location according to rule -->
+<div class="w-full h-full bg-cover bg-center" data-location="128 Nguyen Thi Minh Khai, District 3, Ho Chi Minh City, Vietnam" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMZcE99Za_0Hc1u4UQ1Rgkk5vN1u5IKuH3ItlJyH3a8ImbjHVNfeCcmrLG7BZ1SL7Df_TzPsBvk02-O0fpH7UhPga9AeHrNMVKp2kYw2FrFPTwM6l-qBWJYjnUQSnhFiI_tm8uebYXaXc5ShGHNs-SMD80HvzKs64S5SLrHM1GxuyHcW6k3YGdzBcX1IUnandyeCJAuNB8fM4zKvwwW94t8scTHKKLBPpcRix0HpC5lwYgtp1MQuAz')"></div>
+<!-- Stylized Floating Pin & Overlay Badges -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-inverse-surface/30 via-transparent to-transparent"></div>
+<!-- Interactive Map Pin UI Overlay Mockup -->
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<!-- Active Tooltip Card -->
+<div class="bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2 mb-1.5 animate-bounce">
+<span class="w-2.5 h-2.5 rounded-full bg-royal-blue-vibrant animate-ping"></span>
+<span class="font-label-md text-label-md font-bold text-primary whitespace-nowrap">Trụ sở IVS - Quận 3 (Đang chọn)</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-2xl ring-4 ring-white">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="w-2.5 h-2.5 bg-primary rotate-45 -mt-1.5 shadow-md"></div>
+</div>
+<!-- Floating Controls Top Right -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-text-heading shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors" title="Phóng to">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-text-heading shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors" title="Thu nhỏ">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container-lowest/95 backdrop-blur-md text-primary shadow-md flex items-center justify-center hover:bg-surface-container-high transition-colors" title="Định vị hiện tại">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+<!-- Quick Info Floating Card on Map Bottom -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-lg p-space-md rounded-2xl shadow-xl">
+<div class="flex flex-col sm:flex-row gap-space-md items-center">
+<!-- Visual Placeholder of the facility -->
+<div class="w-full sm:w-36 h-28 rounded-xl overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern architectural facade of IVS Academy English campus in District 3 Ho Chi Minh City with international educational branding, floor-to-ceiling glass windows, warm interior lighting and welcoming entrance banner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs2HJeuVmt2lXJX_7Ub26uCO52dgEDWmT0RXYVhocwmxKhy5PXec03ZhG-DnCC9CpKBBDgpAOF2rbZ8Ys0LH229dE765w7CDCc1KdDs4FzQaSOFgvNQNI3LrjhDQaT3t10cODB8FqMH-AHxmW7E60ThcmCvP58YRTgaElBDhAHlJ9yQxh2QrLHgrPPTjgw6w-GgrFlCtRICfseAq9pcoI5c1sMT1-bGS5LT5YdC3do1-kOAfbjGrRL"/>
+</div>
+<!-- Facility Metadata -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-light text-primary font-caption-badge text-caption-badge font-bold">CƠ SỞ TRỌNG ĐIỂM</span>
+<span class="text-caption-badge font-caption-badge text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-amber-hover">star</span> 4.9/5.0 (620+ đánh giá phụ huynh)
+                    </span>
+</div>
+<h4 class="font-label-md text-label-md font-bold text-text-heading truncate">Tòa nhà Tri thức IVS - 128 Nguyễn Thị Minh Khai</h4>
+<p class="font-body-sm text-[13px] text-on-surface-variant line-clamp-1 mt-0.5">Bãi gửi xe ô tô tầng hầm, camera CenterCare™ bảo mật trực tiếp theo dõi lớp học.</p>
+<div class="flex items-center gap-3 mt-2.5">
+<a class="h-8 px-3 rounded-lg bg-primary text-on-primary text-caption-badge font-caption-badge font-bold flex items-center gap-1 hover:bg-royal-blue-vibrant transition-all" data-path="schedule-tour" href="#">
+<span class="material-symbols-outlined text-[14px]">calendar_add_on</span> Đặt lịch xem cơ sở
+                    </a>
+<a class="h-8 px-3 rounded-lg bg-surface-container-high text-primary text-caption-badge font-caption-badge font-semibold flex items-center gap-1 hover:bg-surface-container-highest transition-all" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-[14px]">route</span> Mở Google Maps
+                    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Connected CenterCare™ Banner (Sync with inspiration image theme) -->
+<div class="bg-gradient-to-r from-primary via-primary-container to-royal-blue-vibrant p-space-md rounded-2xl text-on-primary shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed text-[26px]">devices</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold">Công Nghệ CenterCare™ Tại Mỗi Cơ Sở</span>
+<span class="px-2 py-0.2 rounded-full bg-emerald-growth/20 text-emerald-growth text-[11px] font-bold uppercase">24/7 Smart Sync</span>
+</div>
+<p class="font-body-sm text-[13px] text-primary-fixed-dim line-clamp-1">
+                  Phụ huynh nhận thông báo điểm danh, xem bảng tương tác trực tiếp và theo dõi lộ trình của con từng buổi học.
+                </p>
+</div>
+</div>
+<a class="shrink-0 px-3.5 py-2 rounded-xl bg-surface-container-lowest text-primary font-label-md text-label-md font-bold hover:bg-surface-container-low transition-colors shadow-sm" data-path="about-centercare" href="#">
+              Tìm hiểu CenterCare
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5-STAR FACILITY STANDARDS -->
+<section class="px-margin-mobile lg:px-margin-desktop py-space-xl mt-space-lg bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-caption-badge text-caption-badge text-royal-blue-vibrant uppercase tracking-widest font-bold">CAM KẾT CHẤT LƯỢNG MÔI TRƯỜNG HỌC TẬP</span>
+<h2 class="font-headline-lg text-headline-lg text-text-heading font-bold mt-1">Tiêu Chuẩn Cơ Sở Vật Chất 5 Sao Tại IVS</h2>
+<p class="font-body-base text-body-base text-on-surface-variant mt-2">
+          Mỗi chi nhánh trong hệ thống IVS Academy được thiết kế đồng bộ theo quy chuẩn khắt khe nhằm tạo cảm hứng học tập tối đa và bảo vệ sức khỏe học viên.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Standard 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[28px]">light_mode</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-text-heading font-bold mb-2">100% Ánh Sáng Tự Nhiên &amp; Chống Cận</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Hệ thống đèn LED chuẩn quang thông học đường kết hợp cửa sổ đón sáng tự nhiên, bảo vệ tối đa thị lực của học viên nhí và thanh thiếu niên.
+          </p>
+</div>
+<!-- Standard 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-royal-blue-vibrant mb-space-md">
+<span class="material-symbols-outlined text-[28px]">hearing</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-text-heading font-bold mb-2">Âm Thanh Chuẩn Khảo Thí Quốc Tế</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Tường cách âm tiêu chuẩn phòng thi IELTS/TOEIC quốc tế với loa vệ tinh vòm, giúp luyện nghe chuẩn ngữ điệu người bản xứ không bị vang dội.
+          </p>
+</div>
+<!-- Standard 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-emerald-growth-dark mb-space-md">
+<span class="material-symbols-outlined text-[28px]">touch_app</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-text-heading font-bold mb-2">Bảng Tương Tác Cảm Ứng Đa Điểm</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Thay thế bảng phấn truyền thống bằng Smart Interactive Board 75 inch, kích hoạt các trò chơi ngôn ngữ sinh động và tương tác theo nhóm.
+          </p>
+</div>
+<!-- Standard 4 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all flex flex-col">
+<div class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-amber-hover mb-space-md">
+<span class="material-symbols-outlined text-[28px]">local_library</span>
+</div>
+<h3 class="font-headline-md text-[18px] text-text-heading font-bold mb-2">Thư Viện &amp; Góc Tự Học Thoải Mái</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Hơn 3.000 đầu sách truyện Oxford, Cambridge và kho đề thi IELTS cập nhật hàng quý, mở cửa tự do đón học viên ngoài giờ học chính thức.
+          </p>
+</div>
+</div>
+<!-- Campus Photo Strip Showcase -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mt-space-lg">
+<div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant modern English classroom at IVS Academy with comfortable ergonomic desks, interactive digital smartboard, and colorful learning graphics in blue and emerald tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhXT6bbfsjs8dP84QNAHcV3QuWK7xXtqjX8nbLZk4nnhlIDYZHiPD66ofEya_n5hMNele7U2w2hquz9neA2mEzpjtk6PF8ZU_M5K7GVcgsU2JL33CZLqQ0BOOMIycV5JOlAa_j0LUdOYVI5by9PbPJiljj43XkqoMyPwvDOpCeNxVGpAGXM0RMOGvVGJnULVNGDEFYK9P70ozyZll3Iz5yNj09zO1PY0THheEAS3Eirj6Ks2R9cvBI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md font-semibold">Phòng học thông minh Smart Classroom</span>
+</div>
+</div>
+<div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Official computer testing lab at IVS Academy with rows of private partitioned monitors for IELTS and TOEFL mock testing with professional testing acoustic headsets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD43HpzfYDIxS4zl86VhHVxpoqqQuLFPSUQtD88AYqutP4EwU3IQFmBYEo1tu4tI4AS9KUrxHm0HbCfZHOOh5Q13GB7W5pzsjroO20Slq0hZxLSc9FKU63ZUDt5nHuOEAXnjgpkA8M4Jiz7e_aJbJrblElXIud03voPh2nRczTIX8AIsZJ0XPGdgk680aI-wP6mD5fDSdCuFeTRMZ1iO_BLEeQZHix0Pc05gu9y-kAiPymafrips9g_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md font-semibold">Phòng thi thử mô phỏng máy tính IDP/BC</span>
+</div>
+</div>
+<div class="h-64 rounded-2xl overflow-hidden shadow-sm relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bright welcoming reception lobby and student self-study lounge of IVS Academy with comfortable reading chairs, bookshelves and CenterCare technology digital check-in tablets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzKB6-g4UXwz_fmdiHFDU2j8eycD_Xz9dN0XNRSunX2OH8oDXcgeK_VdPhyfpg24WhzUA3oeXYpVTanLrtdkGFkUZgxXtmkAOZlqmotLnIvnfKrfyHTswqQLa5VNpnADMu1RM2HRXHHqlMxEN6dBh6VMSN4T6SxzCcRETA21t5Fs3L4U2RymijTiSNFgbZzgeDdWDlJNdiOnhCYc118iuy7Df2YkE5TeeA-kGK0rTFdQT8T6Sh4gtb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md font-semibold">Khu vực sảnh đón tiếp phụ huynh &amp; góc đọc sách</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FORM: BOOK A CAMPUS TOUR & FREE LEVEL TEST -->
+<section class="px-margin-mobile lg:px-margin-desktop py-space-2xl">
+<div class="max-w-[1440px] mx-auto">
+<div class="bg-surface-container-lowest rounded-3xl p-space-lg lg:p-space-2xl shadow-xl relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left side content & perks -->
+<div class="lg:col-span-6 space-y-space-md">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-hover/10 text-amber-hover font-caption-badge text-caption-badge uppercase font-bold">
+<span class="material-symbols-outlined text-[15px]">event_available</span>
+              Đặc Quyền Dành Cho Phụ Huynh &amp; Học Viên Mới
+            </div>
+<h2 class="font-headline-lg text-headline-lg text-text-heading font-bold">
+              Đặt Lịch Tham Quan Cơ Sở &amp; Thi Thử Trình Độ Miễn Phí
+            </h2>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+              Trực tiếp trải nghiệm không gian học tập 5 sao, trò chuyện cùng giáo viên bản ngữ và nhận bản đồ lộ trình học tiếng Anh cá nhân hóa hoàn toàn miễn phí.
+            </p>
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-growth/10 text-emerald-growth-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Miễn phí 100% bài kiểm tra năng lực 4 kỹ năng (Trị giá 500.000đ)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-growth/10 text-emerald-growth-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Bé được tham gia 01 buổi học thử tương tác cùng giáo viên bản ngữ</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-emerald-growth/10 text-emerald-growth-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Voucher học bổng trị giá 2.000.000đ áp dụng cho khóa học gần nhất</span>
+</div>
+</div>
+<!-- Trust badge -->
+<div class="p-3.5 rounded-xl bg-surface-subtle flex items-center gap-3">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[24px]">support_agent</span>
+<p class="font-caption-badge text-caption-badge text-text-muted">
+                Bộ phận tư vấn tiếp nhận và liên hệ xác nhận trong vòng <strong class="text-text-heading">15 phút</strong> qua số điện thoại hoặc Zalo.
+              </p>
+</div>
+</div>
+<!-- Right side: Form -->
+<div class="lg:col-span-6 bg-surface-container-low p-space-lg lg:p-space-xl rounded-2xl shadow-sm">
+<h3 class="font-headline-md text-headline-md text-text-heading font-bold mb-space-sm">
+              Đăng Ký Nhận Tư Vấn Trực Tiếp
+            </h3>
+<form class="space-y-space-sm" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đội ngũ tuyển sinh IVS Academy sẽ liên hệ trong 15 phút để xác nhận lịch hẹn.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-md text-label-md text-text-heading block mb-1" for="tour-name">Họ và tên của bạn *</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-text-heading placeholder:text-text-muted text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight" id="tour-name" placeholder="Nguyễn Văn A" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-label-md text-text-heading block mb-1" for="tour-phone">Số điện thoại *</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-text-heading placeholder:text-text-muted text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight" id="tour-phone" placeholder="090 123 4567" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="font-label-md text-label-md text-text-heading block mb-1" for="tour-campus">Chọn cơ sở muốn đến tham quan *</label>
+<select class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="tour-campus" required="">
+<option selected="" value="cs1">Cơ sở 1: 128 Nguyễn Thị Minh Khai, Quận 3, TP.HCM</option>
+<option value="cs2">Cơ sở 2: Tòa nhà IVS Tower, 126 Xuân Thủy, Cầu Giấy, Hà Nội</option>
+<option value="cs3">Cơ sở 3: 245 Xã Đàn, Đống Đa, Hà Nội</option>
+<option value="cs4">Cơ sở 4: 450 Nguyễn Thị Thập, Quận 7, TP.HCM</option>
+<option value="cs5">Cơ sở 5: 104 Nguyễn Văn Linh, Hải Châu, Đà Nẵng</option>
+</select>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-md text-label-md text-text-heading block mb-1" for="tour-program">Độ tuổi / Khóa quan tâm</label>
+<select class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="tour-program">
+<option>Tiếng Anh Mầm non (4 - 6 tuổi)</option>
+<option>Tiếng Anh Tiểu học (6 - 11 tuổi)</option>
+<option>Luyện thi IELTS Target 7.0+</option>
+<option>Tiếng Anh Giao tiếp người lớn</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-label-md text-text-heading block mb-1" for="tour-date">Ngày dự kiến ghé thăm</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-container-lowest text-text-heading text-body-sm font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-highlight cursor-pointer" id="tour-date" type="date"/>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary hover:bg-royal-blue-vibrant font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">verified</span>
+<span>Xác Nhận Đặt Lịch Hẹn Ngay</span>
+</button>
+</div>
+<p class="font-caption-badge text-[12px] text-center text-text-muted">
+                Thông tin của quý khách được bảo mật tuyệt đối theo chính sách đào tạo của IVS Academy.
+              </p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive mock to highlight selected campus cards
+  document.querySelectorAll('article').forEach(card => {
+    card.addEventListener('click', function(e) {
+      if (e.target.tagName.toLowerCase() === 'a') return;
+      document.querySelectorAll('article').forEach(c => c.style.outline = 'none');
+      this.style.outline = '2px solid #2563EB';
+    });
+  });
+</script><footer class="mt-space-2xl bg-surface-container-lowest px-margin-mobile pt-space-xl pb-space-2xl"><div class="flex items-center gap-space-xs mb-space-sm"><img alt="icon.png" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><span class="font-label-md text-label-md text-primary font-bold tracking-tight">HỆ THỐNG ANH NGỮ QUỐC TẾ IVS</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-sm">Giấy phép đào tạo ngoại ngữ số 3421/QĐ-SGDĐT cấp bởi Sở Giáo dục &amp; Đào tạo. Tiên phong đào tạo ngôn ngữ ứng dụng và chuẩn đầu ra quốc tế.</p><div class="space-y-space-2xs text-body-sm font-body-sm text-text-muted mb-space-md"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[16px] mt-1 text-primary">pin_drop</span><span>Tòa nhà IVS, 128 Nguyễn Thị Minh Khai, Q.3, TP. Hồ Chí Minh</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">call</span><span>Hotline: 1900 6868 - 028 7300 xxxx</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">mail</span><span>contact@ivsacademy.edu.vn</span></div></div><div class="flex flex-wrap gap-x-space-md gap-y-1 pt-space-xs mb-space-md"><a class="font-caption-badge text-caption-badge text-primary" href="#">Chính sách bảo mật</a><a class="font-caption-badge text-caption-badge text-primary" href="#">Điều khoản dịch vụ</a><a class="font-caption-badge text-caption-badge text-primary" href="#">Quy chế đào tạo</a></div><div class="flex items-center justify-between pt-space-xs text-text-muted font-caption-badge text-caption-badge"><span>© 2025 IVS Academy. All rights reserved.</span><div class="flex gap-space-xs"><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">f</span><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">in</span><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">yt</span></div></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(15,23,42,0.06)] pb-safe" data-active-classes="text-primary"><div class="h-20 px-space-xs flex items-center justify-between gap-space-2xs"><a class="flex-1 h-12 rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-path="hotline-call" href="tel:19006868"><span class="material-symbols-outlined text-[20px] text-royal-blue-vibrant">call</span><span class="font-caption-badge text-[11px] font-bold mt-0.5">1900 6868</span></a><a class="flex-1 h-12 rounded-xl bg-primary-light flex flex-col items-center justify-center text-primary-container hover:bg-primary-highlight active:scale-95 transition-all" data-path="chat-zalo" href="https://zalo.me" target="_blank"><span class="material-symbols-outlined text-[20px] text-primary">chat</span><span class="font-caption-badge text-[11px] font-bold mt-0.5">Chat Zalo</span></a><a class="flex-[2] h-12 px-space-xs rounded-xl bg-primary text-on-primary flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" data-path="consultation-booking" href="#"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">bolt</span><span class="font-label-md text-label-md font-bold whitespace-nowrap text-on-primary">Đăng ký tư vấn ngay</span></a></div></nav></body></html>

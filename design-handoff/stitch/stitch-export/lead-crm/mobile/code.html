@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>Lead Dashboard - IVS CRM</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100vh; background-color: #f8f9ff; } body { overscroll-behavior-y: none; -webkit-font-smoothing: antialiased; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "border-subtle": "#E2E8F0", "on-tertiary-container": "#ffa929", "inverse-surface": "#233144", "primary-light": "#EFF6FF", "surface": "#f8f9ff", "on-secondary": "#ffffff", "primary-fixed": "#dde1ff", "surface-variant": "#d5e3fd", "on-secondary-container": "#49617f", "surface-subtle": "#F8FAFC", "text-heading": "#0F172A", "secondary-fixed": "#d2e4ff", "outline": "#757684", "on-primary-fixed": "#001453", "on-tertiary-fixed": "#2a1700", "on-error-container": "#93000a", "background": "#f8f9ff", "secondary-container": "#c4dcff", "on-secondary-fixed-variant": "#314865", "on-tertiary-fixed-variant": "#653e00", "tertiary-fixed-dim": "#ffb95f", "error-container": "#ffdad6", "secondary": "#49607e", "primary-highlight": "#DBEAFE", "primary": "#00288e", "surface-dim": "#ccdbf4", "error": "#ba1a1a", "secondary-fixed-dim": "#b0c8eb", "amber-hover": "#D97706", "inverse-primary": "#b8c4ff", "text-muted": "#64748B", "surface-container-highest": "#d5e3fd", "surface-container-low": "#eff4ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "royal-blue-vibrant": "#2563EB", "primary-container": "#1e40af", "tertiary": "#4c2e00", "tertiary-container": "#6b4200", "tertiary-fixed": "#ffddb8", "emerald-growth": "#10B981", "on-primary-container": "#a8b8ff", "surface-bright": "#f8f9ff", "surface-tint": "#3755c3", "surface-container": "#e6eeff", "inverse-on-surface": "#ebf1ff", "on-background": "#0d1c2f", "on-primary": "#ffffff", "on-error": "#ffffff", "primary-fixed-dim": "#b8c4ff", "emerald-growth-dark": "#059669", "surface-container-high": "#dde9ff", "outline-variant": "#c4c5d5", "on-surface": "#0d1c2f", "on-surface-variant": "#444653", "on-secondary-fixed": "#001c37", "on-primary-fixed-variant": "#173bab" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "2rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "margin-desktop": "3rem", "space-2xs": "0.25rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "margin-tablet": "2rem", "space-xs": "0.5rem", "space-3xl": "4.5rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem" }, "fontFamily": { "caption-badge": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "display-hero-mobile": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "headline-lg-mobile": ["Be Vietnam Pro"], "display-hero": ["Be Vietnam Pro"], "headline-md": ["Be Vietnam Pro"], "headline-lg": ["Be Vietnam Pro"], "body-base": ["Be Vietnam Pro"] }, "fontSize": { "caption-badge": ["12px", { "lineHeight": "1.3", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }], "display-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "800" }], "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-hero": ["56px", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "1.35", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-lg": ["36px", { "lineHeight": "1.25", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-base": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }] } } } }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-highlight selection:text-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Menu điều hướng" class="min-w-[44px] min-h-[44px] -ml-2 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md font-bold tracking-tight shadow-sm">I</div><div class="flex flex-col"><span class="font-label-md text-label-md leading-none text-text-heading font-bold tracking-tight">IVS CRM</span><span class="font-caption-badge text-[10px] tracking-wider text-primary font-semibold uppercase leading-tight mt-0.5">Academy</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Thông báo lead mới" class="relative min-w-[44px] min-h-[44px] rounded-xl flex items-center justify-center text-secondary hover:bg-surface-container hover:text-on-surface transition-all" type="button"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm ring-2 ring-surface-container-low"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Banner chào & Tóm tắt chỉ số nhanh -->
+<section class="px-margin-mobile pt-space-xs pb-space-sm">
+<div class="bg-gradient-to-r from-primary to-royal-blue-vibrant rounded-2xl p-space-md text-on-primary shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<span class="font-caption-badge text-caption-badge text-on-primary-container tracking-wider uppercase">Tuyển Sinh Kỳ Mùa Thu</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary mt-0.5">Lead Pipeline Hôm Nay</h1>
+</div>
+<div class="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[22px]">trending_up</span>
+</div>
+</div>
+<!-- 3 Chỉ số quan trọng (Quick Stats) -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-xs pt-space-xs border-t-0 bg-white/10 p-space-xs rounded-xl backdrop-blur-sm">
+<div class="flex flex-col items-center text-center">
+<span class="font-display-hero-mobile text-[22px] font-bold text-on-primary leading-none">48</span>
+<span class="font-caption-badge text-[11px] text-on-primary-container mt-1">Lead Mới</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display-hero-mobile text-[22px] font-bold text-tertiary-fixed-dim leading-none">12</span>
+<span class="font-caption-badge text-[11px] text-on-primary-container mt-1">Cần Gọi Gấp</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-display-hero-mobile text-[22px] font-bold text-emerald-growth leading-none">05</span>
+<span class="font-caption-badge text-[11px] text-on-primary-container mt-1">Lịch Test</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tìm kiếm nhanh & Bộ lọc Chips -->
+<section class="px-margin-mobile flex flex-col gap-space-xs sticky top-16 z-40 bg-surface/95 backdrop-blur-md py-space-xs">
+<!-- Input Tìm kiếm -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none focus:bg-surface-subtle" id="leadSearchInput" placeholder="Tìm theo tên học viên, SĐT, mã Lead..." type="text"/>
+<button aria-label="Lọc chuyên sâu" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Filter chips ngang cuộn mượt -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5" id="statusFilterBar">
+<button class="filter-chip active flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-caption-badge text-caption-badge shadow-sm whitespace-nowrap transition-all" data-filter="all" type="button">
+<span>Tất cả</span>
+<span class="px-1.5 py-0.2 bg-white/20 rounded-full text-[10px]">65</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption-badge text-caption-badge whitespace-nowrap transition-all" data-filter="new" type="button">
+<span class="w-2 h-2 rounded-full bg-royal-blue-vibrant"></span>
+<span>Mới (New)</span>
+<span class="px-1.5 py-0.2 bg-surface-variant rounded-full text-[10px]">48</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption-badge text-caption-badge whitespace-nowrap transition-all" data-filter="called" type="button">
+<span class="w-2 h-2 rounded-full bg-amber-hover"></span>
+<span>Đã gọi điện</span>
+<span class="px-1.5 py-0.2 bg-surface-variant rounded-full text-[10px]">10</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption-badge text-caption-badge whitespace-nowrap transition-all" data-filter="tested" type="button">
+<span class="w-2 h-2 rounded-full bg-purple-600"></span>
+<span>Hẹn Test</span>
+<span class="px-1.5 py-0.2 bg-surface-variant rounded-full text-[10px]">5</span>
+</button>
+<button class="filter-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-caption-badge text-caption-badge whitespace-nowrap transition-all" data-filter="enrolled" type="button">
+<span class="w-2 h-2 rounded-full bg-emerald-growth"></span>
+<span>Đã nhập học</span>
+<span class="px-1.5 py-0.2 bg-surface-variant rounded-full text-[10px]">2</span>
+</button>
+</div>
+</section>
+<!-- Danh Sách Responsive Lead Cards -->
+<section class="px-margin-mobile flex flex-col gap-space-sm pt-space-xs pb-space-2xl" id="leadCardsList">
+<!-- LEAD CARD 1 (NỔI BẬT - MỚI) -->
+<article class="lead-item group bg-surface-container-lowest rounded-2xl p-space-md shadow-sm active:scale-[0.99] transition-all cursor-pointer relative overflow-hidden" data-name="Nguyễn Hoàng Nam" data-phone="0912345678" data-status="new" onclick="openLeadModal('lead-1')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-royal-blue-vibrant"></div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs pl-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-full bg-primary-highlight flex items-center justify-center text-primary font-headline-md font-bold shrink-0">
+            N
+          </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-label-md text-label-md font-bold text-text-heading">Nguyễn Hoàng Nam</h2>
+<span class="font-caption-badge text-[11px] text-text-muted bg-surface-container px-1.5 py-0.5 rounded">19 tuổi</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Target Du học Úc 2025</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-light text-royal-blue-vibrant font-caption-badge text-[11px] font-bold tracking-wide uppercase">
+          MỚI (NEW)
+        </span>
+</div>
+<!-- Program & Branch Badge -->
+<div class="mt-space-xs pl-2 flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-primary">school</span>
+          IELTS Master (Target 6.5+)
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+          Q.3 - Nguyễn Thị Minh Khai
+        </span>
+</div>
+<!-- Quick Action Row & Advisor -->
+<div class="mt-space-sm pl-2 pt-space-xs flex items-center justify-between bg-surface-subtle p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-secondary text-[10px] font-bold">TT</div>
+<span class="font-body-sm text-[13px] text-on-surface">Lê Thu Thảo</span>
+<span class="text-text-muted text-[11px]">• 15p trước</span>
+</div>
+<div class="flex items-center gap-1.5" onclick="event.stopPropagation()">
+<a aria-label="Gọi điện trực tiếp cho Nguyễn Hoàng Nam" class="min-w-[40px] h-10 px-3 rounded-xl bg-emerald-growth text-on-primary flex items-center justify-center gap-1 font-caption-badge text-[12px] active:scale-95 shadow-sm transition-all" href="tel:0912345678">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Gọi ngay</span>
+</a>
+</div>
+</div>
+</article>
+<!-- LEAD CARD 2 (ĐÃ LIÊN HỆ) -->
+<article class="lead-item group bg-surface-container-lowest rounded-2xl p-space-md shadow-sm active:scale-[0.99] transition-all cursor-pointer relative overflow-hidden" data-name="Trần Mai Linh" data-phone="0988765432" data-status="called" onclick="openLeadModal('lead-2')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-amber-hover"></div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs pl-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center text-primary font-headline-md font-bold shrink-0">
+            L
+          </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-label-md text-label-md font-bold text-text-heading">Trần Mai Linh</h2>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Phụ huynh bé Ben (5 tuổi)</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary font-caption-badge text-[11px] font-bold tracking-wide uppercase">
+          ĐÃ LIÊN HỆ
+        </span>
+</div>
+<!-- Program & Branch Badge -->
+<div class="mt-space-xs pl-2 flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-amber-hover">child_care</span>
+          SmartKids Mầm Non
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+          Cầu Giấy, Hà Nội
+        </span>
+</div>
+<!-- Quick Action Row & Advisor -->
+<div class="mt-space-sm pl-2 pt-space-xs flex items-center justify-between bg-surface-subtle p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-secondary text-[10px] font-bold">QH</div>
+<span class="font-body-sm text-[13px] text-on-surface">Phạm Quốc Hưng</span>
+<span class="text-text-muted text-[11px]">• 1 giờ trước</span>
+</div>
+<div class="flex items-center gap-1.5" onclick="event.stopPropagation()">
+<a aria-label="Gọi điện lại" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-emerald-growth/10 text-emerald-growth flex items-center justify-center active:scale-95 transition-all" href="tel:0988765432">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<button aria-label="Ghi chú nhanh" class="w-10 h-10 rounded-xl bg-surface-container text-secondary flex items-center justify-center active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+</div>
+</div>
+</article>
+<!-- LEAD CARD 3 (HẸN TEST TRÌNH ĐỘ) -->
+<article class="lead-item group bg-surface-container-lowest rounded-2xl p-space-md shadow-sm active:scale-[0.99] transition-all cursor-pointer relative overflow-hidden" data-name="Đỗ Quang Khải" data-phone="0903112233" data-status="tested" onclick="openLeadModal('lead-3')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-purple-600"></div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs pl-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 font-headline-md font-bold shrink-0">
+            K
+          </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-label-md text-label-md font-bold text-text-heading">Đỗ Quang Khải</h2>
+<span class="font-caption-badge text-[11px] text-text-muted bg-surface-container px-1.5 py-0.5 rounded">22 tuổi</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Sinh viên Đại học Ngoại Thương</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-purple-50 text-purple-700 font-caption-badge text-[11px] font-bold tracking-wide uppercase">
+          HẸN TEST 14:30
+        </span>
+</div>
+<!-- Program & Branch Badge -->
+<div class="mt-space-xs pl-2 flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-purple-600">quiz</span>
+          Luyện Thi IELTS Cấp Tốc
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px]">location_on</span>
+          Đống Đa, Hà Nội
+        </span>
+</div>
+<!-- Quick Action Row & Advisor -->
+<div class="mt-space-sm pl-2 pt-space-xs flex items-center justify-between bg-surface-subtle p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-secondary text-[10px] font-bold">VL</div>
+<span class="font-body-sm text-[13px] text-on-surface">Trần Văn Long</span>
+<span class="text-text-muted text-[11px]">• 09:30</span>
+</div>
+<div class="flex items-center gap-1.5" onclick="event.stopPropagation()">
+<span class="text-[12px] font-semibold text-purple-700 bg-purple-100 px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">event</span> Hôm nay
+          </span>
+<a aria-label="Gọi cho Khải" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-emerald-growth/10 text-emerald-growth flex items-center justify-center active:scale-95 transition-all" href="tel:0903112233">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+</article>
+<!-- LEAD CARD 4 (ĐÃ NHẬP HỌC) -->
+<article class="lead-item group bg-surface-container-lowest rounded-2xl p-space-md shadow-sm active:scale-[0.99] transition-all cursor-pointer relative overflow-hidden" data-name="Lê Bảo Trân" data-phone="0945678910" data-status="enrolled" onclick="openLeadModal('lead-4')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-emerald-growth"></div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-space-xs pl-2">
+<div class="flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-growth-dark font-headline-md font-bold shrink-0">
+            T
+          </div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-label-md text-label-md font-bold text-text-heading">Lê Bảo Trân</h2>
+<span class="font-caption-badge text-[11px] text-text-muted bg-surface-container px-1.5 py-0.5 rounded">Lớp 4</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5">Học bổng Early Bird 20%</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-growth-dark font-caption-badge text-[11px] font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+          ĐÃ NHẬP HỌC
+        </span>
+</div>
+<!-- Program & Branch Badge -->
+<div class="mt-space-xs pl-2 flex flex-wrap items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px] text-emerald-growth">verified</span>
+          SuperKids Tiểu Học
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-secondary font-caption-badge text-[12px]">
+<span class="material-symbols-outlined text-[15px]">credit_card</span>
+          Đã đóng 100% học phí
+        </span>
+</div>
+<!-- Advisor Row -->
+<div class="mt-space-sm pl-2 pt-space-xs flex items-center justify-between bg-surface-subtle p-2.5 rounded-xl">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-variant flex items-center justify-center text-secondary text-[10px] font-bold">TT</div>
+<span class="font-body-sm text-[13px] text-on-surface">Lê Thu Thảo</span>
+<span class="text-text-muted text-[11px]">• Hôm qua</span>
+</div>
+<span class="font-caption-badge text-[12px] font-bold text-emerald-growth">Mã HV: #IVS-982</span>
+</div>
+</article>
+</section>
+<!-- FLOATING ACTION BUTTON (FAB: + Thêm Lead) -->
+<aside class="fixed right-4 bottom-20 z-40">
+<button aria-label="Thêm hồ sơ lead mới" class="h-12 px-4 rounded-full bg-primary text-on-primary shadow-xl flex items-center gap-2 hover:bg-royal-blue-vibrant active:scale-95 transition-all" onclick="openNewLeadModal()" type="button">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+<span class="font-label-md text-label-md font-bold pr-1">Thêm Lead</span>
+</button>
+</aside>
+<!-- BOTTOM SHEET / MODAL CHI TIẾT LEAD -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex-col justify-end transition-opacity duration-300" id="leadDetailModal">
+<div class="w-full max-h-[85vh] bg-surface-container-lowest rounded-t-3xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom duration-300">
+<!-- Drag handle & Header -->
+<div class="p-space-md pb-space-xs border-b border-subtle flex flex-col relative">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-3"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-light text-royal-blue-vibrant font-caption-badge text-[11px] font-bold uppercase" id="modalBadge">
+              MỚI (NEW)
+            </span>
+<h3 class="font-headline-md text-headline-md font-bold text-text-heading mt-1" id="modalName">Nguyễn Hoàng Nam</h3>
+<p class="font-body-sm text-body-sm text-text-muted" id="modalAgePhone">19 tuổi • 0912 345 678</p>
+</div>
+<button aria-label="Đóng chi tiết" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary active:scale-95" onclick="closeLeadModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Modal Body (Scrollable) -->
+<div class="p-space-md overflow-y-auto space-y-space-md flex-1">
+<!-- Hành động tương tác nhanh -->
+<div class="grid grid-cols-3 gap-space-xs">
+<a class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-emerald-50 text-emerald-growth font-caption-badge text-[11px] active:scale-95 transition-all" href="tel:0912345678">
+<span class="material-symbols-outlined text-[22px] mb-1">call</span>
+            Gọi Điện
+          </a>
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-blue-50 text-royal-blue-vibrant font-caption-badge text-[11px] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">sms</span>
+            Gửi SMS / Zalo
+          </button>
+<button class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-purple-50 text-purple-700 font-caption-badge text-[11px] active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px] mb-1">calendar_add_on</span>
+            Xếp Lịch Test
+          </button>
+</div>
+<!-- Thông tin tuyển sinh chi tiết -->
+<div class="bg-surface-subtle p-space-sm rounded-2xl space-y-2">
+<h4 class="font-caption-badge text-[12px] uppercase text-text-muted font-bold tracking-wider">Thông Tin Khóa Học &amp; Nhu Cầu</h4>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-text-muted">Chương trình:</span>
+<span class="font-semibold text-on-surface" id="modalCourse">IELTS Master (Target 6.5+)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-text-muted">Cơ sở đăng ký:</span>
+<span class="font-semibold text-on-surface" id="modalBranch">Q.3 - Nguyễn Thị Minh Khai</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-text-muted">Chuyên viên tư vấn:</span>
+<span class="font-semibold text-primary" id="modalAdvisor">Lê Thu Thảo</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-text-muted">Nguồn Lead:</span>
+<span class="font-semibold text-on-surface">Facebook Ads - Form Đăng ký</span>
+</div>
+</div>
+<!-- Lịch sử chăm sóc & Ghi chú (Timeline) -->
+<div class="space-y-space-xs">
+<h4 class="font-caption-badge text-[12px] uppercase text-text-muted font-bold tracking-wider">Lịch Sử Tư Vấn &amp; Timeline</h4>
+<div class="relative pl-5 space-y-3 before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-variant">
+<div class="relative">
+<span class="w-3.5 h-3.5 rounded-full bg-royal-blue-vibrant absolute -left-5 top-1 ring-4 ring-white"></span>
+<p class="font-label-md text-[13px] font-bold text-on-surface">Lead phát sinh từ chiến dịch Mùa Thu</p>
+<p class="font-body-sm text-[12px] text-text-muted">Học viên quan tâm khóa cấp tốc thi tháng 12/2025.</p>
+<span class="text-[11px] text-text-muted mt-0.5 block">15 phút trước • Hệ thống Tự Động</span>
+</div>
+<div class="relative">
+<span class="w-3.5 h-3.5 rounded-full bg-outline-variant absolute -left-5 top-1 ring-4 ring-white"></span>
+<p class="font-label-md text-[13px] font-bold text-on-surface">Tự động phân bổ cho Lê Thu Thảo</p>
+<span class="text-[11px] text-text-muted mt-0.5 block">14 phút trước • Round-Robin CRM</span>
+</div>
+</div>
+</div>
+<!-- Form Thêm Ghi Chú Nhanh -->
+<div class="space-y-1.5">
+<label class="font-caption-badge text-[12px] uppercase text-text-muted font-bold" for="leadNoteInput">Thêm Ghi Chú Tư Vấn Mới</label>
+<div class="relative">
+<textarea class="w-full p-3 rounded-xl bg-surface-subtle border-0 text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" id="leadNoteInput" placeholder="Nhập kết quả cuộc gọi hoặc yêu cầu phụ huynh..." rows="2"></textarea>
+<button class="mt-1.5 w-full h-10 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-bold active:scale-98 transition-all flex items-center justify-center gap-1" onclick="saveLeadNote()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Lưu Ghi Chú &amp; Đổi Trạng Thái</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- POPUP TẠO LEAD MỚI NHANH (MINI FORM) -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex-col justify-end" id="newLeadModal">
+<div class="w-full max-h-[90vh] bg-surface-container-lowest rounded-t-3xl p-space-md flex flex-col space-y-space-sm overflow-y-auto">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md font-bold text-text-heading">Thêm Học Viên Mới</h3>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary" onclick="closeNewLeadModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="space-y-space-xs">
+<div>
+<label class="font-label-md text-[13px] text-text-heading block mb-1">Họ và tên học viên *</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="newLeadName" placeholder="VD: Hoàng Gia Bảo" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-[13px] text-text-heading block mb-1">Số điện thoại phụ huynh/học viên *</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="newLeadPhone" placeholder="VD: 0987 654 321" type="tel"/>
+</div>
+<div>
+<label class="font-label-md text-[13px] text-text-heading block mb-1">Chương trình quan tâm</label>
+<select class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-on-surface focus:outline-none" id="newLeadCourse">
+<option value="IELTS Master (Target 6.5+)">IELTS Master (Target 6.5+)</option>
+<option value="SmartKids Mầm Non">SmartKids Mầm Non</option>
+<option value="SuperKids Tiểu Học">SuperKids Tiểu Học</option>
+<option value="Tiếng Anh Giao Tiếp">Tiếng Anh Giao Tiếp Quốc Tế</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-[13px] text-text-heading block mb-1">Cơ sở đăng ký</label>
+<select class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-on-surface focus:outline-none" id="newLeadBranch">
+<option value="Q.3 - Nguyễn Thị Minh Khai">Q.3 - Nguyễn Thị Minh Khai (TP.HCM)</option>
+<option value="Cầu Giấy, Hà Nội">Cơ sở Cầu Giấy (Hà Nội)</option>
+<option value="Đống Đa, Hà Nội">Cơ sở Đống Đa (Hà Nội)</option>
+</select>
+</div>
+</div>
+<button class="w-full h-12 bg-primary text-on-primary rounded-xl font-label-md font-bold shadow-md hover:bg-royal-blue-vibrant active:scale-98 transition-all flex items-center justify-center gap-1.5 mt-space-sm" onclick="submitNewLead()" type="button">
+<span class="material-symbols-outlined text-[20px]">check</span>
+<span>Lưu &amp; Phân Bổ Ngay</span>
+</button>
+</div>
+</div>
+<script>
+    // Dữ liệu mô phỏng cho Modal chi tiết
+    const leadsData = {
+      'lead-1': {
+        name: 'Nguyễn Hoàng Nam',
+        age: '19 tuổi • 0912 345 678',
+        badge: 'MỚI (NEW)',
+        badgeClass: 'bg-primary-light text-royal-blue-vibrant',
+        course: 'IELTS Master (Target 6.5+)',
+        branch: 'Q.3 - Nguyễn Thị Minh Khai',
+        advisor: 'Lê Thu Thảo'
+      },
+      'lead-2': {
+        name: 'Trần Mai Linh (Mẹ bé Ben)',
+        age: 'Bé Ben 5 tuổi • 0988 765 432',
+        badge: 'ĐÃ LIÊN HỆ',
+        badgeClass: 'bg-tertiary-fixed text-tertiary',
+        course: 'SmartKids Mầm Non',
+        branch: 'Cầu Giấy, Hà Nội',
+        advisor: 'Phạm Quốc Hưng'
+      },
+      'lead-3': {
+        name: 'Đỗ Quang Khải',
+        age: '22 tuổi • 0903 112 233',
+        badge: 'HẸN TEST 14:30',
+        badgeClass: 'bg-purple-50 text-purple-700',
+        course: 'Luyện Thi IELTS Cấp Tốc',
+        branch: 'Đống Đa, Hà Nội',
+        advisor: 'Trần Văn Long'
+      },
+      'lead-4': {
+        name: 'Lê Bảo Trân',
+        age: 'Lớp 4 • 0945 678 910',
+        badge: 'ĐÃ NHẬP HỌC',
+        badgeClass: 'bg-emerald-50 text-emerald-growth-dark',
+        course: 'SuperKids Tiểu Học',
+        branch: 'Q.3 - Nguyễn Thị Minh Khai',
+        advisor: 'Lê Thu Thảo'
+      }
+    };
+
+    function openLeadModal(leadId) {
+      const data = leadsData[leadId];
+      if (!data) return;
+
+      document.getElementById('modalName').textContent = data.name;
+      document.getElementById('modalAgePhone').textContent = data.age;
+      document.getElementById('modalCourse').textContent = data.course;
+      document.getElementById('modalBranch').textContent = data.branch;
+      document.getElementById('modalAdvisor').textContent = data.advisor;
+
+      const badgeEl = document.getElementById('modalBadge');
+      badgeEl.textContent = data.badge;
+      badgeEl.className = `inline-flex items-center px-2 py-0.5 rounded-full font-caption-badge text-[11px] font-bold uppercase ${data.badgeClass}`;
+
+      const modal = document.getElementById('leadDetailModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLeadModal() {
+      const modal = document.getElementById('leadDetailModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function openNewLeadModal() {
+      const modal = document.getElementById('newLeadModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeNewLeadModal() {
+      const modal = document.getElementById('newLeadModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveLeadNote() {
+      const note = document.getElementById('leadNoteInput').value;
+      if (!note.trim()) {
+        alert('Vui lòng nhập nội dung ghi chú tư vấn');
+        return;
+      }
+      alert('Đã cập nhật ghi chú và lưu vào nhật ký CSKH thành công!');
+      document.getElementById('leadNoteInput').value = '';
+      closeLeadModal();
+    }
+
+    function submitNewLead() {
+      const name = document.getElementById('newLeadName').value;
+      const phone = document.getElementById('newLeadPhone').value;
+      if (!name || !phone) {
+        alert('Vui lòng điền đủ tên và số điện thoại học viên');
+        return;
+      }
+      alert('Đã thêm mới học viên ' + name + ' vào hệ thống tuyển sinh!');
+      closeNewLeadModal();
+    }
+
+    // Bộ lọc Chip Status tương tác nhanh
+    document.querySelectorAll('#statusFilterBar .filter-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#statusFilterBar .filter-chip').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.lead-item').forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-status') === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Tìm kiếm tức thì theo Tên hoặc SĐT
+    document.getElementById('leadSearchInput').addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.lead-item').forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const phone = (card.getAttribute('data-phone') || '').toLowerCase();
+        if (name.includes(query) || phone.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Đóng Modal khi bấm vùng xám bên ngoài
+    document.getElementById('leadDetailModal').addEventListener('click', (e) => {
+      if (e.target.id === 'leadDetailModal') closeLeadModal();
+    });
+    document.getElementById('newLeadModal').addEventListener('click', (e) => {
+      if (e.target.id === 'newLeadModal') closeNewLeadModal();
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(15,23,42,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs max-w-md mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-semibold" data-path="lead-dashboard" href="#"><span class="material-symbols-outlined text-[22px]">view_kanban</span><span class="font-caption-badge text-[11px] leading-tight mt-0.5">Lead Pipeline</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="tu-van-tuyen-sinh" href="#"><span class="material-symbols-outlined text-[22px]">support_agent</span><span class="font-caption-badge text-[11px] leading-tight mt-0.5">Tư vấn</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="lich-hen-test" href="#"><span class="material-symbols-outlined text-[22px]">event_available</span><span class="font-caption-badge text-[11px] leading-tight mt-0.5">Lịch test</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-primary transition-colors" data-path="bao-cao-hieu-suat" href="#"><span class="material-symbols-outlined text-[22px]">insights</span><span class="font-caption-badge text-[11px] leading-tight mt-0.5">Báo cáo</span></a></div></nav></body></html>

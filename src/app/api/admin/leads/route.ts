@@ -125,6 +125,10 @@ export async function PATCH(req: NextRequest) {
     const isStatusChanged = previousStatus !== status;
     const isAssigneeChanged = assignedUserId !== undefined && assignedUserId !== currentLead.assignedUserId;
 
+    if (isAssigneeChanged && !hasPermission(session.role, "lead.assign")) {
+      return NextResponse.json({ error: "Bạn không có quyền phân công tư vấn viên." }, { status: 403 });
+    }
+
     // Update lead record
     const updatedLead = await prisma.lead.update({
       where: { id: leadId },

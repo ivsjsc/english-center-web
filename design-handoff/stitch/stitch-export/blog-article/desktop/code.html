@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>IVS Academy</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#001c37", "on-surface-variant": "#444653", "inverse-primary": "#b8c4ff", "on-secondary-fixed-variant": "#314865", "background": "#f8f9ff", "on-error-container": "#93000a", "secondary-fixed": "#d2e4ff", "on-primary-fixed-variant": "#173bab", "royal-blue-vibrant": "#2563EB", "surface-container-high": "#dde9ff", "on-primary-container": "#a8b8ff", "error": "#ba1a1a", "border-subtle": "#E2E8F0", "error-container": "#ffdad6", "inverse-surface": "#233144", "surface-container-highest": "#d5e3fd", "on-tertiary-fixed": "#2a1700", "outline-variant": "#c4c5d5", "on-tertiary": "#ffffff", "surface-container-low": "#eff4ff", "on-error": "#ffffff", "on-tertiary-container": "#ffa929", "emerald-growth": "#10B981", "surface-dim": "#ccdbf4", "primary-light": "#EFF6FF", "surface-container": "#e6eeff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "tertiary-container": "#6b4200", "secondary-fixed-dim": "#b0c8eb", "text-heading": "#0F172A", "surface-subtle": "#F8FAFC", "amber-hover": "#D97706", "text-muted": "#64748B", "tertiary": "#4c2e00", "surface-bright": "#f8f9ff", "secondary": "#49607e", "on-background": "#0d1c2f", "inverse-on-surface": "#ebf1ff", "primary-fixed": "#dde1ff", "secondary-container": "#c4dcff", "emerald-growth-dark": "#059669", "on-tertiary-fixed-variant": "#653e00", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#3755c3", "surface-variant": "#d5e3fd", "primary-highlight": "#DBEAFE", "on-primary-fixed": "#001453", "on-secondary-container": "#49617f", "primary-fixed-dim": "#b8c4ff", "on-surface": "#0d1c2f", "primary": "#00288e", "tertiary-fixed": "#ffddb8", "primary-container": "#1e40af", "surface": "#f8f9ff", "outline": "#757684" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "margin-desktop": "3rem", "space-xl": "2rem", "space-3xl": "4.5rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "margin-tablet": "2rem", "space-2xs": "0.25rem", "space-md": "1rem" }, "fontFamily": { "body-sm": ["Be Vietnam Pro"], "label-md": ["Be Vietnam Pro"], "body-base": ["Be Vietnam Pro"], "headline-md": ["Be Vietnam Pro"], "body-lg": ["Be Vietnam Pro"], "headline-lg-mobile": ["Be Vietnam Pro"], "caption-badge": ["Be Vietnam Pro"], "display-hero": ["Be Vietnam Pro"], "display-hero-mobile": ["Be Vietnam Pro"], "headline-lg": ["Be Vietnam Pro"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }], "body-base": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "1.35", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }], "caption-badge": ["12px", { "lineHeight": "1.3", "letterSpacing": "0.05em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-hero-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "800" }], "headline-lg": ["36px", { "lineHeight": "1.25", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-base text-body-base text-on-surface flex flex-col min-h-screen relative selection:bg-primary-highlight"><header class="fixed top-0 inset-x-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="icon.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><div class="flex flex-col"><span class="font-headline-md text-headline-md font-bold leading-none text-primary">IVS</span><span class="font-caption-badge text-caption-badge uppercase tracking-wider text-secondary leading-tight">Academy</span></div></div><div class="flex items-center gap-space-xs"><a class="h-9 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" data-path="consultation-booking" href="#"><span class="material-symbols-outlined text-[16px]">edit_calendar</span><span>Tư vấn</span></a><button aria-label="Menu" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="document.getElementById('mobile-nav-drawer').classList.remove('translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0','pointer-events-none');"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop" onclick="document.getElementById('mobile-nav-drawer').classList.add('translate-x-full'); this.classList.add('opacity-0','pointer-events-none');"></div><aside class="fixed top-0 right-0 bottom-0 w-[85vw] max-w-[340px] z-50 bg-surface-container-lowest shadow-[0_20px_40px_-6px_rgba(15,23,42,0.16)] translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="mobile-nav-drawer"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><img alt="icon.png" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><span class="font-label-md text-label-md text-primary font-bold">Danh mục IVS</span></div><button class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container" onclick="document.getElementById('mobile-nav-drawer').classList.add('translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0','pointer-events-none');"><span class="material-symbols-outlined text-[22px]">close</span></button></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><details class="group"><summary class="flex items-center justify-between p-space-sm rounded-lg hover:bg-surface-container-low cursor-pointer list-none"><div class="flex items-center gap-space-xs text-on-surface"><span class="material-symbols-outlined text-primary text-[20px]">menu_book</span><span class="font-label-md text-label-md font-semibold">Khóa học</span></div><span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform text-[20px]">expand_more</span></summary><div class="pl-space-lg pr-space-xs py-space-xs flex flex-col gap-1"><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-preschool" href="#">Tiếng Anh Mầm non</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-primary" href="#">Tiếng Anh Tiểu học</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-secondary" href="#">Tiếng Anh THCS</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-highschool" href="#">Tiếng Anh THPT</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-ielts" href="#">Luyện thi IELTS Target 7.5+</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-toeic" href="#">Luyện thi TOEIC</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-communication" href="#">Tiếng Anh Giao tiếp</a><a class="py-2 px-3 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:text-primary hover:bg-primary-light" data-path="courses-corporate" href="#">Đào tạo Doanh nghiệp</a></div></details><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="methodology" href="#"><span class="material-symbols-outlined text-primary text-[20px]">psychology</span><span>Phương pháp giảng dạy</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="teachers" href="#"><span class="material-symbols-outlined text-primary text-[20px]">groups</span><span>Đội ngũ giáo viên</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="campuses" href="#"><span class="material-symbols-outlined text-primary text-[20px]">location_city</span><span>Hệ thống cơ sở</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="blog" href="#"><span class="material-symbols-outlined text-primary text-[20px]">article</span><span>Góc học tập &amp; Blog</span></a><a class="flex items-center gap-space-xs p-space-sm rounded-lg text-on-surface hover:bg-surface-container-low font-label-md text-label-md font-semibold" data-path="about-us" href="#"><span class="material-symbols-outlined text-primary text-[20px]">info</span><span>Giới thiệu IVS Academy</span></a></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center gap-space-xs text-text-muted text-caption-badge font-caption-badge mb-2"><span class="material-symbols-outlined text-[14px]">verified</span><span>Hệ thống chuẩn Quốc tế Cambridge</span></div><p class="text-body-sm font-body-sm text-on-surface-variant font-medium">Hotline: 1900 6868</p></div></aside><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="px-margin-mobile pt-space-md pb-space-xs flex items-center"><h1 class="font-headline-md text-headline-md text-text-heading">Home Page</h1></div><div class="flex flex-col w-full">
+<!-- Top Reading Progress Indicator -->
+<div class="sticky top-16 z-30 w-full bg-surface-container-high h-1">
+<div class="h-full bg-royal-blue-vibrant transition-all duration-150 w-0" id="reading-progress"></div>
+</div>
+<!-- Breadcrumb Navigation Bar -->
+<div class="w-full bg-surface-subtle py-space-sm px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+<div class="max-w-[1280px] mx-auto flex items-center gap-space-xs text-caption-badge font-caption-badge text-text-muted flex-wrap">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="home" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span> Trang chủ
+      </a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" data-path="blog" href="#">Góc học thuật &amp; Tin tức</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" data-path="blog-ielts" href="#">Luyện thi IELTS</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold truncate max-w-[280px] sm:max-w-md">Lộ trình học IELTS từ mất gốc lên 6.5+</span>
+</div>
+</div>
+<!-- Article Header / Hero Typography Area -->
+<section class="w-full bg-surface-container-lowest px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-space-lg pb-space-xl shadow-sm">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-space-md">
+<!-- Category & Reading Time Chips -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="bg-primary-light text-royal-blue-vibrant px-space-sm py-1 rounded-full font-caption-badge text-caption-badge tracking-wider font-bold uppercase">
+          Chiến Thuật IELTS 2025
+        </span>
+<span class="flex items-center gap-1 text-text-muted font-caption-badge text-caption-badge bg-surface-subtle px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[15px] text-emerald-growth-dark">verified_user</span>
+          Chuẩn Học Thuật Cambridge
+        </span>
+</div>
+<!-- Main SEO H1 Headline -->
+<h1 class="font-headline-lg text-headline-lg text-text-heading font-extrabold tracking-tight leading-tight max-w-4xl">
+        Lộ Trình Tự Học &amp; Luyện Thi IELTS Từ Mất Gốc Lên 6.5+ Toàn Diện Cho Học Sinh, Sinh Viên
+      </h1>
+<!-- Sapo / Abstract Lead -->
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed max-w-4xl font-normal">
+        Phương pháp học Active Recall kết hợp chiến thuật phân bổ thời gian thực chiến, giúp người mất gốc xây dựng nền tảng vững chắc và bứt phá band điểm mục tiêu trong 6 - 9 tháng.
+      </p>
+<!-- Metadata Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs bg-surface-subtle p-space-md rounded-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Master James Alexander, senior British IELTS examiner and academic curriculum director at IVS Academy, wearing a formal suit with friendly smile in modern academy campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjTPJ8n0FgUCa3uevIVz0ORPzzGf0LRkFICd1cTzy9XDcnUoMRl5BEoKlscNxP4DuldpVYw8HEaH3Z3ms_BsriaoyWtLGxNcL5r28pdNfGNFjk0Mu8n9qNPvWdkMIBK8V4zp3j8T9Fi95wKK2jedLPXg6BoVCT7oOkz0w4JnJz7kgueyKtiApEReVo247JJ_vV9SaA3L_30xBvxgWYVuy5Br2M87W5VTBNId45L4Lsp5OwSo-3YChF"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-text-heading">Thầy James Alexander</span>
+<span class="material-symbols-outlined text-[16px] text-royal-blue-vibrant" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-caption-badge text-caption-badge text-text-muted">Chuyên gia IELTS 8.5 • Thạc sĩ Cambridge</span>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-x-space-lg gap-y-1 font-caption-badge text-caption-badge text-text-muted">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span>15/03/2025</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-emerald-growth-dark">update</span>
+<span>Cập nhật: 28/03/2025</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-amber-hover">schedule</span>
+<span>8 phút đọc</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">visibility</span>
+<span>12.450 lượt xem</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Body Content: Two Columns Layout -->
+<div class="w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: Reading Content (approx 780px) -->
+<article class="lg:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- Hero Visual Banner Image -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-md bg-surface-container">
+<img class="w-full h-[360px] md:h-[440px] object-cover" data-alt="Modern high-tech classroom at IVS Academy with students engaging in active IELTS group discussions with interactive digital tablets and teacher explaining phonetic charts on glass whiteboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1hpg4ne8OIwl3DATBvDjAoh2bIjzE7FWRyPIIRlCdcQqg3d59iZaTQSBL_ulYQGAFiAytKuQE2V4ki0QZXCYBKBTbvbmj3R5WUcxsUBoKxQxOM8Rb4Qydor23iIz5k4PYZcaDzLwUZxJSzCWdpGbhVRyH3B9xeVPymzgxNGe3i6ikmjakG-9kfN5JQI5FWmUl9iWMXl4RbTStgB5hA7qcEI_Dk_XFX1GkRI8CNfTAY22ZV4WuJqvK"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-lg">
+<p class="text-on-primary font-caption-badge text-caption-badge opacity-90">
+              Lớp học IELTS Academic chuẩn hóa tại IVS Academy - Tối ưu từng nhóm kỹ năng với công nghệ tương tác
+            </p>
+</div>
+</div>
+<!-- Section 1 -->
+<section class="scroll-mt-24 flex flex-col gap-space-sm" id="section-1">
+<h2 class="font-headline-md text-headline-md font-bold text-text-heading flex items-center gap-2">
+<span class="w-2.5 h-7 rounded-full bg-royal-blue-vibrant inline-block"></span>
+            1. Đánh giá đúng năng lực hiện tại (Giai đoạn chẩn đoán)
+          </h2>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+            Rất nhiều thí sinh khi bắt đầu tự học IELTS thường mắc sai lầm nghiêm trọng: <strong class="text-text-heading font-semibold">mua ngay bộ đề Cambridge 10-19</strong> và lao vào giải ngấu nghiến. Khi đối mặt với hàng chục từ vựng lạ, câu văn phức hợp và tốc độ nói tự nhiên của người bản xứ ở Section 3, Section 4, cảm giác kiệt sức và chán nản xuất hiện ngay trong 2 tuần đầu tiên.
+          </p>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+            Trước khi vạch lộ trình kéo dài hàng trăm giờ học, bạn buộc phải trải qua một quy trình chẩn đoán 4 kỹ năng độc lập để phát hiện chính xác "lỗ hổng" của mình nằm ở đâu: Ngữ âm sai khiến không nghe được? Thiếu ngữ pháp căn bản khiến câu văn viết sai cấu trúc? Hay phản xạ nói chưa hình thành do thiếu môi trường thực hành?
+          </p>
+<!-- Examiner Callout Advice Box -->
+<div class="bg-primary-light p-space-md md:p-space-lg rounded-2xl shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-royal-blue-vibrant text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">tips_and_updates</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-bold text-primary-container uppercase tracking-wide">
+                Lời khuyên từ Examiner Cambridge
+              </span>
+<p class="font-body-base text-body-base text-on-surface-variant italic leading-relaxed">
+                "Đừng vội giải đề Cambridge ngay khi chưa nắm chắc 3.000 từ vựng Oxford cốt lõi và hệ thống phát âm IPA chuẩn. Đề thi là công cụ đo lường năng lực (testing), không phải là công cụ bồi dưỡng kiến thức nền tảng (building)."
+              </p>
+</div>
+</div>
+</section>
+<!-- Section 2: 4 Stages Breakdown -->
+<section class="scroll-mt-24 flex flex-col gap-space-md" id="section-2">
+<h2 class="font-headline-md text-headline-md font-bold text-text-heading flex items-center gap-2">
+<span class="w-2.5 h-7 rounded-full bg-royal-blue-vibrant inline-block"></span>
+            2. Chi tiết 4 chặng bứt phá từ Band 0 lên 6.5+
+          </h2>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+            Dựa trên mô hình đào tạo chuyển giao quốc tế tại IVS Academy, lộ trình 6.5+ được chia làm 4 chặng khoa học với mục tiêu đầu ra được định lượng rõ ràng:
+          </p>
+<!-- Stage 1 Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-1 duration-200">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-badge text-caption-badge font-bold">CHẶNG 1</span>
+<h3 class="font-headline-md text-[19px] font-bold text-text-heading">Nền tảng phát âm IPA &amp; Ngữ pháp căn bản</h3>
+</div>
+<span class="font-caption-badge text-caption-badge px-3 py-1 bg-surface-container text-royal-blue-vibrant rounded-full font-bold">Mục tiêu: 3.5 - 4.0</span>
+</div>
+<p class="font-body-base text-body-sm text-on-surface-variant leading-relaxed">
+              Tập trung chỉnh toàn diện 44 âm trong bảng IPA (nguyên âm đơn, nguyên âm đôi, phụ âm hữu thanh/vô thanh). Nắm vững 6 thì trọng tâm (Hiện tại đơn, Hiện tại tiếp diễn, Hiện tại hoàn thành, Quá khứ đơn, Tương lai đơn, Tương lai gần) và các loại từ cốt lõi trong câu tiếng Anh.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Thời gian: 6 - 8 tuần</span>
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Tài liệu: English Pronunciation in Use, Grammar in Use Basic</span>
+</div>
+</div>
+<!-- Stage 2 Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-1 duration-200">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-badge text-caption-badge font-bold">CHẶNG 2</span>
+<h3 class="font-headline-md text-[19px] font-bold text-text-heading">Nâng cao vốn từ vựng học thuật &amp; Kỹ năng Đọc hiểu</h3>
+</div>
+<span class="font-caption-badge text-caption-badge px-3 py-1 bg-surface-container text-royal-blue-vibrant rounded-full font-bold">Mục tiêu: 4.5 - 5.5</span>
+</div>
+<p class="font-body-base text-body-sm text-on-surface-variant leading-relaxed">
+              Mở rộng 1.500 từ vựng theo 10 chủ đề học thuật phổ biến (Environment, Education, Technology, Health, Work...). Làm quen với kỹ thuật Skimming (đọc lướt lấy ý chính) và Scanning (đọc quét tìm dữ liệu thời gian, tên riêng, con số) để giải phóng áp lực thời gian làm bài Reading.
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Thời gian: 8 - 10 tuần</span>
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Tài liệu: Vocabulary for IELTS (Cambridge), Get Ready for IELTS Series</span>
+</div>
+</div>
+<!-- Stage 3 Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-1 duration-200">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-badge text-caption-badge font-bold">CHẶNG 3</span>
+<h3 class="font-headline-md text-[19px] font-bold text-text-heading">Chiến thuật xử lý 10 dạng câu hỏi Listening &amp; Reading</h3>
+</div>
+<span class="font-caption-badge text-caption-badge px-3 py-1 bg-surface-container text-royal-blue-vibrant rounded-full font-bold">Mục tiêu: 5.5 - 6.0</span>
+</div>
+<p class="font-body-base text-body-sm text-on-surface-variant leading-relaxed">
+              Rèn luyện phản xạ với dạng Multiple Choice, Matching Headings, True/False/Not Given và Form Completion. Học cách phân biệt từ bẫy (Distractors) trong phần thi Nghe thông qua bài tập nghe chép chính tả (Dictation Method).
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Thời gian: 6 - 8 tuần</span>
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Tài liệu: Complete IELTS Band 5-6.5, Cambridge IELTS Practice Tests 12-16</span>
+</div>
+</div>
+<!-- Stage 4 Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-xs transition-transform hover:-translate-y-1 duration-200">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-fixed font-caption-badge text-caption-badge font-bold">CHẶNG 4</span>
+<h3 class="font-headline-md text-[19px] font-bold text-text-heading">Luyện viết Writing Task 1, 2 &amp; Phản xạ Speaking</h3>
+</div>
+<span class="font-caption-badge text-caption-badge px-3 py-1 bg-emerald-growth/20 text-emerald-growth-dark rounded-full font-bold">Mục tiêu: 6.5+</span>
+</div>
+<p class="font-body-base text-body-sm text-on-surface-variant leading-relaxed">
+              Luyện chuẩn xác các tiêu chí Cohesion &amp; Coherence, Task Response trong Writing. Hình thành Mindmap 3 lớp để trả lời mượt mà Speaking Part 2 và thảo luận sâu sắc ở Speaking Part 3 theo phương pháp P.E.E.L (Point, Explanation, Example, Link).
+            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Thời gian: 8 - 10 tuần</span>
+<span class="bg-surface-subtle text-text-muted px-2.5 py-1 rounded font-caption-badge text-caption-badge">Tài liệu: Collins Writing for IELTS, Mat Clark IELTS Speaking</span>
+</div>
+</div>
+<!-- Summary Comparison Table -->
+<div class="w-full overflow-x-auto rounded-xl shadow-sm bg-surface-container-lowest mt-space-xs">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-text-heading font-label-md">
+<tr>
+<th class="p-4">Chặng đào tạo</th>
+<th class="p-4">Thời lượng học</th>
+<th class="p-4">Mục tiêu Band</th>
+<th class="p-4">Trọng tâm kỹ năng</th>
+</tr>
+</thead>
+<tbody class="text-on-surface-variant">
+<tr class="hover:bg-surface-subtle transition-colors">
+<td class="p-4 font-semibold text-text-heading">1. Nền tảng</td>
+<td class="p-4">6 - 8 tuần</td>
+<td class="p-4 text-royal-blue-vibrant font-bold">3.5 - 4.0</td>
+<td class="p-4">Bảng ngữ âm IPA &amp; 6 Thì cơ bản</td>
+</tr>
+<tr class="hover:bg-surface-subtle transition-colors">
+<td class="p-4 font-semibold text-text-heading">2. Tích lũy</td>
+<td class="p-4">8 - 10 tuần</td>
+<td class="p-4 text-royal-blue-vibrant font-bold">4.5 - 5.5</td>
+<td class="p-4">1.500 Academic Words &amp; Kỹ thuật Skim/Scan</td>
+</tr>
+<tr class="hover:bg-surface-subtle transition-colors">
+<td class="p-4 font-semibold text-text-heading">3. Chiến thuật</td>
+<td class="p-4">6 - 8 tuần</td>
+<td class="p-4 text-royal-blue-vibrant font-bold">5.5 - 6.0</td>
+<td class="p-4">10 dạng bài Listening/Reading &amp; Bẫy đề thi</td>
+</tr>
+<tr class="hover:bg-surface-subtle transition-colors">
+<td class="p-4 font-semibold text-text-heading">4. Tăng tốc 6.5+</td>
+<td class="p-4">8 - 10 tuần</td>
+<td class="p-4 text-emerald-growth-dark font-bold">6.5 - 7.0+</td>
+<td class="p-4">Writing Task 1 &amp; 2, Phản xạ Speaking PEEL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Inline CTA Banner -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-gradient-to-r from-primary via-primary-container to-royal-blue-vibrant text-on-primary p-space-lg md:p-space-xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex flex-col gap-2 max-w-xl">
+<span class="inline-flex items-center gap-1.5 font-caption-badge text-caption-badge uppercase tracking-wider text-tertiary-fixed font-bold">
+<span class="material-symbols-outlined text-[16px]">stars</span> Miễn phí 100% dành cho bạn đọc
+            </span>
+<h3 class="font-headline-md text-[24px] font-bold text-on-primary leading-tight">
+              Kiểm Tra Trình Độ Tiếng Anh &amp; Thi Thử IELTS 4 Kỹ Năng Chuẩn Quốc Tế
+            </h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              Nhận ngay báo cáo phân tích chi tiết điểm mạnh - điểm yếu và bảng lộ trình cá nhân hóa do chính giảng viên 8.0+ tại IVS Academy trực tiếp đánh giá.
+            </p>
+</div>
+<a class="px-space-lg py-3.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-bold hover:bg-amber-hover hover:text-on-primary transition-all shadow-md active:scale-95 whitespace-nowrap flex items-center gap-2" data-path="level-test-booking" href="#">
+<span>Đặt lịch kiểm tra ngay</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Section 3: Common Pitfalls -->
+<section class="scroll-mt-24 flex flex-col gap-space-sm" id="section-3">
+<h2 class="font-headline-md text-headline-md font-bold text-text-heading flex items-center gap-2">
+<span class="w-2.5 h-7 rounded-full bg-royal-blue-vibrant inline-block"></span>
+            3. Những lỗi sai kinh điển khiến bạn dậm chân ở Band 5.5
+          </h2>
+<p class="font-body-base text-body-base text-on-surface-variant leading-relaxed">
+            Nhiều bạn học viên dành 2 - 3 tiếng mỗi ngày trong suốt 6 tháng nhưng điểm thi thử vẫn dừng lại ở ngưỡng 5.0 - 5.5. Dưới đây là 3 nguyên nhân cốt lõi được đúc kết từ hơn 5.000 hồ sơ học viên tại trung tâm:
+          </p>
+<ul class="space-y-space-sm pl-2">
+<li class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-error-container text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-heading font-bold">Học vẹt từ vựng đơn lẻ mà không học Collocations</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Học sinh thường ghi chép từ vựng kèm nghĩa tiếng Việt nhưng không biết từ đó đi với giới từ nào, bổ nghĩa cho danh từ nào, dẫn đến việc diễn đạt gượng gạo như "make a decision" bị nói nhầm thành "do a decision".</p>
+</div>
+</li>
+<li class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-error-container text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-heading font-bold">Luyện nói một mình không có người chỉnh sửa phát âm</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Nói một mình giúp tăng phản xạ dịch nhưng lại củng cố thêm các tật phát âm sai (nuốt âm đuôi s/es/ed, nhấn sai trọng âm từ), tạo thành phản xạ sai ăn sâu vào tiềm thức.</p>
+</div>
+</li>
+<li class="flex items-start gap-space-sm">
+<div class="w-6 h-6 rounded-full bg-error-container text-error flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-heading font-bold">Lạm dụng từ hiếm (Big Words) thiếu ngữ cảnh tự nhiên</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Examiner chấm tiêu chí Lexical Resource dựa trên tính chính xác và tự nhiên chứ không ưu tiên những từ ngữ cổ xưa hoặc quá trừu tượng bị ghép sai ngữ cảnh.</p>
+</div>
+</li>
+</ul>
+<!-- Blockquote Quote Card -->
+<blockquote class="my-space-md p-space-lg bg-surface-container-low rounded-2xl relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-primary"></div>
+<p class="font-body-lg text-body-lg text-primary-container italic font-medium leading-relaxed">
+              "Điểm 6.5 không đòi hỏi bạn phải là một nhà ngôn ngữ học xuất sắc. 6.5 phản ánh một người sử dụng tiếng Anh tự tin, hiểu rõ mạch lập luận và diễn đạt rành mạch quan điểm của mình mà không bị ngắt quãng quá lâu."
+            </p>
+<div class="mt-space-sm flex items-center gap-2">
+<span class="w-6 h-0.5 bg-royal-blue-vibrant inline-block"></span>
+<span class="font-label-md text-label-md font-bold text-text-heading">Thầy James Alexander</span>
+<span class="text-caption-badge font-caption-badge text-text-muted">— Giám đốc Học thuật IVS Academy</span>
+</div>
+</blockquote>
+</section>
+<!-- Section 4: Academic FAQ Accordion -->
+<section class="scroll-mt-24 flex flex-col gap-space-sm" id="section-4">
+<h2 class="font-headline-md text-headline-md font-bold text-text-heading flex items-center gap-2">
+<span class="w-2.5 h-7 rounded-full bg-royal-blue-vibrant inline-block"></span>
+            4. Câu hỏi thường gặp khi bắt đầu luyện thi IELTS
+          </h2>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<details class="group bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all" open="">
+<summary class="flex items-center justify-between cursor-pointer font-label-md text-label-md font-bold text-text-heading list-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[20px]">help_outline</span>
+                  Mất gốc tiếng Anh hoàn toàn mất bao lâu để đạt IELTS 6.5?
+                </span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Trung bình cần từ 500 đến 650 giờ học có hướng dẫn (Guided Learning Hours). Với học sinh dành 2 giờ học mỗi ngày, thời gian lý tưởng là 7 - 9 tháng. Nếu tham gia các khóa học chuyên sâu tại IVS Academy với trợ giảng kèm 1:1, thời gian có thể rút ngắn còn 5 - 6 tháng.
+              </div>
+</details>
+<details class="group bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-label-md text-label-md font-bold text-text-heading list-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[20px]">help_outline</span>
+                  Nên chọn thi IELTS trên giấy hay thi IELTS trên máy tính?
+                </span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Thi máy tính phù hợp với người gõ phím nhanh, chữ viết tay khó đọc hoặc muốn nhận kết quả sớm sau 2 ngày. Thi trên giấy phù hợp với người có thói quen gạch chân và ghi chú trực tiếp vào đề đọc. IVS Academy khuyên bạn nên làm quen với cả 2 hình thức trước khi đăng ký chính thức.
+              </div>
+</details>
+<details class="group bg-surface-container-lowest p-space-md rounded-xl shadow-sm transition-all">
+<summary class="flex items-center justify-between cursor-pointer font-label-md text-label-md font-bold text-text-heading list-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[20px]">help_outline</span>
+                  Có nên tự học IELTS tại nhà mà không cần đến trung tâm?
+                </span>
+<span class="material-symbols-outlined text-text-muted group-open:rotate-180 transition-transform text-[20px]">expand_more</span>
+</summary>
+<div class="pt-space-sm font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Bạn hoàn toàn có thể tự học Listening và Reading tại nhà với nguồn tài liệu phong phú. Tuy nhiên với Writing và Speaking, việc có người chấm điểm chi tiết theo 4 tiêu chí của Hội đồng thi là yếu tố then chốt giúp bạn không bị kẹt ở band điểm thấp.
+              </div>
+</details>
+</div>
+</section>
+</article>
+<!-- RIGHT COLUMN: Sticky Utility Sidebar (approx 360px) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg lg:sticky lg:top-20">
+<!-- Table of Contents Widget -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-text-heading flex items-center gap-2">
+<span class="material-symbols-outlined text-royal-blue-vibrant text-[20px]">format_list_bulleted</span>
+              Mục lục nội dung
+            </span>
+<span class="text-caption-badge font-caption-badge text-text-muted">4 mục chính</span>
+</div>
+<nav class="flex flex-col gap-1 text-body-sm font-body-sm pt-2" id="toc-container">
+<a class="toc-link py-2 px-3 rounded-lg text-on-surface-variant hover:bg-primary-light hover:text-royal-blue-vibrant transition-colors flex items-center gap-2" href="#section-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant inline-block"></span>
+<span class="truncate">1. Đánh giá năng lực chẩn đoán</span>
+</a>
+<a class="toc-link py-2 px-3 rounded-lg text-on-surface-variant hover:bg-primary-light hover:text-royal-blue-vibrant transition-colors flex items-center gap-2" href="#section-2">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant inline-block"></span>
+<span class="truncate">2. Chi tiết 4 chặng bứt phá 6.5+</span>
+</a>
+<a class="toc-link py-2 px-3 rounded-lg text-on-surface-variant hover:bg-primary-light hover:text-royal-blue-vibrant transition-colors flex items-center gap-2" href="#section-3">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant inline-block"></span>
+<span class="truncate">3. Lỗi sai kinh điển tại Band 5.5</span>
+</a>
+<a class="toc-link py-2 px-3 rounded-lg text-on-surface-variant hover:bg-primary-light hover:text-royal-blue-vibrant transition-colors flex items-center gap-2" href="#section-4">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant inline-block"></span>
+<span class="truncate">4. Câu hỏi thường gặp (FAQ)</span>
+</a>
+</nav>
+</div>
+<!-- Featured Course Promotion Card -->
+<div class="bg-gradient-to-b from-surface-container-lowest to-surface-container-low rounded-2xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-44 w-full bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Student smiling holding Cambridge IELTS book in front of library bookshelf with scholarship achievement badge overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3qE7f6HlGCAGI1lYVVquIBd_0ZwHnMgDonGcyU0k9bz5Rm_BU711QzLwKPccli5gFwWAC6MdEbwqffsXMGhlDhm3ZpRGPbNg2xZvYOg-8fvhroxCji9vorvNhsw6sxgByAPhYLIzWVPNkMic66WClAUhUS7kyK6-r0oplP24KiU_BWe59EvYrJQ9q-Iswf-etq9_JRny4L8mixfA4RDUqs349ivzogMnvHaWuaJLQHw8vfOaVuG8a"/>
+<div class="absolute top-3 right-3 bg-tertiary-fixed text-on-tertiary-fixed font-caption-badge text-caption-badge font-bold px-2.5 py-1 rounded-full shadow">
+              Học bổng 35%
+            </div>
+</div>
+<div class="p-space-lg flex flex-col gap-space-xs">
+<span class="font-caption-badge text-caption-badge uppercase tracking-wider text-royal-blue-vibrant font-bold">Khóa Học Đề Xuất</span>
+<h4 class="font-headline-md text-[18px] font-bold text-text-heading">IELTS Master Target 6.5 - 7.5+</h4>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Cam kết đầu ra bằng văn bản. Giáo viên bản xứ chấm bài Speaking &amp; Writing 1:1 không giới hạn.
+            </p>
+<div class="flex items-center gap-2 py-1">
+<span class="text-caption-badge font-caption-badge text-emerald-growth-dark flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Cam kết 100% đạt Band
+              </span>
+<span class="text-caption-badge font-caption-badge text-text-muted">• Khai giảng T4/2025</span>
+</div>
+<a class="mt-space-xs w-full py-3 rounded-xl bg-royal-blue-vibrant text-on-primary font-label-md text-label-md font-bold text-center hover:bg-primary transition-colors shadow-sm active:scale-95" data-path="course-ielts-master" href="#">
+              Đăng Ký Nhận Ưu Đãi
+            </a>
+</div>
+</div>
+<!-- Exclusive Free Ebook Download Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[24px]">download_for_offline</span>
+<span>Tài Liệu Độc Quyền</span>
+</div>
+<h4 class="font-headline-md text-[17px] font-bold text-text-heading leading-tight">
+            Ebook 120 Đề Thi Thử IELTS Kèm Lời Giải Chi Tiết 2025
+          </h4>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Tổng hợp các bộ đề mới nhất từ IDP &amp; BC với phân tích từ vựng ăn điểm cho từng chủ đề.
+          </p>
+<div class="flex flex-col gap-2 pt-1">
+<input class="w-full h-11 px-3 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-royal-blue-vibrant" placeholder="Nhập địa chỉ email của bạn..." type="email"/>
+<button class="w-full h-11 rounded-xl bg-surface-container-highest text-primary font-label-md text-label-md font-bold hover:bg-primary-light transition-colors active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Gửi tài liệu vào mail</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<!-- ARTICLE FOOTER AREA -->
+<section class="w-full bg-surface-container-lowest py-space-2xl px-margin-mobile md:px-margin-tablet lg:px-margin-desktop shadow-sm mt-space-xl">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-space-2xl">
+<!-- Author Biography Box & Social Shares -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg bg-surface-subtle p-space-lg md:p-space-xl rounded-2xl">
+<div class="flex items-center gap-space-md">
+<div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0 bg-primary-fixed shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait closeup of Teacher James Alexander Cambridge Master degree holder smiling professionally in educational setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7UfXDiQ4zNUbDdmB_di48GfOSh9O_0bct7uYh_3Y3RMPKEhSUviOo2Llmc2nQiSdoqa-Mw1nSkXnHnwXuhIVyRru6lQhmV5bCJCDyIdgL7daf2fVEjbX0k9DjoybPausF9g-y2xFBdsVSh8P9P-Zrqe3Z9_DyIluBvlM0XReLprlp2zOs9QGx-VjYF5pJswAvlsx3K4UolNjrycLBEZ2wcyckYDbWTvB2NlUGExKoH0Ayef9Ijqq1"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-[20px] font-bold text-text-heading">Thầy James Alexander</span>
+<span class="px-2 py-0.5 rounded bg-primary-light text-royal-blue-vibrant font-caption-badge text-[11px] font-bold">Examiner 8.5</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+              Hơn 12 năm kinh nghiệm đào tạo học thuật tại Vương Quốc Anh và Việt Nam. Cố vấn học thuật chiến lược cho hơn 1.200 học viên đạt 7.0+ IELTS tại IVS Academy.
+            </p>
+</div>
+</div>
+<!-- Social Share Buttons -->
+<div class="flex flex-col gap-2 w-full md:w-auto">
+<span class="font-caption-badge text-caption-badge uppercase text-text-muted font-bold tracking-wider">Chia sẻ bài viết</span>
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="h-10 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-caption-badge text-caption-badge font-bold flex items-center gap-1.5 transition-colors" onclick="navigator.clipboard.writeText(window.location.href); alert('Đã sao chép liên kết!');">
+<span class="material-symbols-outlined text-[16px]">link</span>
+<span>Sao chép link</span>
+</button>
+<a class="w-10 h-10 rounded-xl bg-royal-blue-vibrant text-on-primary flex items-center justify-center font-bold text-body-sm hover:opacity-90 transition-opacity" href="https://www.facebook.com/sharer/sharer.php" target="_blank">
+              f
+            </a>
+<a class="w-10 h-10 rounded-xl bg-primary-light text-primary flex items-center justify-center font-bold text-caption-badge hover:bg-primary-highlight transition-colors" href="https://zalo.me" target="_blank">
+              Zalo
+            </a>
+<a class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-bold text-caption-badge hover:opacity-90 transition-opacity" href="https://linkedin.com" target="_blank">
+              in
+            </a>
+</div>
+</div>
+</div>
+<!-- Related Articles Section (3-card Grid) -->
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-caption-badge text-caption-badge uppercase tracking-wider text-royal-blue-vibrant font-bold">Cẩm Nang Chuyên Sâu</span>
+<h3 class="font-headline-md text-headline-md font-bold text-text-heading">Bài Viết Liên Quan Dành Cho Bạn</h3>
+</div>
+<a class="hidden sm:flex items-center gap-1 font-label-md text-label-md text-royal-blue-vibrant font-semibold hover:underline" data-path="blog" href="#">
+<span>Xem tất cả bài viết</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Related Card 1 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col transition-all hover:-translate-y-1.5 hover:shadow-md">
+<div class="h-48 w-full relative bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Student practicing IELTS speaking with examiner across table in bright glass classroom with evaluation sheets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-0tTM6wvJWY1dtfUPdPJubWnriiLHDCHkwxwHUWhpHT1AJjUexzKmxqhzjnH2huU3ckHcCgZeacGAasLqeHBUswFOoEy0vv08u8DOxWMcwOanPKd9bsDs2eL0ZQFkSOilExl7qqdKStEnI-EhKnxXilhkatWttHfLQQddHCjy_3ARLxwHkv_iW2YVccewma07O72MeHwf_dNpfGcWBcF11yJPS5mHwcOIiIM4mhqOAuyUMjs5JKSz"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-text-heading font-caption-badge text-caption-badge font-bold px-2.5 py-1 rounded-full">
+                IELTS Speaking
+              </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-xs">
+<div class="flex flex-col gap-1">
+<span class="font-caption-badge text-caption-badge text-text-muted">10/03/2025 • 6 phút đọc</span>
+<h4 class="font-headline-md text-[17px] font-bold text-text-heading hover:text-royal-blue-vibrant transition-colors line-clamp-2">
+                  Top 15 Cấu Trúc Ngữ Pháp Giúp Nâng Band Speaking Từ 5.0 Lên 7.0+
+                </h4>
+</div>
+<a class="font-label-md text-label-md text-royal-blue-vibrant font-bold flex items-center gap-1 pt-2 hover:underline" href="#">
+                Đọc bài viết <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Related Card 2 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col transition-all hover:-translate-y-1.5 hover:shadow-md">
+<div class="h-48 w-full relative bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Close up of writing task 2 essay paper with red annotations and vocabulary corrections on wood desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfOURz64rBNsB7u9XMfLt4maSAZm4f-thxf95opp7LBfpLxVEhgIwpd1q696QtQ-kkiOhjy7omGZ8QoQ-elnGtvC1kcK24btbAT7YWkTLSO0ZIhdM6qg7ob_u7IpZ03nTFhwqXdKpM4BpN_wtkIXAcFmhtWB8uzYrHNFnihQpD8b9B3tjsdJEEzbOtFEjnD77kMrOmQYfmPSBO7qHLQg7nKgIPcfPj-eBj-HmoTSeI1G4aE57Yq8vm"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-text-heading font-caption-badge text-caption-badge font-bold px-2.5 py-1 rounded-full">
+                IELTS Writing
+              </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-xs">
+<div class="flex flex-col gap-1">
+<span class="font-caption-badge text-caption-badge text-text-muted">05/03/2025 • 9 phút đọc</span>
+<h4 class="font-headline-md text-[17px] font-bold text-text-heading hover:text-royal-blue-vibrant transition-colors line-clamp-2">
+                  Bẻ Khóa Dạng Bài Bàn Luận Two-Sided Discussion Trong Writing Task 2
+                </h4>
+</div>
+<a class="font-label-md text-label-md text-royal-blue-vibrant font-bold flex items-center gap-1 pt-2 hover:underline" href="#">
+                Đọc bài viết <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Related Card 3 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col transition-all hover:-translate-y-1.5 hover:shadow-md">
+<div class="h-48 w-full relative bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Student with headphones writing listening notes attentively on test booklet during IELTS mock test" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt4isYnTP7D-VUQL-bl34EginSJpHFJB_Bf7mNTFm0OLkXroaqkICjAJTzZt2AfjK1jmcY5MU_ANmJBkeEzJQEhp9XroPfblZf4sbjvmhIFLQ_Eiz4C1kEQizYMCuPvcZJdw51r3H8HTMFM4hn4c68HZhVkzApCVAI0fZNTreQH4pua3bLPLsIf7rKhvLq60SrPzvLjd4phHoKjaf-iUvMxBnbBEnd9qnRF5j4Jgwgy8QAdY0gPs5k"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-sm text-text-heading font-caption-badge text-caption-badge font-bold px-2.5 py-1 rounded-full">
+                IELTS Listening
+              </span>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-xs">
+<div class="flex flex-col gap-1">
+<span class="font-caption-badge text-caption-badge text-text-muted">28/02/2025 • 7 phút đọc</span>
+<h4 class="font-headline-md text-[17px] font-bold text-text-heading hover:text-royal-blue-vibrant transition-colors line-clamp-2">
+                  Cách Phân Biệt Từ Gây Nhiễu (Distractors) Ở Section 3 &amp; 4 Listening
+                </h4>
+</div>
+<a class="font-label-md text-label-md text-royal-blue-vibrant font-bold flex items-center gap-1 pt-2 hover:underline" href="#">
+                Đọc bài viết <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<!-- Academic Newsletter & Consultation Form -->
+<div class="w-full rounded-2xl bg-gradient-to-br from-primary to-primary-container text-on-primary p-space-lg md:p-space-2xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-space-xl">
+<div class="flex flex-col gap-2 max-w-xl">
+<span class="font-caption-badge text-caption-badge uppercase tracking-wider text-tertiary-fixed font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">school</span> Đồng hành cùng học viên IVS
+          </span>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-primary leading-tight">
+            Đăng Ký Nhận Bản Tin Học Thuật &amp; Tư Vấn Lộ Trình Miễn Phí
+          </h3>
+<p class="font-body-base text-body-base text-on-primary-container leading-relaxed">
+            Nhận ngay phân tích chuyên sâu về đề thi thực tế hàng tuần, bộ tài liệu chọn lọc và tư vấn 1:1 từ chuyên gia học thuật IVS Academy.
+          </p>
+</div>
+<form class="w-full lg:max-w-md bg-surface-container-lowest p-space-lg rounded-2xl shadow-lg flex flex-col gap-space-sm text-on-surface" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Đội ngũ học vụ IVS Academy sẽ liên hệ trong 15 phút.');">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md font-semibold text-text-heading">Họ và tên của bạn</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-royal-blue-vibrant" placeholder="Nguyễn Văn A" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md font-semibold text-text-heading">Số điện thoại liên hệ</label>
+<input class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-royal-blue-vibrant" placeholder="0987 xxx xxx" required="" type="tel"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md font-semibold text-text-heading">Mục tiêu Band IELTS mong muốn</label>
+<select class="w-full h-11 px-3.5 rounded-xl bg-surface-subtle font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-royal-blue-vibrant">
+<option>Mục tiêu 5.5 - 6.0 (Tốt nghiệp &amp; Chuẩn đầu ra ĐH)</option>
+<option selected="">Mục tiêu 6.5 - 7.0 (Du học &amp; Học bổng)</option>
+<option>Mục tiêu 7.5+ (Định cư &amp; Giảng dạy)</option>
+</select>
+</div>
+<button class="mt-2 w-full h-12 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-royal-blue-vibrant transition-all shadow-md active:scale-95 flex items-center justify-center gap-2" type="submit">
+<span>Nhận Lộ Trình Chi Tiết Ngay</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Dynamic Reading Progress Bar & TOC Scroll Spy
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPos = window.scrollY;
+    const progress = (scrollPos / docHeight) * 100;
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) {
+      progressBar.style.width = progress + '%';
+    }
+
+    // Scrollspy for TOC items
+    const sections = ['section-1', 'section-2', 'section-3', 'section-4'];
+    const links = document.querySelectorAll('.toc-link');
+    
+    let currentActive = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop - 140;
+        if (scrollPos >= top) {
+          currentActive = id;
+        }
+      }
+    });
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === '#' + currentActive) {
+        link.classList.add('bg-primary-light', 'text-royal-blue-vibrant', 'font-bold');
+        link.classList.remove('text-on-surface-variant');
+      } else {
+        link.classList.remove('bg-primary-light', 'text-royal-blue-vibrant', 'font-bold');
+        link.classList.add('text-on-surface-variant');
+      }
+    });
+  });
+</script><footer class="mt-space-2xl bg-surface-container-lowest px-margin-mobile pt-space-xl pb-space-2xl"><div class="flex items-center gap-space-xs mb-space-sm"><img alt="icon.png" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VBXi_GL60vgzGA073yjki8_GU0FkjFWvPxVarNge43IJ1U0TrthgFxZGXrI4GOorEU98sNY7RCZAZPnZk2p6JqhanqzAsL-mUwyMCuWSo0sEq-kLFcAq_stCPnrPjkTztVySGungYTJis85OPYhWyHC648w3ddQZxMfLbHq8JjrhMbvPFim08sz0vnp4GDH6xZefeM4JmMyzjQEZisuhBtYfjdn8HANP4QMBQ_SQhoaPqGOBVmPo-LWZc5fGc7YOq-CzHWitGZ0g"/><span class="font-label-md text-label-md text-primary font-bold tracking-tight">HỆ THỐNG ANH NGỮ QUỐC TẾ IVS</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-sm">Giấy phép đào tạo ngoại ngữ số 3421/QĐ-SGDĐT cấp bởi Sở Giáo dục &amp; Đào tạo. Tiên phong đào tạo ngôn ngữ ứng dụng và chuẩn đầu ra quốc tế.</p><div class="space-y-space-2xs text-body-sm font-body-sm text-text-muted mb-space-md"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[16px] mt-1 text-primary">pin_drop</span><span>Tòa nhà IVS, 128 Nguyễn Thị Minh Khai, Q.3, TP. Hồ Chí Minh</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">call</span><span>Hotline: 1900 6868 - 028 7300 xxxx</span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-primary">mail</span><span>contact@ivsacademy.edu.vn</span></div></div><div class="flex flex-wrap gap-x-space-md gap-y-1 pt-space-xs mb-space-md"><a class="font-caption-badge text-caption-badge text-primary" href="#">Chính sách bảo mật</a><a class="font-caption-badge text-caption-badge text-primary" href="#">Điều khoản dịch vụ</a><a class="font-caption-badge text-caption-badge text-primary" href="#">Quy chế đào tạo</a></div><div class="flex items-center justify-between pt-space-xs text-text-muted font-caption-badge text-caption-badge"><span>© 2025 IVS Academy. All rights reserved.</span><div class="flex gap-space-xs"><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">f</span><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">in</span><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-[11px]">yt</span></div></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_16px_rgba(15,23,42,0.06)] pb-safe" data-active-classes="text-primary"><div class="h-20 px-space-xs flex items-center justify-between gap-space-2xs"><a class="flex-1 h-12 rounded-xl bg-surface-container-low flex flex-col items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-path="hotline-call" href="tel:19006868"><span class="material-symbols-outlined text-[20px] text-royal-blue-vibrant">call</span><span class="font-caption-badge text-[11px] font-bold mt-0.5">1900 6868</span></a><a class="flex-1 h-12 rounded-xl bg-primary-light flex flex-col items-center justify-center text-primary-container hover:bg-primary-highlight active:scale-95 transition-all" data-path="chat-zalo" href="https://zalo.me" target="_blank"><span class="material-symbols-outlined text-[20px] text-primary">chat</span><span class="font-caption-badge text-[11px] font-bold mt-0.5">Chat Zalo</span></a><a class="flex-[2] h-12 px-space-xs rounded-xl bg-primary text-on-primary flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all" data-path="consultation-booking" href="#"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">bolt</span><span class="font-label-md text-label-md font-bold whitespace-nowrap text-on-primary">Đăng ký tư vấn ngay</span></a></div></nav></body></html>

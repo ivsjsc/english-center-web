@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
+import { constructMetadata } from "@/lib/seo";
 import { Award, CheckCircle2 } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 

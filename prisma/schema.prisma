@@ -47,40 +47,40 @@ model CourseCategory {
 }
 
 model Course {
-  id                String             @id @default(cuid())
-  slug              String             @unique
+  id                String         @id @default(cuid())
+  slug              String         @unique
   name              String
   shortDescription  String
   description       String
   categoryId        String
-  category          CourseCategory     @relation(fields: [categoryId], references: [id])
-  targetAudience    String             // e.g., "Trẻ 4 - 6 tuổi", "Học sinh THCS & THPT", "Người đi làm"
-  minimumAge        Int                @default(4)
-  maximumAge        Int                @default(99)
-  level             String             // "Beginner", "Intermediate", "Advanced", "All Levels"
-  CEFRLevel         String?            // "Pre-A1", "A1", "A2", "B1", "B2", "C1"
-  duration          String             // e.g., "3 tháng / Khóa"
-  numberOfSessions  Int                @default(24)
-  teachingMethod    String             // e.g., "Active Learning & Critical Thinking"
-  classSize         String             @default("10 - 15 học viên")
+  category          CourseCategory @relation(fields: [categoryId], references: [id])
+  targetAudience    String // e.g., "Trẻ 4 - 6 tuổi", "Học sinh THCS & THPT", "Người đi làm"
+  minimumAge        Int            @default(4)
+  maximumAge        Int            @default(99)
+  level             String // "Beginner", "Intermediate", "Advanced", "All Levels"
+  CEFRLevel         String? // "Pre-A1", "A1", "A2", "B1", "B2", "C1"
+  duration          String // e.g., "3 tháng / Khóa"
+  numberOfSessions  Int            @default(24)
+  teachingMethod    String // e.g., "Active Learning & Critical Thinking"
+  classSize         String         @default("10 - 15 học viên")
   learningMaterials String?
   featuredImage     String
-  status            String             @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
-  featured          Boolean            @default(false)
-  ctaText           String             @default("Đăng ký tư vấn ngay")
+  status            String         @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
+  featured          Boolean        @default(false)
+  ctaText           String         @default("Đăng ký tư vấn ngay")
   seoTitle          String?
   seoDescription    String?
-  createdAt         DateTime           @default(now())
-  updatedAt         DateTime           @updatedAt
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
 
-  curriculums       CourseCurriculum[]
-  outcomes          CourseOutcome[]
-  faqs              CourseFAQ[]
-  centerCourses     CenterCourse[]
-  teacherCourses    TeacherCourse[]
-  leads             Lead[]
-  achievements      StudentAchievement[]
-  testimonials      Testimonial[]
+  curriculums    CourseCurriculum[]
+  outcomes       CourseOutcome[]
+  faqs           CourseFAQ[]
+  centerCourses  CenterCourse[]
+  teacherCourses TeacherCourse[]
+  leads          Lead[]
+  achievements   StudentAchievement[]
+  testimonials   Testimonial[]
 
   @@index([slug])
   @@index([status])
@@ -89,34 +89,34 @@ model Course {
 }
 
 model CourseCurriculum {
-  id             String   @id @default(cuid())
-  courseId       String
-  course         Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
-  title          String
-  description    String
-  sessionsCount  Int      @default(4)
-  orderIndex     Int      @default(0)
+  id            String @id @default(cuid())
+  courseId      String
+  course        Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title         String
+  description   String
+  sessionsCount Int    @default(4)
+  orderIndex    Int    @default(0)
 
   @@index([courseId])
 }
 
 model CourseOutcome {
-  id          String   @id @default(cuid())
+  id          String @id @default(cuid())
   courseId    String
-  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  course      Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
   description String
-  orderIndex  Int      @default(0)
+  orderIndex  Int    @default(0)
 
   @@index([courseId])
 }
 
 model CourseFAQ {
-  id         String   @id @default(cuid())
+  id         String @id @default(cuid())
   courseId   String
-  course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  course     Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
   question   String
   answer     String
-  orderIndex Int      @default(0)
+  orderIndex Int    @default(0)
 
   @@index([courseId])
 }
@@ -129,7 +129,7 @@ model Teacher {
   id              String                 @id @default(cuid())
   slug            String                 @unique
   name            String
-  title           String                 // e.g. "Senior Academic Coordinator & IELTS Specialist"
+  title           String // e.g. "Senior Academic Coordinator & IELTS Specialist"
   bio             String
   avatar          String
   yearsExperience Int                    @default(5)
@@ -146,8 +146,8 @@ model TeacherQualification {
   id        String  @id @default(cuid())
   teacherId String
   teacher   Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
-  name      String  // e.g. "Master of TESOL - University of Queensland"
-  issuer    String  // University of Queensland
+  name      String // e.g. "Master of TESOL - University of Queensland"
+  issuer    String // University of Queensland
   year      Int?
 
   @@index([teacherId])
@@ -167,26 +167,26 @@ model TeacherCourse {
 // ==========================================
 
 model Center {
-  id             String         @id @default(cuid())
-  slug           String         @unique
+  id             String   @id @default(cuid())
+  slug           String   @unique
   name           String
-  province       String         // e.g., "Hồ Chí Minh", "Hà Nội", "Đà Nẵng"
-  district       String         // e.g., "Quận 1", "Quận Cầu Giấy"
+  province       String // e.g., "Hồ Chí Minh", "Hà Nội", "Đà Nẵng"
+  district       String // e.g., "Quận 1", "Quận Cầu Giấy"
   ward           String?
   address        String
   latitude       Float?
   longitude      Float?
   phone          String
   email          String
-  openingHours   String         @default("08:00 - 21:30 (Thứ 2 - Chủ Nhật)")
+  openingHours   String   @default("08:00 - 21:30 (Thứ 2 - Chủ Nhật)")
   description    String
-  facilities     String         // Comma-separated or JSON list of amenities
+  facilities     String // Comma-separated or JSON list of amenities
   GoogleMapsURL  String
-  active         Boolean        @default(true)
+  active         Boolean  @default(true)
   seoTitle       String?
   seoDescription String?
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
   images         CenterImage[]
   centerCourses  CenterCourse[]
@@ -225,29 +225,29 @@ model CenterCourse {
 // ==========================================
 
 model Lead {
-  id             String         @id @default(cuid())
+  id             String   @id @default(cuid())
   fullName       String
   phone          String
   email          String?
   studentAge     Int?
   courseId       String?
-  course         Course?        @relation(fields: [courseId], references: [id])
+  course         Course?  @relation(fields: [courseId], references: [id])
   centerId       String?
-  center         Center?        @relation(fields: [centerId], references: [id])
+  center         Center?  @relation(fields: [centerId], references: [id])
   message        String?
-  source         String         @default("WEBSITE") // WEBSITE, FACEBOOK, GOOGLE_ADS, ZALO, DIRECT
+  source         String   @default("WEBSITE") // WEBSITE, FACEBOOK, GOOGLE_ADS, ZALO, DIRECT
   UTMSource      String?
   UTMMedium      String?
   UTMCampaign    String?
   UTMContent     String?
   UTMTerm        String?
-  status         String         @default("NEW") // NEW, CONTACTED, APPOINTMENT, PLACEMENT_TEST, ENROLLED, LOST
+  status         String   @default("NEW") // NEW, CONTACTED, APPOINTMENT, PLACEMENT_TEST, ENROLLED, LOST
   assignedUserId String?
-  assignedUser   User?          @relation("AssignedLeads", fields: [assignedUserId], references: [id])
-  createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  assignedUser   User?    @relation("AssignedLeads", fields: [assignedUserId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
-  activities     LeadActivity[]
+  activities LeadActivity[]
 
   @@index([phone])
   @@index([status])
@@ -263,7 +263,7 @@ model LeadActivity {
   lead           Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
   userId         String?
   user           User?    @relation(fields: [userId], references: [id])
-  action         String   // STATUS_CHANGE, NOTE_ADDED, CONSULTANT_ASSIGNED, CALL_MADE
+  action         String // STATUS_CHANGE, NOTE_ADDED, CONSULTANT_ASSIGNED, CALL_MADE
   previousStatus String?
   newStatus      String?
   note           String?
@@ -282,7 +282,7 @@ model PlacementTestBooking {
   centerId          String?
   center            Center?  @relation(fields: [centerId], references: [id])
   preferredDate     DateTime
-  preferredTimeSlot String   // "09:00 - 10:30", "14:00 - 15:30", "18:00 - 19:30"
+  preferredTimeSlot String // "09:00 - 10:30", "14:00 - 15:30", "18:00 - 19:30"
   status            String   @default("PENDING") // PENDING, CONFIRMED, COMPLETED, CANCELLED
   note              String?
   createdAt         DateTime @default(now())
@@ -301,8 +301,8 @@ model StudentAchievement {
   studentName     String
   courseId        String?
   course          Course?  @relation(fields: [courseId], references: [id])
-  score           String   // e.g. "IELTS 8.5", "Flyers 15/15 Khiên", "SAT 1520"
-  certificateType String   // "IELTS", "CAMBRIDGE", "TOEIC", "SAT"
+  score           String // e.g. "IELTS 8.5", "Flyers 15/15 Khiên", "SAT 1520"
+  certificateType String // "IELTS", "CAMBRIDGE", "TOEIC", "SAT"
   story           String
   avatar          String
   year            Int      @default(2025)
@@ -316,7 +316,7 @@ model StudentAchievement {
 model Testimonial {
   id           String   @id @default(cuid())
   authorName   String
-  relationship String   // e.g., "Phụ huynh bé Gia Hưng (Cambridge Starter)", "Học viên IELTS 8.0"
+  relationship String // e.g., "Phụ huynh bé Gia Hưng (Cambridge Starter)", "Học viên IELTS 8.0"
   quote        String
   avatar       String
   rating       Int      @default(5)
@@ -352,7 +352,7 @@ model BlogPost {
   category       BlogCategory @relation(fields: [categoryId], references: [id])
   authorName     String       @default("Ban Chuyên Môn AURA")
   featuredImage  String
-  tags           String?      // comma-separated
+  tags           String? // comma-separated
   published      Boolean      @default(true)
   publishedAt    DateTime     @default(now())
   seoTitle       String?
@@ -412,10 +412,10 @@ model AuditLog {
   id        String   @id @default(cuid())
   userId    String?
   user      User?    @relation(fields: [userId], references: [id])
-  action    String   // USER_LOGIN, LEAD_STATUS_UPDATE, COURSE_UPDATE, etc.
-  entity    String   // Lead, Course, Center, User
+  action    String // USER_LOGIN, LEAD_STATUS_UPDATE, COURSE_UPDATE, etc.
+  entity    String // Lead, Course, Center, User
   entityId  String?
-  details   String?  // JSON or summary description
+  details   String? // JSON or summary description
   ipAddress String?
   createdAt DateTime @default(now())
 

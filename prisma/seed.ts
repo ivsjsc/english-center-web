@@ -988,17 +988,17 @@ IELTS và TOEFL đều là hai thước đo chuẩn mực kiểm tra năng lực
       seoDescription: "So sánh chi tiết bài thi IELTS và TOEFL giúp bạn lựa chọn chứng chỉ phù hợp nhất với kế hoạch tương lai.",
     },
     {
-      slug: "tam-quan-trong-cua-tieu-chuan-neas-trong-giao-duc",
-      title: "Tiêu Chuẩn Quốc Tế NEAS Trong Giảng Dạy Ngoại Ngữ Là Gì?",
-      excerpt: "Tại sao phụ huynh nên chọn các hệ thống trung tâm Anh ngữ đạt chứng nhận kiểm định chất lượng độc lập NEAS.",
+      slug: "tam-quan-trong-cua-khung-tham-chieu-cefr-trong-giao-duc",
+      title: "Tầm Quan Trọng Của Khung Tham Chiếu CEFR Trong Giảng Dạy Tiếng Anh",
+      excerpt: "Tại sao chương trình đào tạo theo chuẩn Khung Năng Lực Châu Âu (CEFR) giúp người học định hướng tiến bộ rõ ràng?",
       content: `
-NEAS (National ELT Accreditation Scheme) là tổ chức kiểm định độc lập uy tín hàng đầu thế giới về chất lượng giảng dạy tiếng Anh. Một trung tâm được cấp chứng chỉ NEAS phải trải qua quá trình đánh giá nghiêm ngặt về chương trình học, cơ sở vật chất và trình độ đội ngũ giáo viên.
+Khung Tham chiếu Ngôn ngữ Chung Châu Âu (CEFR) là tiêu chuẩn quốc tế được công nhận rộng rãi nhất để đo lường năng lực ngôn ngữ từ bậc A1 (cơ bản) đến C2 (thành thạo). Tại IVS Academy, toàn bộ lộ trình khóa học được xây dựng đối sánh trực tiếp với các cấp độ CEFR, đảm bảo học viên nắm bắt năng lực thực chất ở từng giai đoạn học tập.
       `,
       categoryId: blogCatMap.get("tieng-anh-tre-em-mam-non")!,
       featuredImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80",
-      tags: "Tiêu chuẩn NEAS, Chất Lượng Giáo Dục, IVS Academy",
-      seoTitle: "Chứng Nhận NEAS Quốc Tế Trong Đào Tạo Anh Ngữ | IVS",
-      seoDescription: "Tìm hiểu ý nghĩa chứng nhận kiểm định chất lượng giáo dục NEAS độc quyền tại IVS Academy Academy.",
+      tags: "Chuẩn CEFR, Chất Lượng Giáo Dục, IVS Academy",
+      seoTitle: "Khung Tham Chiếu CEFR Trong Đào Tạo Anh Ngữ | IVS Academy",
+      seoDescription: "Tìm hiểu ý nghĩa định hướng chuẩn đầu ra theo khung CEFR tại IVS Academy.",
     },
     {
       slug: "5-ung-dung-luyen-nghe-tieng-anh-moi-ngay-cho-nguoi-ban-ron",
