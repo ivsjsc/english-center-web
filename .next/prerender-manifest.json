@@ -108,7 +108,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/methodology": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -121,8 +121,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
+      "srcRoute": "/methodology",
+      "dataRoute": "/methodology.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -156,7 +156,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/methodology": {
+    "/personal-data-policy": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -169,8 +169,80 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/methodology",
-      "dataRoute": "/methodology.rsc",
+      "srcRoute": "/personal-data-policy",
+      "dataRoute": "/personal-data-policy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/news": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/news",
+      "dataRoute": "/news.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/privacy": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/privacy",
+      "dataRoute": "/privacy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/placement-test": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/placement-test",
+      "dataRoute": "/placement-test.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -205,7 +277,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/personal-data-policy": {
+    "/teachers": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -218,80 +290,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/personal-data-policy",
-      "dataRoute": "/personal-data-policy.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/placement-test": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/placement-test",
-      "dataRoute": "/placement-test.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/student-achievements": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/student-achievements",
-      "dataRoute": "/student-achievements.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/privacy": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/privacy",
-      "dataRoute": "/privacy.rsc",
+      "srcRoute": "/teachers",
+      "dataRoute": "/teachers.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -325,7 +325,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news": {
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -338,8 +338,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news",
-      "dataRoute": "/news.rsc",
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -349,7 +349,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/teachers": {
+    "/student-achievements": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -362,8 +362,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/teachers",
-      "dataRoute": "/teachers.rsc",
+      "srcRoute": "/student-achievements",
+      "dataRoute": "/student-achievements.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
