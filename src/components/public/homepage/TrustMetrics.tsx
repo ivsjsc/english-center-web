@@ -1,39 +1,76 @@
 import React from "react";
+import { isSampleDeployment } from "@/lib/deployment";
 
 export function TrustMetrics() {
-  const metrics = [
-    {
-      value: "75.000+",
-      label: "Học viên tin chọn",
-      subtext: "Đã & đang theo học",
-      valueColor: "text-primary-deep",
-    },
-    {
-      value: "100%",
-      label: "Chuẩn Quốc Tế",
-      subtext: "TESOL / CELTA",
-      valueColor: "text-primary-vibrant",
-    },
-    {
-      value: "35+",
-      label: "Cơ sở hiện đại",
-      subtext: "Tại các TP trọng điểm",
-      valueColor: "text-primary-deep",
-    },
-    {
-      value: "15+",
-      label: "Năm uy tín",
-      subtext: "Kinh nghiệm đào tạo",
-      valueColor: "text-primary-vibrant",
-    },
-    {
-      value: "98.6%",
-      label: "Đạt cam kết đầu ra",
-      subtext: "IELTS 6.5+ & Cambridge",
-      valueColor: "text-growth-dark",
-      colSpan: "col-span-2 md:col-span-1",
-    },
-  ];
+  const isSample = isSampleDeployment();
+
+  const metrics = isSample
+    ? [
+        {
+          value: "CEFR",
+          label: "Khung Chuẩn Quốc Tế",
+          subtext: "Định hướng Cambridge & IELTS",
+          valueColor: "text-primary-deep",
+        },
+        {
+          value: "100%",
+          label: "Giáo Viên Đạt Chuẩn",
+          subtext: "Bằng cấp sư phạm chuyên môn",
+          valueColor: "text-primary-vibrant",
+        },
+        {
+          value: "4 - 18+",
+          label: "Độ Tuổi Đào Tạo",
+          subtext: "Lộ trình xuyên suốt toàn diện",
+          valueColor: "text-primary-deep",
+        },
+        {
+          value: "Active",
+          label: "Phương Pháp Chủ Động",
+          subtext: "Phát triển tư duy & phản xạ",
+          valueColor: "text-primary-vibrant",
+        },
+        {
+          value: "1 : 1",
+          label: "Đồng Hành Cá Nhân Hóa",
+          subtext: "Theo sát tiến độ từng học viên",
+          valueColor: "text-growth-dark",
+          colSpan: "col-span-2 md:col-span-1",
+        },
+      ]
+    : [
+        {
+          value: "75.000+",
+          label: "Học viên tin chọn",
+          subtext: "Đã & đang theo học",
+          valueColor: "text-primary-deep",
+        },
+        {
+          value: "100%",
+          label: "Chuẩn Quốc Tế",
+          subtext: "TESOL / CELTA",
+          valueColor: "text-primary-vibrant",
+        },
+        {
+          value: "35+",
+          label: "Cơ sở hiện đại",
+          subtext: "Tại các TP trọng điểm",
+          valueColor: "text-primary-deep",
+        },
+        {
+          value: "15+",
+          label: "Năm uy tín",
+          subtext: "Kinh nghiệm đào tạo",
+          valueColor: "text-primary-vibrant",
+        },
+        {
+          value: "98.6%",
+          label: "Đạt cam kết đầu ra",
+          subtext: "IELTS 6.5+ & Cambridge",
+          valueColor: "text-growth-dark",
+          colSpan: "col-span-2 md:col-span-1",
+        },
+      ];
 
   return (
     <section className="w-full bg-surface py-8 sm:py-12 border-y border-border/60">
@@ -58,6 +95,11 @@ export function TrustMetrics() {
             </div>
           ))}
         </div>
+        {isSample && (
+          <p className="text-center text-[11px] text-text-muted mt-4">
+            * Chỉ số thể hiện định hướng tiêu chuẩn đào tạo sư phạm của hệ thống IVS Academy (Website Mẫu).
+          </p>
+        )}
       </div>
     </section>
   );

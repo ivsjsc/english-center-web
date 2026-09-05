@@ -6,6 +6,21 @@ import { CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Select } from "../ui/select";
+import { isSampleDeployment } from "@/lib/deployment";
+
+const SAMPLE_FALLBACK_COURSES = [
+  { id: "sample-c1", name: "Tiếng Anh Mầm Non (SmartKids, 4-6T)" },
+  { id: "sample-c2", name: "Tiếng Anh Tiểu Học (SuperKids, 6-11T)" },
+  { id: "sample-c3", name: "Tiếng Anh THCS (Young Leaders, 11-15T)" },
+  { id: "sample-c4", name: "Luyện Thi IELTS Master (6.5 - 8.0+)" },
+  { id: "sample-c5", name: "Tiếng Anh Giao Tiếp & TOEIC Quốc Tế" },
+];
+
+const SAMPLE_FALLBACK_CENTERS = [
+  { id: "sample-cnt1", name: "Cơ sở trọng điểm Hà Nội", province: "Hà Nội" },
+  { id: "sample-cnt2", name: "Cơ sở trung tâm TP.HCM", province: "Hồ Chí Minh" },
+  { id: "sample-cnt3", name: "Cơ sở vệ tinh Đà Nẵng", province: "Đà Nẵng" },
+];
 
 interface CourseOption {
   id: string;
@@ -35,6 +50,7 @@ export function LeadForm({
   title = "Đăng Ký Nhận Tư Vấn & Ưu Đãi Tuyển Sinh",
   subtitle = "Để lại thông tin, chuyên viên IVS sẽ liên hệ tư vấn lộ trình và gửi thông tin lớp học phù hợp.",
 }: LeadFormProps) {
+  const isSample = isSampleDeployment();
   const [courses, setCourses] = useState<CourseOption[]>([]);
   const [centers, setCenters] = useState<CenterOption[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -64,15 +80,24 @@ export function LeadForm({
   // Fetch courses and centers on mount
   useEffect(() => {
     async function loadOptions() {
+      if (isSample) {
+        setCourses(SAMPLE_FALLBACK_COURSES);
+        setCenters(SAMPLE_FALLBACK_CENTERS);
+        return;
+      }
       try {
         const res = await fetch("/api/public-options");
         if (res.ok) {
           const data = await res.json();
-          setCourses(data.courses || []);
-          setCenters(data.centers || []);
+          setCourses(data.courses?.length ? data.courses : SAMPLE_FALLBACK_COURSES);
+          setCenters(data.centers?.length ? data.centers : SAMPLE_FALLBACK_CENTERS);
+        } else {
+          setCourses(SAMPLE_FALLBACK_COURSES);
+          setCenters(SAMPLE_FALLBACK_CENTERS);
         }
       } catch {
-        // graceful fallback if network fails
+        setCourses(SAMPLE_FALLBACK_COURSES);
+        setCenters(SAMPLE_FALLBACK_CENTERS);
       }
     }
     loadOptions();
@@ -88,12 +113,22 @@ export function LeadForm({
         UTMTerm: searchParams.get("utm_term") || "",
       });
     }
-  }, []);
+  }, [isSample]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setErrorMsg(null);
+
+    // In sample mode, immediately fulfill without backend call, database write, or PII retention
+    if (isSample) {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsSuccess(true);
+        if (onSuccess) onSuccess();
+      }, 400);
+      return;
+    }
 
     try {
       const payload = {
@@ -134,10 +169,16 @@ export function LeadForm({
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-xl font-bold text-slate-900">
-          Đăng Ký Thành Công!
+          {isSample ? "Ghi Nhận Thao Tác Mẫu Thành Công!" : "Đăng Ký Thành Công!"}
         </h3>
-        <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Cảm ơn quý phụ huynh & học viên đã liên hệ với IVS Academy. Bộ phận tư vấn sẽ liên hệ qua số điện thoại <strong>{formData.phone}</strong> trong thời gian sớm nhất.
+        <p className="text-sm text-slate-700 max-w-md mx-auto leading-relaxed font-medium">
+          {isSample ? (
+            <span className="block bg-amber-50 text-amber-900 p-3.5 rounded-xl border border-amber-200 text-xs sm:text-sm">
+              Đây là Website Mẫu. Chức năng gửi đăng ký sẽ được kích hoạt khi triển khai chính thức.
+            </span>
+          ) : (
+            <>Cảm ơn quý phụ huynh & học viên đã liên hệ với IVS Academy. Bộ phận tư vấn sẽ liên hệ qua số điện thoại <strong>{formData.phone}</strong> trong thời gian sớm nhất.</>
+          )}
         </p>
         <div className="pt-3">
           <Link href="/placement-test">

@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, Menu, X, ChevronDown, GraduationCap, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface HeaderProps {
   onOpenConsultation?: () => void;
 }
 
 export function Header({ onOpenConsultation }: HeaderProps) {
+  const isSample = isSampleDeployment();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [courseDropdownOpen, setCourseDropdownOpen] = useState(false);
   const [mobileCourseOpen, setMobileCourseOpen] = useState(false);
@@ -54,12 +56,14 @@ export function Header({ onOpenConsultation }: HeaderProps) {
               <span>IVS Tech</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-            <Link
-              href="/admin/login"
-              className="text-slate-400 hover:text-white transition-colors pl-2 border-l border-white/20"
-            >
-              Cổng Nội Bộ
-            </Link>
+            {!isSample && (
+              <Link
+                href="/admin/login"
+                className="text-slate-400 hover:text-white transition-colors pl-2 border-l border-white/20"
+              >
+                Cổng Nội Bộ
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -330,13 +334,15 @@ export function Header({ onOpenConsultation }: HeaderProps) {
                   <span>IVS Tech</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
-                <Link
-                  href="/admin/login"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-primary"
-                >
-                  Cổng Nội Bộ
-                </Link>
+                {!isSample && (
+                  <Link
+                    href="/admin/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="hover:text-primary"
+                  >
+                    Cổng Nội Bộ
+                  </Link>
+                )}
               </div>
             </div>
           </div>

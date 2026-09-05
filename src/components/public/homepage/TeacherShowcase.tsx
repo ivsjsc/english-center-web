@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { TeacherCard } from "@/components/public/TeacherCard";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface TeacherItem {
   id?: string;
@@ -19,6 +20,7 @@ interface TeacherShowcaseProps {
 }
 
 export function TeacherShowcase({ teachers = [] }: TeacherShowcaseProps) {
+  const isSample = isSampleDeployment();
   // Canonical default 4 teachers from Stitch specification if db items are fewer
   const defaultTeachers = [
     {
@@ -81,6 +83,13 @@ export function TeacherShowcase({ teachers = [] }: TeacherShowcaseProps) {
             <p className="text-sm sm:text-base text-text-default mt-2">
               100% giáo viên sở hữu bằng cử nhân/thạc sĩ quốc tế cùng các chứng chỉ giảng dạy sư phạm danh giá.
             </p>
+            {isSample && (
+              <div className="mt-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
+                  Hồ sơ giảng viên mẫu minh họa — Sẽ cập nhật theo danh sách nhân sự chính thức
+                </span>
+              </div>
+            )}
           </div>
 
           <Link

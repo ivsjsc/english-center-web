@@ -9,6 +9,18 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, User, Tag } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 
+export async function generateStaticParams() {
+  try {
+    const posts = await prisma.blogPost.findMany({
+      where: { published: true },
+      select: { slug: true },
+    });
+    return posts.map((post) => ({ slug: post.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {

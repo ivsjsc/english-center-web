@@ -15,6 +15,18 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
+export async function generateStaticParams() {
+  try {
+    const centers = await prisma.center.findMany({
+      where: { active: true },
+      select: { slug: true },
+    });
+    return centers.map((center) => ({ slug: center.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {

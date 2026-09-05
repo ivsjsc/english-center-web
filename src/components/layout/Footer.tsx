@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, ExternalLink } from "lucide-react";
+import { isSampleDeployment } from "@/lib/deployment";
 
 export function Footer() {
+  const isSample = isSampleDeployment();
   return (
     <footer className="w-full bg-[#F1F5F9] text-text-default pt-14 pb-8 border-t border-border shadow-[0_-1px_6px_rgba(0,0,0,0.03)] text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,11 +120,13 @@ export function Footer() {
                   <ExternalLink className="w-3 h-3 text-text-muted" />
                 </a>
               </li>
-              <li>
-                <Link href="/admin/login" className="hover:text-primary transition-colors">
-                  Cổng quản trị nội bộ CenterCare
-                </Link>
-              </li>
+              {!isSample && (
+                <li>
+                  <Link href="/admin/login" className="hover:text-primary transition-colors">
+                    Cổng quản trị nội bộ CenterCare
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -133,13 +137,18 @@ export function Footer() {
             </h3>
             <div className="space-y-1.5 text-xs sm:text-sm text-text-default">
               <p>
-                <strong className="text-text-heading">Hà Nội:</strong> 12 cơ sở (Cầu Giấy, Đống Đa, Ba Đình...)
+                <strong className="text-text-heading">Hà Nội:</strong> Hệ thống phòng học chuẩn quốc tế
               </p>
               <p>
-                <strong className="text-text-heading">TP. Hồ Chí Minh:</strong> 15 cơ sở (Quận 1, Tân Bình, Quận 7...)
+                <strong className="text-text-heading">TP. Hồ Chí Minh:</strong> Cơ sở hiện đại tại các quận trung tâm
               </p>
               <p>
-                <strong className="text-text-heading">Đà Nẵng & Cần Thơ:</strong> 8 cơ sở khu vực
+                <strong className="text-text-heading">Đà Nẵng & Cần Thơ:</strong> Cơ sở vệ tinh khu vực
+              </p>
+              <p className="pt-1">
+                <Link href="/centers" className="text-primary font-semibold hover:underline flex items-center gap-1 text-xs">
+                  <span>Khám phá chi tiết cơ sở gần bạn &rarr;</span>
+                </Link>
               </p>
               <div className="pt-2 space-y-1 border-t border-slate-200 mt-2">
                 <p className="flex items-center gap-1.5">

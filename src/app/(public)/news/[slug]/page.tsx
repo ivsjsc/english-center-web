@@ -8,6 +8,18 @@ import { constructMetadata } from "@/lib/seo";
 import { Calendar } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 
+export async function generateStaticParams() {
+  try {
+    const articles = await prisma.newsArticle.findMany({
+      where: { published: true },
+      select: { slug: true },
+    });
+    return articles.map((article) => ({ slug: article.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {

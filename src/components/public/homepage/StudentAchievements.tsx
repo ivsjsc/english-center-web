@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface AchievementItem {
   id?: string;
@@ -16,6 +17,7 @@ interface StudentAchievementsProps {
 }
 
 export function StudentAchievements({ achievements = [] }: StudentAchievementsProps) {
+  const isSample = isSampleDeployment();
   const defaultAchievements = [
     {
       name: "Nguyễn Hoàng Minh",
@@ -81,6 +83,13 @@ export function StudentAchievements({ achievements = [] }: StudentAchievementsPr
           <p className="text-sm sm:text-base text-text-default mt-2">
             Mỗi điểm số ấn tượng là một câu chuyện nỗ lực, niềm tự hào của học viên và sự đồng hành bền bỉ từ thầy cô.
           </p>
+          {isSample && (
+            <div className="mt-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
+                Dữ liệu mẫu minh họa giao diện — Sẽ cập nhật theo bảng vàng chính thức
+              </span>
+            </div>
+          )}
         </div>
 
         {/* 4 Honor Cards Grid */}

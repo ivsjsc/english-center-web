@@ -8,6 +8,18 @@ import { constructMetadata } from "@/lib/seo";
 import { Award, CheckCircle2 } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 
+export async function generateStaticParams() {
+  try {
+    const teachers = await prisma.teacher.findMany({
+      where: { active: true },
+      select: { slug: true },
+    });
+    return teachers.map((teacher) => ({ slug: teacher.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {

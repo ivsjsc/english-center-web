@@ -6,6 +6,7 @@ import { CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select } from "@/components/ui/select";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface CenterOption {
   id: string;
@@ -15,6 +16,7 @@ interface CenterOption {
 }
 
 export function PlacementTestForm({ centers }: { centers: CenterOption[] }) {
+  const isSample = isSampleDeployment();
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -36,6 +38,15 @@ export function PlacementTestForm({ centers }: { centers: CenterOption[] }) {
     e.preventDefault();
     setIsLoading(true);
     setErrorMsg(null);
+
+    // In sample mode, fulfill immediately without network mutation or PII storage
+    if (isSample) {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsSuccess(true);
+      }, 400);
+      return;
+    }
 
     try {
       const res = await fetch("/api/placement-test", {
@@ -69,12 +80,20 @@ export function PlacementTestForm({ centers }: { centers: CenterOption[] }) {
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-xl font-bold text-brand-navy">
-          Đặt Lịch Thi Xếp Lớp Thành Công!
+          {isSample ? "Ghi Nhận Thao Tác Mẫu Thành Công!" : "Đặt Lịch Thi Xếp Lớp Thành Công!"}
         </h3>
-        <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Bộ phận khảo thí của IVS Academy đã ghi nhận lịch hẹn của bạn vào ngày{" "}
-          <strong>{formData.preferredDate}</strong> ({formData.preferredTimeSlot}). Chúng tôi sẽ gửi tin nhắn SMS xác nhận và địa điểm chi tiết.
-        </p>
+        <div className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+          {isSample ? (
+            <div className="bg-amber-50 text-amber-900 p-4 rounded-xl border border-amber-200 text-xs sm:text-sm font-medium">
+              Đây là Website Mẫu. Chức năng gửi đăng ký sẽ được kích hoạt khi triển khai chính thức.
+            </div>
+          ) : (
+            <p>
+              Bộ phận khảo thí của IVS Academy đã ghi nhận lịch hẹn của bạn vào ngày{" "}
+              <strong>{formData.preferredDate}</strong> ({formData.preferredTimeSlot}). Chúng tôi sẽ gửi tin nhắn SMS xác nhận và địa điểm chi tiết.
+            </p>
+          )}
+        </div>
         <div className="pt-2">
           <Link href="/courses">
             <Button variant="primary">Khám Phá Các Khóa Học</Button>

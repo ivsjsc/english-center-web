@@ -15,6 +15,18 @@ import {
   HelpCircle,
 } from "lucide-react";
 
+export async function generateStaticParams() {
+  try {
+    const courses = await prisma.course.findMany({
+      where: { status: "PUBLISHED" },
+      select: { slug: true },
+    });
+    return courses.map((course) => ({ slug: course.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {

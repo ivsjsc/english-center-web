@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { isSampleDeployment } from "@/lib/deployment";
 
 export function ContactForm() {
+  const isSample = isSampleDeployment();
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -23,6 +25,15 @@ export function ContactForm() {
     e.preventDefault();
     setIsLoading(true);
     setErrorMsg(null);
+
+    // In sample mode, fulfill immediately without network mutation or PII storage
+    if (isSample) {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsSuccess(true);
+      }, 400);
+      return;
+    }
 
     try {
       const res = await fetch("/api/contact", {
@@ -53,11 +64,19 @@ export function ContactForm() {
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <h3 className="text-xl font-bold text-brand-navy">
-          Gửi Liên Hệ Thành Công!
+          {isSample ? "Ghi Nhận Thao Tác Mẫu Thành Công!" : "Gửi Liên Hệ Thành Công!"}
         </h3>
-        <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Cảm ơn bạn đã gửi tin nhắn đến IVS Academy. Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.
-        </p>
+        <div className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed font-medium">
+          {isSample ? (
+            <div className="bg-amber-50 text-amber-900 p-4 rounded-xl border border-amber-200 text-xs sm:text-sm">
+              Đây là Website Mẫu. Chức năng gửi đăng ký sẽ được kích hoạt khi triển khai chính thức.
+            </div>
+          ) : (
+            <p>
+              Cảm ơn bạn đã gửi tin nhắn đến IVS Academy. Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.
+            </p>
+          )}
+        </div>
       </div>
     );
   }
