@@ -31,6 +31,19 @@ export function Header({ onOpenConsultation }: HeaderProps) {
             </span>
           </div>
 
+          {isSample && (
+            <a
+              href="https://ivsacademy.edu.vn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden xl:inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold text-white hover:bg-white/15 hover:border-white/40 transition-colors"
+              title="Truy cập website IVS Academy chính thức"
+            >
+              <span>IVS Academy Chính thức</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+
           <div className="flex items-center gap-6 text-slate-300">
             <Link
               href="/centers"
