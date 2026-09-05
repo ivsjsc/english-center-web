@@ -21,13 +21,13 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-            Cảm Nhận Thực Tế
+            Cảm Nhận Học Viên
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-            Phụ Huynh & Học Viên Nói Gì Về AURA?
+            Chia Sẻ Từ Phụ Huynh & Học Viên Tại IVS Academy
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Sự tin tưởng và thành công của học viên là nguồn động lực lớn nhất để chúng tôi không ngừng hoàn thiện.
+            Sự hài lòng và tiến bộ của học viên là thước đo giá trị lớn nhất cho chất lượng đào tạo của chúng tôi.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
                 </div>
 
                 <p className="text-sm text-slate-700 leading-relaxed italic relative z-10">
-                  "{item.quote}"
+                  &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 

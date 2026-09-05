@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, BookOpen } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BlogPostItem {
@@ -31,7 +31,7 @@ export function LatestBlogPosts({ posts }: LatestBlogPostsProps) {
               Bài Viết Mới Nhất Từ Ban Chuyên Môn
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              Cập nhật bí quyết luyện thi IELTS, phương pháp học tiếng Anh mầm non và cẩm nang săn học bổng quốc tế.
+              Cập nhật bí quyết luyện thi IELTS, phương pháp học tiếng Anh mầm non và cẩm nang xây dựng lộ trình du học.
             </p>
           </div>
 

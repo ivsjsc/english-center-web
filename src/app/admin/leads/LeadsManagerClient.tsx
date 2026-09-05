@@ -3,21 +3,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {
   Search,
-  Filter,
   UserCheck,
-  Clock,
   Phone,
   MessageSquare,
-  AlertCircle,
-  CheckCircle2,
-  Calendar,
   History,
-  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
-import { Select } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 
 interface LeadActivity {
   id: string;
@@ -65,10 +57,10 @@ export function LeadsManagerClient({
   currentUserId: string;
   userRole: string;
 }) {
+  const canAssign = userRole !== "CONSULTANT";
   const [leads, setLeads] = useState<LeadItem[]>([]);
   const [consultants, setConsultants] = useState<ConsultantOption[]>([]);
   const [centers, setCenters] = useState<FilterOption[]>([]);
-  const [courses, setCourses] = useState<FilterOption[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Filter & Search states
@@ -106,7 +98,6 @@ export function LeadsManagerClient({
         setLeads(data.leads || []);
         setConsultants(data.consultants || []);
         setCenters(data.centers || []);
-        setCourses(data.courses || []);
         setTotalPages(data.pagination.totalPages || 1);
         setTotalLeads(data.pagination.total || 0);
       }
@@ -340,7 +331,7 @@ export function LeadsManagerClient({
                         <span className="font-medium text-slate-800">
                           {lead.assignedUser.fullName.split("(")[0]}
                         </span>
-                      ) : (
+                      ) : canAssign ? (
                         <button
                           type="button"
                           onClick={() => {
@@ -351,6 +342,8 @@ export function LeadsManagerClient({
                         >
                           + Phân công
                         </button>
+                      ) : (
+                        <span className="text-[11px] text-slate-400 italic">Chưa phân công</span>
                       )}
                     </td>
 
@@ -557,7 +550,7 @@ export function LeadsManagerClient({
                 </div>
                 {act.note && (
                   <p className="text-slate-600 bg-white p-2 rounded-xl border border-slate-100 italic">
-                    "{act.note}"
+                    &ldquo;{act.note}&rdquo;
                   </p>
                 )}
               </div>

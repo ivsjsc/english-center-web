@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { MapPin, Phone, ExternalLink, Copy, Check, Search } from "lucide-react";
+import { MapPin, Phone, ExternalLink, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface CenterItem {
@@ -44,13 +44,13 @@ export function CenterFinderSection({ centers }: CenterFinderSectionProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-              Mạng Lưới Toàn Quốc
+              Mạng Lưới Đào Tạo
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-              Tìm Cơ Sở AURA Gần Bạn Nhất
+              Tìm Cơ Sở IVS Academy Gần Bạn Nhất
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              Hệ thống các cơ sở hiện đại tọa lạc tại các vị trí đắc địa, thuận tiện giao thông và đưa đón học sinh.
+              Hệ thống các cơ sở tọa lạc tại các vị trí trung tâm, thuận tiện giao thông và an toàn cho học viên.
             </p>
           </div>
 
@@ -147,7 +147,7 @@ export function CenterFinderSection({ centers }: CenterFinderSectionProps) {
                   className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-brand-navy text-white text-xs font-bold hover:bg-brand-sapphire transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-accent-amber" />
-                  <span>Chỉ đường trên Google Maps</span>
+                  <span>Google Maps</span>
                 </a>
               </div>
             </div>

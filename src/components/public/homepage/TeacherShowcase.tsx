@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Award, GraduationCap, ArrowRight } from "lucide-react";
+import { Award, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface TeacherItem {
@@ -26,19 +26,19 @@ export function TeacherShowcase({ teachers }: TeacherShowcaseProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-              Đội Ngũ Chuyên Gia
+              Đội Ngũ Chuyên Môn
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-              Đội Ngũ Giảng Viên Quốc Tế & Bản Ngữ Tận Tâm
+              Đội Ngũ Giảng Viên Giàu Nhiệt Huyết
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              100% sở hữu chứng chỉ giảng dạy ngoại ngữ quốc tế CELTA, DELTA hoặc Thạc sĩ Ngôn ngữ ứng dụng từ các trường đại học hàng đầu thế giới.
+              Đội ngũ giảng viên có chứng chỉ giảng dạy ngoại ngữ chuyên nghiệp (TESOL, CELTA), tận tâm đồng hành cùng sự tiến bộ của từng học viên.
             </p>
           </div>
 
           <Link href="/teachers" className="shrink-0">
             <Button variant="outline" size="sm">
-              <span>Gặp Gỡ Toàn Bộ Giảng Viên</span>
+              <span>Gặp Gỡ Đội Ngũ Giảng Viên</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>

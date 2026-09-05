@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, ShieldCheck, Sparkles, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -19,7 +19,7 @@ export function HeroSection() {
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-accent-amber">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Tiêu Chuẩn Đào Tạo Kiểm Định Quốc Tế NEAS (Úc)</span>
+              <span>Chương Trình Đào Tạo Ngoại Ngữ & Kỹ Năng Định Hướng Quốc Tế</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.15]">
@@ -30,7 +30,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
-              Hệ thống trung tâm Anh ngữ chuẩn mực hàng đầu. Lộ trình học bài bản từ Mầm non đến Luyện thi IELTS chuyên sâu, đồng hành cùng đội ngũ 100% giáo viên quốc tế giàu kinh nghiệm.
+              Hệ thống đào tạo tiếng Anh IVS Academy với lộ trình học bài bản từ Mầm non đến Luyện thi IELTS chuyên sâu, giúp học viên làm chủ 4 kỹ năng và phát triển tư duy phản biện.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
@@ -51,15 +51,15 @@ export function HeroSection() {
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300 border-t border-white/10">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Cam kết chuẩn đầu ra văn bản</span>
+                <span>Lộ trình đào tạo theo chuẩn CEFR</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>100% giáo viên chứng chỉ CELTA/DELTA</span>
+                <span>Giảng viên có chứng chỉ sư phạm</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Khảo thí Cambridge & IELTS chính thức</span>
+                <span>Định hướng khảo thí Cambridge & IELTS</span>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function HeroSection() {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/3] sm:aspect-[1/1]">
                 <Image
                   src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80"
-                  alt="Lớp học tương tác tại AURA English Academy"
+                  alt="Lớp học tương tác tại IVS Academy"
                   fill
                   priority
                   className="object-cover"
@@ -79,25 +79,25 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
               </div>
 
-              {/* Floating Badge 1: NEAS Quality */}
+              {/* Floating Badge 1: CEFR Standard */}
               <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white text-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">
                   <Award className="w-6 h-6" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs font-semibold text-slate-500">Chuẩn Kiểm Định</div>
-                  <div className="font-extrabold text-sm text-brand-navy">NEAS Australia</div>
+                  <div className="text-xs font-semibold text-slate-500">Khung Tham Chiếu</div>
+                  <div className="font-extrabold text-sm text-brand-navy">Chuẩn CEFR Châu Âu</div>
                 </div>
               </div>
 
-              {/* Floating Badge 2: High Scorer */}
+              {/* Floating Badge 2: Personalized Path */}
               <div className="absolute -top-4 -right-4 sm:-right-6 bg-brand-navy/95 backdrop-blur-md text-white p-3.5 rounded-2xl shadow-xl border border-white/20 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-black text-sm">
-                  8.5
+                  1:1
                 </div>
                 <div className="text-left">
-                  <div className="font-bold text-xs text-white">Top Điểm Số IELTS</div>
-                  <div className="text-[10px] text-slate-300">5.200+ Học viên 7.0+</div>
+                  <div className="font-bold text-xs text-white">Lộ Trình Học Tập</div>
+                  <div className="text-[10px] text-slate-300">Cá nhân hóa theo mục tiêu</div>
                 </div>
               </div>
             </div>

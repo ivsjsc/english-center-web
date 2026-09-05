@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function LearningMethod() {
@@ -18,13 +18,13 @@ export function LearningMethod() {
     },
     {
       num: "03",
-      title: "Rèn Luyện Tư Duy Phản Biện & Tranh Biện (Critical Thinking)",
+      title: "Rèn Luyện Tư Duy Phản Biện (Critical Thinking)",
       desc: "Học cách bảo vệ quan điểm, phân tích đa chiều và thuyết trình tự tin trước đám đông.",
     },
     {
       num: "04",
-      title: "Đánh Giá Tiến Bộ Liên Tục & Sửa Lỗi Tức Thời (Real-Time Feedback)",
-      desc: "Đo lường sự tiến bộ chuẩn CEFR qua từng buổi học, không để dồn lỗ hổng kiến thức đến kỳ thi.",
+      title: "Đánh Giá Tiến Bộ Liên Tục (Continuous Assessment)",
+      desc: "Đo lường sự tiến bộ chuẩn CEFR qua từng chặng học tập, hỗ trợ kịp thời để học viên luôn theo kịp tiến độ.",
     },
   ];
 
@@ -38,10 +38,10 @@ export function LearningMethod() {
               Phương Pháp Sư Phạm
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-              Phương Pháp Chủ Động Tương Tác Chuẩn NEAS Toàn Cầu
+              Mô Hình Đào Tạo Tương Tác Định Hướng Chuẩn Quốc Tế
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Mô hình học tập độc quyền tại AURA chuyển đổi học viên từ người tiếp thu thụ động thành nhà lãnh đạo tương lai tự tin làm chủ tư duy và ngôn ngữ.
+              Mô hình học tập tại IVS Academy tập trung vào học viên, tạo môi trường tự nhiên giúp người học tự tin làm chủ tư duy và kỹ năng ngôn ngữ.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
@@ -78,7 +78,7 @@ export function LearningMethod() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]">
               <Image
                 src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80"
-                alt="Phương pháp giảng dạy chủ động tương tác tại AURA"
+                alt="Phương pháp giảng dạy tương tác tại IVS Academy"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -86,10 +86,10 @@ export function LearningMethod() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-white text-left">
                 <div className="text-xs font-bold uppercase text-accent-amber mb-1">
-                  Khung Tham Chiếu Châu Âu CEFR
+                  Khung Tham Chiếu CEFR
                 </div>
                 <div className="text-base font-extrabold leading-snug">
-                  Đồng bộ chuẩn đầu ra với Cambridge & IELTS quốc tế
+                  Định hướng chuẩn đầu ra bài thi Cambridge & IELTS
                 </div>
               </div>
             </div>

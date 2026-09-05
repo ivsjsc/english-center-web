@@ -32,8 +32,8 @@ export function LeadForm({
   initialCenterId,
   onSuccess,
   variant = "card",
-  title = "Đăng Ký Nhận Tư Vấn & Học Bổng 25%",
-  subtitle = "Để lại thông tin, chuyên viên AURA sẽ liên hệ tư vấn lộ trình và gửi kết quả bài thi thử trong vòng 15 phút.",
+  title = "Đăng Ký Nhận Tư Vấn & Ưu Đãi Tuyển Sinh",
+  subtitle = "Để lại thông tin, chuyên viên IVS sẽ liên hệ tư vấn lộ trình và gửi thông tin lớp học phù hợp.",
 }: LeadFormProps) {
   const [courses, setCourses] = useState<CourseOption[]>([]);
   const [centers, setCenters] = useState<CenterOption[]>([]);
@@ -137,7 +137,7 @@ export function LeadForm({
           Đăng Ký Thành Công!
         </h3>
         <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Cảm ơn quý phụ huynh & học viên đã tin tưởng lựa chọn AURA Academy. Bộ phận học thuật sẽ liên hệ qua số điện thoại <strong>{formData.phone}</strong> trong vòng 15 phút.
+          Cảm ơn quý phụ huynh & học viên đã liên hệ với IVS Academy. Bộ phận tư vấn sẽ liên hệ qua số điện thoại <strong>{formData.phone}</strong> trong thời gian sớm nhất.
         </p>
         <div className="pt-3">
           <Link href="/placement-test">
@@ -179,7 +179,7 @@ export function LeadForm({
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4 text-left">
-        {/* Anti-spam honeypot field (hidden from humans, trapped bots fill it) */}
+        {/* Anti-spam honeypot field */}
         <div className="hidden" aria-hidden="true">
           <label htmlFor="hp_comment">Do not fill this</label>
           <input
@@ -259,7 +259,7 @@ export function LeadForm({
               className="mt-0.5 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300"
             />
             <span>
-              Tôi đồng ý để AURA liên hệ tư vấn và xác nhận đã đọc{" "}
+              Tôi đồng ý để IVS liên hệ tư vấn và xác nhận đã đọc{" "}
               <Link href="/personal-data-policy" target="_blank" className="text-brand-600 underline font-semibold">
                 Chính sách bảo vệ dữ liệu cá nhân
               </Link>{" "}
@@ -276,7 +276,7 @@ export function LeadForm({
             className="w-full font-bold text-base tracking-wide"
             isLoading={isLoading}
           >
-            ĐĂNG KÝ TƯ VẤN & NHẬN HỌC BỔNG NGAY
+            ĐĂNG KÝ TƯ VẤN LỘ TRÌNH HỌC
           </Button>
         </div>
       </form>

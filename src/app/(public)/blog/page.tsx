@@ -4,8 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
-import { Calendar, ArrowRight, BookOpen } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Calendar } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Cẩm Nang Học Tiếng Anh & Luyện Thi IELTS",
@@ -49,7 +48,7 @@ export default async function BlogPage({
             Góc Chuyên Gia & Cẩm Nang Học Ngoại Ngữ
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
-            Những bài viết chuyên sâu từ hội đồng học thuật AURA, tổng hợp bí quyết bứt phá 4 kỹ năng và cập nhật thông tin học bổng du học quốc tế mới nhất.
+            Những bài viết chuyên sâu từ hội đồng học thuật IVS Academy, tổng hợp bí quyết bứt phá 4 kỹ năng và cập nhật thông tin học bổng du học quốc tế mới nhất.
           </p>
         </div>
 

@@ -1,28 +1,27 @@
 import React from "react";
-import Image from "next/image";
 import { MonitorPlay, Smartphone, BookOpen, Compass } from "lucide-react";
 
 export function LearningEcosystem() {
   const pillars = [
     {
       icon: MonitorPlay,
-      title: "Lớp Học Tương Tác Công Nghệ Cao",
-      desc: "Trang bị màn hình cảm ứng SmartScreen 85 inch và hệ thống âm thanh vòm chuẩn rạp giúp học viên đắm chìm trong ngữ cảnh bản xứ.",
+      title: "Lớp Học Tương Tác Trực Tiếp",
+      desc: "Trang bị màn hình tương tác thông minh và học cụ trực quan giúp học viên hứng thú tham gia bài học.",
     },
     {
       icon: Smartphone,
-      title: "Ứng Dụng AURA SmartLMS Trợ Lý AI",
-      desc: "Học mọi lúc mọi nơi: Luyện phát âm nhận diện giọng nói AI, làm bài tập tương tác và theo dõi biểu đồ tiến độ học tập 24/7.",
+      title: "Hệ Thống Trực Tuyến IVS LMS",
+      desc: "Học mọi lúc mọi nơi: Luyện tập phát âm, làm bài tập trực tuyến và theo dõi tiến trình học tập của con.",
     },
     {
       icon: BookOpen,
-      title: "Thư Viện Mở & Trung Tâm Thi Thử",
-      desc: "Không gian tự học yên tĩnh với hơn 10.000 đầu sách tiếng Anh, cùng phòng máy tính mô phỏng kỳ thi IELTS và Cambridge thật.",
+      title: "Thư Viện Tài Liệu Tham Khảo",
+      desc: "Không gian đọc và tự học với các đầu sách tiếng Anh, truyện tranh và bộ đề thi thử Cambridge/IELTS.",
     },
     {
       icon: Compass,
-      title: "CLB Hùng Biện & Trại Hè Quốc Tế",
-      desc: "Môi trường ngoại khóa đa dạng cuối tuần, phát triển kỹ năng sinh tồn, dã ngoại và giao lưu kết nối bạn bè quốc tế.",
+      title: "Hoạt Động Trải Nghiệm Ngoại Khóa",
+      desc: "Môi trường giao lưu tiếng Anh cuối tuần, câu lạc bộ thuyết trình và các buổi sinh hoạt chuyên đề.",
     },
   ];
 
@@ -31,13 +30,13 @@ export function LearningEcosystem() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-            Hệ Sinh Thái Toàn Diện
+            Hệ Sinh Thái Học Tập
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-            Học Mọi Lúc, Mọi Nơi Cùng Hệ Sinh Thái AURA 360°
+            Môi Trường Đào Tạo Toàn Diện Tại IVS Academy
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Sự kết hợp hoàn hảo giữa lớp học trực tiếp đầy cảm hứng và nền tảng kỹ thuật số thông minh hỗ trợ tối đa việc tự học tại nhà.
+            Kết hợp hài hòa giữa giờ học trên lớp và các công cụ bổ trợ trực tuyến giúp học viên duy trì thói quen học tập liên tục.
           </p>
         </div>
 

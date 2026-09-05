@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MapPin, Menu, X, ChevronDown, GraduationCap, ShieldCheck } from "lucide-react";
+import { Phone, MapPin, Menu, X, ChevronDown, GraduationCap, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface HeaderProps {
@@ -23,7 +23,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
               Thông Báo Mới
             </span>
             <span className="text-slate-200">
-              Ưu đãi năm học mới: Nhận ngay học bổng 25% + Bộ quà nhập học độc quyền!
+              Đăng ký sớm: Nhận ngay ưu đãi học bổng tuyển sinh + Kiểm tra năng lực miễn phí!
             </span>
           </div>
           <div className="flex items-center gap-6 text-slate-300">
@@ -32,7 +32,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <MapPin className="w-3.5 h-3.5 text-accent-amber" />
-              <span>Hệ thống 4+ Cơ sở</span>
+              <span>Hệ thống Cơ sở</span>
             </Link>
             <a
               href="tel:19006886"
@@ -57,15 +57,15 @@ export function Header({ onOpenConsultation }: HeaderProps) {
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-navy to-brand-600 flex items-center justify-center text-white font-black text-2xl shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform">
-              A
+              IVS
             </div>
             <div>
               <div className="font-extrabold text-xl tracking-tight text-brand-navy group-hover:text-brand-600 transition-colors">
-                AURA <span className="text-brand-600 font-medium">ACADEMY</span>
+                IVS <span className="text-brand-600 font-medium">ACADEMY</span>
               </div>
               <div className="text-[10px] font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-1">
-                <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                Chuẩn Kiểm Định NEAS
+                <Sparkles className="w-3 h-3 text-accent-amber" />
+                Đào Tạo Ngoại Ngữ & Kỹ Năng
               </div>
             </div>
           </Link>
@@ -96,7 +96,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
                     </div>
                     <div>
                       <div className="text-slate-900 font-bold text-sm">Tất Cả Khóa Học</div>
-                      <div className="text-slate-500 text-xs mt-0.5">Khám phá lộ trình từ 4-60 tuổi</div>
+                      <div className="text-slate-500 text-xs mt-0.5">Khám phá lộ trình theo lứa tuổi</div>
                     </div>
                   </Link>
                   <Link
@@ -104,21 +104,21 @@ export function Header({ onOpenConsultation }: HeaderProps) {
                     className="p-2.5 rounded-xl hover:bg-brand-50 transition-colors text-left"
                   >
                     <div className="text-slate-900 font-semibold text-sm">Tiếng Anh Mầm Non (4-6T)</div>
-                    <div className="text-slate-500 text-xs">Phương pháp Phonics chuẩn Cambridge</div>
+                    <div className="text-slate-500 text-xs">Phương pháp ngữ âm Phonics tương tác</div>
                   </Link>
                   <Link
                     href="/courses?category=superkids-tieu-hoc"
                     className="p-2.5 rounded-xl hover:bg-brand-50 transition-colors text-left"
                   >
                     <div className="text-slate-900 font-semibold text-sm">Tiếng Anh Tiểu Học (6-11T)</div>
-                    <div className="text-slate-500 text-xs">Luyện thi Starters, Movers, Flyers</div>
+                    <div className="text-slate-500 text-xs">Định hướng chứng chỉ Cambridge</div>
                   </Link>
                   <Link
                     href="/courses?category=ielts-chuyen-sau"
                     className="p-2.5 rounded-xl hover:bg-brand-50 transition-colors text-left"
                   >
                     <div className="text-slate-900 font-semibold text-sm">Luyện Thi IELTS Chuyên Sâu</div>
-                    <div className="text-slate-500 text-xs">Cam kết đầu ra 6.5 - 8.0+ bằng văn bản</div>
+                    <div className="text-slate-500 text-xs">Lộ trình mục tiêu 6.5 - 8.0+</div>
                   </Link>
                 </div>
               )}
@@ -200,14 +200,14 @@ export function Header({ onOpenConsultation }: HeaderProps) {
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-600 py-1.5 text-sm"
                 >
-                  • Tiếng Anh Tiểu Học Cambridge (6-11T)
+                  • Tiếng Anh Tiểu Học (6-11T)
                 </Link>
                 <Link
                   href="/courses?category=ielts-chuyen-sau"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block text-slate-600 py-1.5 text-sm"
                 >
-                  • Luyện Thi IELTS Cam Kết 6.5 - 8.0+
+                  • Luyện Thi IELTS 6.5 - 8.0+
                 </Link>
               </div>
             </div>
@@ -225,14 +225,14 @@ export function Header({ onOpenConsultation }: HeaderProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 hover:text-brand-600"
               >
-                Phương Pháp Giảng Dạy NEAS
+                Phương Pháp Đào Tạo
               </Link>
               <Link
                 href="/teachers"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 hover:text-brand-600"
               >
-                Đội Ngũ Giảng Viên Quốc Tế
+                Đội Ngũ Giảng Viên
               </Link>
               <Link
                 href="/student-achievements"

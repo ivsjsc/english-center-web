@@ -1,14 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { Shield, Award, Target, Eye, Heart, CheckCircle2 } from "lucide-react";
+import { Target, Eye, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Về Chúng Tôi — AURA English Academy",
-  description: "Hành trình phát triển và sứ mệnh đào tạo thế hệ trẻ Việt Nam tự tin làm chủ ngôn ngữ toàn cầu của AURA English Academy.",
+  title: "Về Chúng Tôi — IVS Academy",
+  description: "Hành trình phát triển và sứ mệnh đào tạo thế hệ trẻ Việt Nam tự tin làm chủ ngôn ngữ toàn cầu của IVS Academy.",
   canonicalPath: "/about",
 });
 
@@ -29,10 +28,10 @@ export default function AboutPage() {
               Sứ Mệnh Giáo Dục Vươn Tầm
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-              AURA English Academy — Tiêu Chuẩn Anh Ngữ Quốc Tế Hàng Đầu
+              IVS Academy — Tiêu Chuẩn Anh Ngữ Quốc Tế Hàng Đầu
             </h1>
             <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
-              Thành lập với khát vọng trao quyền cho thế hệ trẻ Việt Nam tự tin bước ra thế giới, AURA không ngừng kiến tạo chuẩn mực đào tạo ngoại ngữ chất lượng cao, bền vững và nhân văn.
+              Thành lập với khát vọng trao quyền cho thế hệ trẻ Việt Nam tự tin bước ra thế giới, IVS Academy không ngừng kiến tạo chuẩn mực đào tạo ngoại ngữ chất lượng cao, bền vững và nhân văn.
             </p>
           </div>
         </div>
@@ -57,7 +56,7 @@ export default function AboutPage() {
             </div>
             <h2 className="text-xl font-bold text-brand-navy">Tầm Nhìn (Vision)</h2>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Trở thành hệ thống tổ chức giáo dục ngoại ngữ được tin cậy nhất Việt Nam, được kiểm định độc lập và công nhận bởi các định chế giáo dục uy tín trên thế giới.
+              Trở thành hệ thống tổ chức giáo dục ngoại ngữ được tin cậy tại Việt Nam, mang đến môi trường học tập hiện đại và chuẩn mực cho người học.
             </p>
           </div>
 
@@ -72,33 +71,33 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Accreditations Grid */}
+        {/* Academic Standards Grid */}
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h3 className="text-2xl sm:text-3xl font-black text-brand-navy">
-              Kiểm Định & Đối Tác Chiến Lược Quốc Tế
+              Định Hướng Học Thuật & Chuẩn Khung Quốc Tế
             </h3>
             <p className="text-slate-600 text-sm">
-              Sự công nhận từ các tổ chức giáo dục hàng đầu thế giới là bảo chứng vàng cho chất lượng của AURA.
+              Chương trình đào tạo tại IVS Academy được nghiên cứu và thiết kế bám sát các tiêu chuẩn ngôn ngữ quốc tế.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100 text-center space-y-2">
-              <div className="font-black text-brand-navy text-lg">NEAS Australia</div>
-              <div className="text-xs text-slate-500">Tổ chức kiểm định chất lượng đào tạo Anh ngữ độc lập toàn cầu</div>
+              <div className="font-black text-brand-navy text-lg">Chuẩn Khung CEFR</div>
+              <div className="text-xs text-slate-500">Tham chiếu khung năng lực ngôn ngữ chung Châu Âu từ A1 đến C2</div>
             </div>
             <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100 text-center space-y-2">
-              <div className="font-black text-brand-navy text-lg">Cambridge Assessment</div>
-              <div className="text-xs text-slate-500">Hội đồng thi chứng chỉ Starters, Movers, Flyers, KET, PET chính thức</div>
+              <div className="font-black text-brand-navy text-lg">Định Hướng Cambridge</div>
+              <div className="text-xs text-slate-500">Lộ trình rèn luyện năng lực toàn diện theo chuẩn Starters, Movers, Flyers</div>
             </div>
             <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100 text-center space-y-2">
-              <div className="font-black text-brand-navy text-lg">British Council & IDP</div>
-              <div className="text-xs text-slate-500">Đối tác khảo thí kim cương kỳ thi IELTS quốc tế trên máy tính</div>
+              <div className="font-black text-brand-navy text-lg">Tiêu Chuẩn IELTS</div>
+              <div className="text-xs text-slate-500">Rèn luyện tư duy học thuật và phản xạ 4 kỹ năng Nghe - Nói - Đọc - Viết</div>
             </div>
             <div className="p-6 rounded-2xl bg-surface-50 border border-slate-100 text-center space-y-2">
-              <div className="font-black text-brand-navy text-lg">Oxford & NatGeo</div>
-              <div className="text-xs text-slate-500">Hợp tác xuất bản giáo trình độc quyền tích hợp hình ảnh bản quyền thế giới</div>
+              <div className="font-black text-brand-navy text-lg">Học Liệu Hiện Đại</div>
+              <div className="text-xs text-slate-500">Tài liệu học tập chọn lọc quốc tế kết hợp bài tập thực hành tương tác</div>
             </div>
           </div>
         </div>
@@ -107,7 +106,7 @@ export default function AboutPage() {
         <div className="text-center pt-4">
           <Link href="/courses">
             <Button variant="primary" size="lg">
-              Khám Phá Các Khóa Học Tại AURA &rarr;
+              Khám Phá Các Khóa Học Tại IVS Academy &rarr;
             </Button>
           </Link>
         </div>

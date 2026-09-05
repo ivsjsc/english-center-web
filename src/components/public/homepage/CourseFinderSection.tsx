@@ -3,10 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Search, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Select } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 
 interface RecommendedCourse {
   id: string;
@@ -69,13 +67,13 @@ export function CourseFinderSection() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Thuật Toán Khảo Sát Thông Minh</span>
+            <span>Khảo Sát Nhu Cầu Học Tập</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Tìm Khóa Học Phù Hợp Nhất Với Bạn
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Chỉ với 30 giây khảo sát nhu cầu, hệ thống sẽ đề xuất lộ trình chuẩn xác nhất theo độ tuổi và mục tiêu phát triển.
+            Chỉ với 30 giây khảo sát nhu cầu, hệ thống sẽ đề xuất lộ trình phù hợp nhất theo độ tuổi và mục tiêu phát triển.
           </p>
         </div>
 
@@ -114,7 +112,7 @@ export function CourseFinderSection() {
                   <option value="cambridge">Chứng chỉ Cambridge (Starters/Movers/Flyers)</option>
                   <option value="ielts">Luyện thi IELTS 6.5 - 8.0+</option>
                   <option value="communication">Giao tiếp công sở & phản xạ</option>
-                  <option value="study_abroad">Digital SAT & Săn học bổng du học</option>
+                  <option value="study_abroad">Digital SAT & Học bổng du học</option>
                   <option value="kids">Phát âm Phonics & phản xạ mầm non</option>
                 </select>
               </div>
@@ -129,7 +127,7 @@ export function CourseFinderSection() {
                   onChange={(e) => setCurrentLevel(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
                 >
-                  <option value="beginner">Mới bắt đầu / Mất gốc</option>
+                  <option value="beginner">Mới bắt đầu / Cần lấy lại gốc</option>
                   <option value="intermediate">Đã có căn bản (A2 - B1)</option>
                   <option value="advanced">Khá - Tự tin (B2 trở lên)</option>
                 </select>
@@ -146,8 +144,8 @@ export function CourseFinderSection() {
                   className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
                 >
                   <option value="center">Học tại trung tâm (Trực tiếp)</option>
-                  <option value="1on1">Lớp kèm VIP 1-kèm-1</option>
-                  <option value="online">Học trực tuyến tương tác cao</option>
+                  <option value="1on1">Lớp kèm 1-kèm-1</option>
+                  <option value="online">Học trực tuyến tương tác</option>
                 </select>
               </div>
 
@@ -189,13 +187,13 @@ export function CourseFinderSection() {
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-bold text-white flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                <span>Đề Xuất Khóa Học Dành Riêng Cho Bạn ({recommendations.length})</span>
+                <span>Đề Xuất Khóa Học Dành Cho Bạn ({recommendations.length})</span>
               </h3>
             </div>
 
             {recommendations.length === 0 ? (
               <div className="bg-white/10 rounded-2xl p-8 text-center text-slate-300">
-                Không tìm thấy khóa học chính xác với tiêu chí này. Chuyên viên học thuật AURA sẽ hỗ trợ thiết kế lộ trình riêng cho bạn.
+                Không tìm thấy khóa học chính xác với tiêu chí này. Chuyên viên học thuật IVS sẽ hỗ trợ tư vấn lộ trình riêng cho bạn.
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -2,11 +2,16 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import bcrypt from "bcryptjs";
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.SESSION_SECRET || "default-development-secret-must-be-changed-in-production-2026!"
-);
+const DEFAULT_SECRET = "default-development-secret-must-be-changed-in-production-2026!";
+const rawSecret = process.env.SESSION_SECRET || DEFAULT_SECRET;
 
-const COOKIE_NAME = "aura_session_token";
+if (process.env.NODE_ENV === "production" && rawSecret === DEFAULT_SECRET) {
+  throw new Error("SECURITY RISK: SESSION_SECRET must be configured with a strong secret in production.");
+}
+
+const SECRET_KEY = new TextEncoder().encode(rawSecret);
+
+const COOKIE_NAME = "ivs_session_token";
 
 export interface SessionPayload {
   userId: string;

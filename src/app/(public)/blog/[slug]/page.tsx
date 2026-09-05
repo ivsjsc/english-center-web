@@ -6,8 +6,7 @@ import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata, generateArticleSchema } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Calendar, User, Tag, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, User, Tag } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 
 export async function generateMetadata({
@@ -117,7 +116,7 @@ export default async function BlogPostDetailPage({
 
               {/* Excerpt Box */}
               <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-sm sm:text-base text-amber-950 font-medium leading-relaxed italic">
-                "{post.excerpt}"
+                &ldquo;{post.excerpt}&rdquo;
               </div>
 
               {/* Cover Image */}
