@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { SlidersHorizontal, Headphones, ArrowRight, CheckCircle2 } from "lucide-react";
+import { SlidersHorizontal, Headphones, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface RecommendedCourse {

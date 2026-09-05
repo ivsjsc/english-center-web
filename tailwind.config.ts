@@ -24,8 +24,6 @@ const config: Config = {
         "accent-amber-hover": "#D97706",
         "growth": "#10B981",
         "growth-dark": "#059669",
-        "surface": "#F8F9FF",
-        "surface-subtle": "#F8FAFC",
         "text-heading": "#0F172A",
         "text-default": "#334155",
         "text-muted": "#64748B",

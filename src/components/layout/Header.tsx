@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Menu, X, ChevronDown, GraduationCap, Sparkles, ExternalLink, Award } from "lucide-react";
+import { Phone, MapPin, Menu, X, ChevronDown, GraduationCap, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface HeaderProps {

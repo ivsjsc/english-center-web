@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Compass, Check, Sparkles, ShieldCheck } from "lucide-react";
+import { ArrowRight, Compass, Check, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps {
