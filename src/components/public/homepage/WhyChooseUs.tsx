@@ -1,72 +1,94 @@
 import React from "react";
-import { ShieldCheck, BookOpenCheck, Laptop2, HeartHandshake } from "lucide-react";
+import { Award, Brain, MessageSquare, Smartphone, Users, Building2 } from "lucide-react";
 
 export function WhyChooseUs() {
-  const points = [
+  const pillars = [
     {
-      icon: ShieldCheck,
-      title: "Phương Pháp Tương Tác Hiện Đại",
-      desc: "Lộ trình đào tạo chú trọng phát triển phản xạ tự nhiên, tăng cường tương tác và thời lượng thực hành ngôn ngữ trực tiếp.",
-      color: "text-amber-500",
-      bg: "bg-amber-50",
+      icon: Award,
+      title: "100% Giảng Viên Chuẩn Sư Phạm",
+      description:
+        "Đội ngũ giáo viên quốc tế & Việt Nam giàu năng lượng với chứng chỉ giảng dạy quốc tế TESOL, CELTA hoặc Thạc sĩ chuyên ngành được xác thực minh bạch.",
+      iconColor: "text-primary",
+      iconBg: "bg-primary-light",
     },
     {
-      icon: BookOpenCheck,
-      title: "Giáo Trình Bản Quyền Quốc Tế",
-      desc: "Nội dung học tập chọn lọc theo khung tham chiếu CEFR, tích hợp kỹ năng thế kỷ 21 và tư duy học thuật độc lập.",
-      color: "text-blue-600",
-      bg: "bg-blue-50",
+      icon: Brain,
+      title: "Lộ Trình Cá Nhân Hóa Toàn Diện",
+      description:
+        "Hệ thống Diagnostic phân tích chính xác điểm mạnh và lỗ hổng kiến thức ngữ pháp, từ vựng, phát âm để may đo bài tập bổ trợ riêng cho từng học viên.",
+      iconColor: "text-primary-vibrant",
+      iconBg: "bg-blue-50",
     },
     {
-      icon: Laptop2,
-      title: "Hệ Thống Học Tập IVS LMS",
-      desc: "Cổng tương tác trực tuyến hỗ trợ tự học tại nhà, ôn tập từ vựng, làm bài tập và theo dõi tiến độ học tập xuyên suốt.",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
+      icon: MessageSquare,
+      title: "Kích Hoạt Phản Xạ Đa Chiều",
+      description:
+        "Phương pháp học Active Engagement kết hợp dự án nhóm thực tế, giúp học viên tự tin giao tiếp phản xạ tự nhiên mà không cần dịch thầm trong đầu.",
+      iconColor: "text-growth-dark",
+      iconBg: "bg-emerald-50",
     },
     {
-      icon: HeartHandshake,
-      title: "Hỗ Trợ Học Viên Tận Tâm",
-      desc: "Đội ngũ trợ giảng và chuyên viên học thuật theo sát từng buổi học, bổ trợ kiến thức kịp thời cho từng học viên.",
-      color: "text-purple-600",
-      bg: "bg-purple-50",
+      icon: Smartphone,
+      title: "Hệ Sinh Thái CenterCare",
+      description:
+        "Nền tảng quản lý học tập thông minh số hóa toàn diện: điểm danh, nhận xét buổi học, luyện đề 24/7 và kho học liệu độc quyền.",
+      iconColor: "text-primary",
+      iconBg: "bg-primary-light",
+    },
+    {
+      icon: Users,
+      title: "Đồng Hành Sát Sao Phụ Huynh",
+      description:
+        "Báo cáo học tập số gửi sau mỗi buổi học. Cố vấn học tập (Academic Coach) luôn kề vai giải đáp thắc mắc và kèm cặp học viên kịp thời.",
+      iconColor: "text-primary-vibrant",
+      iconBg: "bg-blue-50",
+    },
+    {
+      icon: Building2,
+      title: "Cơ Sở Vật Chất Chuẩn Cambridge",
+      description:
+        "100% phòng học trang bị bảng tương tác thông minh, thư viện mở đa phương tiện và không gian an toàn, truyền cảm hứng học tập tối đa.",
+      iconColor: "text-growth-dark",
+      iconBg: "bg-emerald-50",
     },
   ];
 
   return (
-    <section className="py-20 bg-white text-left">
+    <section className="w-full py-16 lg:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-            Giá Trị Đào Tạo
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs uppercase text-primary-vibrant tracking-wider font-bold">
+            GIÁ TRỊ KHÁC BIỆT
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-            Điểm Nổi Bật Tại IVS Academy
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
+            Tại sao 75.000+ Phụ huynh & Học viên tin chọn IVS?
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base mt-2">
-            Môi trường học tập cởi mở, khuyến khích sáng tạo và giúp mỗi học viên tự tin thể hiện năng lực bản thân.
+          <p className="text-sm sm:text-base text-text-default mt-2">
+            Chúng tôi không chỉ dạy ngôn ngữ mà mở ra tư duy toàn cầu với chuẩn mực học thuật quốc tế cao nhất.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {points.map((p, idx) => {
-            const Icon = p.icon;
+        {/* 6 Core Value Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map((pillar, idx) => {
+            const IconComponent = pillar.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-surface-50 border border-slate-100 hover:border-brand-200 hover:shadow-card transition-all duration-300 flex flex-col justify-between"
+                className="bg-white p-6 sm:p-7 rounded-2xl border border-border shadow-sm hover:shadow-card-hover transition-all duration-300 flex flex-col text-left"
               >
-                <div className="space-y-4">
-                  <div className={`w-14 h-14 rounded-2xl ${p.bg} ${p.color} flex items-center justify-center`}>
-                    <Icon className="w-7 h-7" />
-                  </div>
-                  <h3 className="font-extrabold text-lg text-brand-navy">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {p.desc}
-                  </p>
+                <div
+                  className={`w-12 h-12 rounded-xl ${pillar.iconBg} ${pillar.iconColor} flex items-center justify-center mb-5 shrink-0`}
+                >
+                  <IconComponent className="w-6 h-6" />
                 </div>
+                <h3 className="text-lg font-bold text-text-heading">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm text-text-default mt-2 leading-relaxed">
+                  {pillar.description}
+                </p>
               </div>
             );
           })}

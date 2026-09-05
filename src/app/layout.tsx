@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "@/styles/globals.css";
 import { constructMetadata, generateOrganizationSchema } from "@/lib/seo";
 
-const inter = Inter({
+const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin", "vietnamese"],
-  variable: "--font-heading",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-be-vietnam-pro",
   display: "swap",
 });
 
@@ -25,14 +20,14 @@ export default function RootLayout({
   const orgSchema = generateOrganizationSchema();
 
   return (
-    <html lang="vi" className={`${inter.variable} ${plusJakarta.variable}`}>
+    <html lang="vi" className={beVietnamPro.variable}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-surface-50 text-slate-900 font-sans">
+      <body className="min-h-screen flex flex-col bg-[#F8F9FF] text-slate-800 font-sans antialiased">
         {children}
       </body>
     </html>

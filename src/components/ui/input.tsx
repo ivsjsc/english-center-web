@@ -28,18 +28,18 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           className={twMerge(
             clsx(
-              "w-full px-4 py-2.5 rounded-xl border bg-white text-slate-900 text-sm transition-colors duration-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 min-h-[44px]",
+              "w-full px-4 py-3 rounded-xl border bg-white text-text-heading text-sm transition-colors duration-200 placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-vibrant focus:border-primary-vibrant min-h-[48px] h-12",
               error
-                ? "border-red-400 focus:ring-red-400 focus:border-red-400"
-                : "border-slate-200 hover:border-slate-300",
+                ? "border-error focus:ring-error focus:border-error"
+                : "border-border hover:border-slate-300",
               className
             )
           )}
           {...props}
         />
-        {error && <p className="text-xs text-red-600 font-medium">{error}</p>}
+        {error && <p className="text-xs text-error font-medium">{error}</p>}
         {helperText && !error && (
-          <p className="text-xs text-slate-500">{helperText}</p>
+          <p className="text-xs text-text-muted">{helperText}</p>
         )}
       </div>
     );

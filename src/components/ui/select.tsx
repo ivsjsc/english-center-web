@@ -35,10 +35,10 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={selectId}
             className={twMerge(
               clsx(
-                "w-full px-4 py-2.5 pr-10 rounded-xl border bg-white text-slate-900 text-sm appearance-none transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 min-h-[44px]",
+                "w-full px-4 py-3 pr-10 rounded-xl border bg-white text-text-heading text-sm appearance-none transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-vibrant focus:border-primary-vibrant min-h-[48px] h-12",
                 error
-                  ? "border-red-400 focus:ring-red-400 focus:border-red-400"
-                  : "border-slate-200 hover:border-slate-300",
+                  ? "border-error focus:ring-error focus:border-error"
+                  : "border-border hover:border-slate-300",
                 className
               )
             )}

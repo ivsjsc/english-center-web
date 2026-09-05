@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "danger";
+  variant?: "primary" | "secondary" | "deep" | "accent" | "outline" | "ghost" | "danger";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
 }
@@ -22,25 +22,27 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98]";
+      "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-vibrant focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98]";
 
     const sizeStyles = {
-      sm: "text-xs px-3.5 py-2 min-h-[36px] gap-1.5",
-      md: "text-sm px-5 py-2.5 min-h-[44px] gap-2", // 44px touch target standard
-      lg: "text-base px-7 py-3.5 min-h-[50px] gap-2.5",
+      sm: "text-xs px-3.5 py-2 min-h-[40px] gap-1.5",
+      md: "text-sm px-5 py-2.5 min-h-[44px] gap-2", // 44px mobile touch target standard
+      lg: "text-base px-7 py-3.5 min-h-[48px] sm:min-h-[52px] gap-2.5",
     };
 
     const variantStyles = {
       primary:
-        "bg-brand-600 text-white hover:bg-brand-700 shadow-md shadow-brand-600/20 active:bg-brand-800",
+        "bg-accent-amber text-text-heading hover:bg-accent-amber-hover font-bold shadow-sm shadow-accent-amber/20",
       secondary:
-        "bg-brand-navy text-white hover:bg-brand-sapphire shadow-md shadow-brand-navy/20",
+        "bg-primary-vibrant text-white hover:bg-blue-700 shadow-sm shadow-blue-600/20 active:bg-blue-800",
+      deep:
+        "bg-primary-deep text-white hover:bg-primary shadow-sm shadow-primary-deep/20",
       accent:
-        "bg-accent-amber text-brand-navy hover:bg-accent-gold font-bold shadow-md shadow-accent-amber/20",
+        "bg-accent-amber text-text-heading hover:bg-accent-amber-hover font-bold shadow-sm shadow-accent-amber/20",
       outline:
-        "border-2 border-brand-200 text-brand-navy hover:bg-brand-50 hover:border-brand-400 bg-white",
-      ghost: "text-slate-600 hover:text-brand-600 hover:bg-brand-50",
-      danger: "bg-red-600 text-white hover:bg-red-700 shadow-md shadow-red-600/20",
+        "border border-border text-primary hover:bg-primary-light hover:border-primary-highlight bg-white transition-colors",
+      ghost: "text-text-default hover:text-primary hover:bg-primary-light transition-colors",
+      danger: "bg-error text-white hover:bg-rose-700 shadow-sm shadow-rose-600/20",
     };
 
     return (

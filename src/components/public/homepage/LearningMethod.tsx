@@ -1,99 +1,90 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ClipboardCheck, Users, Mic, LineChart } from "lucide-react";
 
 export function LearningMethod() {
   const steps = [
     {
-      num: "01",
-      title: "Chủ Động Khám Phá (Inquiry-Based Learning)",
-      desc: "Thay vì nghe giảng thụ động, học viên được đặt vào các tình huống thực tế để tự đặt câu hỏi và tìm tòi giải pháp.",
+      number: "01",
+      icon: ClipboardCheck,
+      title: "Đánh Giá & Khám Phá",
+      description:
+        "Kiểm tra năng lực 4 kỹ năng chuẩn CEFR và phỏng vấn trực tiếp 1-1 với giám khảo để xác định chính xác trình độ khởi đầu.",
+      badgeBg: "bg-primary-light text-primary",
+      iconColor: "text-primary",
     },
     {
-      num: "02",
-      title: "Tích Hợp Liên Môn CLIL (Ngôn Ngữ & Tri Thức)",
-      desc: "Tiếp thu tiếng Anh thông qua kiến thức Khoa học, Nghệ thuật, Lịch sử và Công nghệ, biến ngôn ngữ thành công cụ tư duy.",
+      number: "02",
+      icon: Users,
+      title: "Học Chủ Động & Dự Án",
+      description:
+        "Tiếp cận ngữ cảnh bài giảng đa phương tiện, tranh luận nhóm và hoàn thành mini-projects để phát triển tư duy giải quyết vấn đề.",
+      badgeBg: "bg-blue-100 text-primary-vibrant",
+      iconColor: "text-primary-vibrant",
     },
     {
-      num: "03",
-      title: "Rèn Luyện Tư Duy Phản Biện (Critical Thinking)",
-      desc: "Học cách bảo vệ quan điểm, phân tích đa chiều và thuyết trình tự tin trước đám đông.",
+      number: "03",
+      icon: Mic,
+      title: "Phản Xạ Đời Thường",
+      description:
+        "Thực hành mô phỏng các tình huống thực tế (thuyết trình, phỏng vấn, đàm phán) giúp ghi nhớ từ vựng và cấu trúc vĩnh viễn.",
+      badgeBg: "bg-amber-100 text-amber-800",
+      iconColor: "text-accent-amber-hover",
     },
     {
-      num: "04",
-      title: "Đánh Giá Tiến Bộ Liên Tục (Continuous Assessment)",
-      desc: "Đo lường sự tiến bộ chuẩn CEFR qua từng chặng học tập, hỗ trợ kịp thời để học viên luôn theo kịp tiến độ.",
+      number: "04",
+      icon: LineChart,
+      title: "Đo Lường & Cải Tiến",
+      description:
+        "Đánh giá tiến độ sau mỗi 12 buổi học qua hệ thống CenterCare Dashboard và tinh chỉnh lộ trình mục tiêu tiếp theo.",
+      badgeBg: "bg-emerald-100 text-growth-dark",
+      iconColor: "text-growth-dark",
     },
   ];
 
   return (
-    <section className="py-20 bg-surface-50 text-left overflow-hidden">
+    <section className="w-full py-16 lg:py-24 bg-surface-subtle border-t border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text & Steps */}
-          <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-              Phương Pháp Sư Phạm
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-              Mô Hình Đào Tạo Tương Tác Định Hướng Chuẩn Quốc Tế
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Mô hình học tập tại IVS Academy tập trung vào học viên, tạo môi trường tự nhiên giúp người học tự tin làm chủ tư duy và kỹ năng ngôn ngữ.
-            </p>
+        {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs uppercase text-primary-vibrant tracking-wider font-bold">
+            QUY CHUẨN ĐÀO TẠO
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
+            Phương pháp học tập 4 bước chuẩn CEFR
+          </h2>
+          <p className="text-sm sm:text-base text-text-default mt-2">
+            Chu trình khép kín giúp học viên bứt phá phản xạ ngôn ngữ và hấp thu kiến thức bền vững.
+          </p>
+        </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-              {steps.map((s, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white p-5 rounded-2xl border border-slate-200/70 shadow-sm space-y-2 hover:border-brand-300 transition-colors"
-                >
-                  <div className="text-xs font-black text-brand-600 tracking-wider">
-                    BƯỚC {s.num}
+        {/* 4 Steps Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative text-left">
+          {steps.map((step, idx) => {
+            const IconComponent = step.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white p-6 rounded-2xl border border-border shadow-sm hover:shadow-card-hover transition-all duration-300 relative flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <span
+                      className={`w-11 h-11 rounded-full ${step.badgeBg} text-lg font-black flex items-center justify-center`}
+                    >
+                      {step.number}
+                    </span>
+                    <IconComponent className={`w-6 h-6 ${step.iconColor}`} />
                   </div>
-                  <h3 className="font-bold text-sm text-slate-900 leading-snug">
-                    {s.title}
+                  <h3 className="text-lg font-bold text-text-heading">
+                    {step.title}
                   </h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    {s.desc}
+                  <p className="text-sm text-text-default mt-2 leading-relaxed">
+                    {step.description}
                   </p>
                 </div>
-              ))}
-            </div>
-
-            <div className="pt-2">
-              <Link href="/methodology">
-                <Button variant="outline" size="md">
-                  <span>Tìm Hiểu Chi Tiết Phương Pháp Sư Phạm</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Visual Image */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5]">
-              <Image
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80"
-                alt="Phương pháp giảng dạy tương tác tại IVS Academy"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-                <div className="text-xs font-bold uppercase text-accent-amber mb-1">
-                  Khung Tham Chiếu CEFR
-                </div>
-                <div className="text-base font-extrabold leading-snug">
-                  Định hướng chuẩn đầu ra bài thi Cambridge & IELTS
-                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

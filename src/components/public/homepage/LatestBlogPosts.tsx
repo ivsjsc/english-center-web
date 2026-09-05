@@ -1,99 +1,94 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-interface BlogPostItem {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  featuredImage: string;
-  publishedAt: Date;
-  category: { name: string; slug: string };
-}
+import { ArrowRight } from "lucide-react";
+import { BlogCard } from "@/components/public/BlogCard";
 
 interface LatestBlogPostsProps {
-  posts: BlogPostItem[];
+  posts?: any[];
 }
 
-export function LatestBlogPosts({ posts }: LatestBlogPostsProps) {
+export function LatestBlogPosts({ posts = [] }: LatestBlogPostsProps) {
+  const defaultPosts = [
+    {
+      slug: "bi-quyet-nang-band-ielts-speaking-tu-6-len-7-5",
+      title: "Bí quyết nâng band IELTS Speaking từ 6.0 lên 7.5 trong 60 ngày",
+      excerpt:
+        "Chi tiết chiến thuật mở rộng luận điểm tự nhiên, cách ứng dụng thành ngữ Idiomatic language không bị gượng gạo theo chia sẻ từ cựu giám khảo.",
+      categoryName: "Luyện thi IELTS",
+      readTimeMinutes: 5,
+      publishedAt: "2025-05-12",
+      coverImage: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+      slug: "giai-doan-vang-giup-tre-4-6-tuoi-tiep-nhan-song-ngu",
+      title: "Giai đoạn vàng giúp trẻ 4 - 6 tuổi tiếp nhận song ngữ tự nhiên",
+      excerpt:
+        "Khoa học thần kinh về vùng não Broca trong việc học ngôn ngữ thứ hai trước 7 tuổi và cách phụ huynh có thể đồng hành cùng con mỗi tối.",
+      categoryName: "Phương pháp mầm non",
+      readTimeMinutes: 7,
+      publishedAt: "2025-05-08",
+      coverImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+      slug: "loi-the-vuot-troi-cua-chung-chi-cambridge",
+      title: "Lợi thế vượt trội của chứng chỉ Cambridge Starters, Movers, Flyers",
+      excerpt:
+        "Tại sao các trường THCS và THPT chọn chứng chỉ Cambridge làm tiêu chí tuyển thẳng và đánh giá năng lực ngoại ngữ đầu vào?",
+      categoryName: "Chứng chỉ Cambridge",
+      readTimeMinutes: 4,
+      publishedAt: "2025-05-02",
+      coverImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=80",
+    },
+  ];
+
+  const displayPosts = posts.length >= 3
+    ? posts.slice(0, 3).map((p, idx) => ({
+        slug: p.slug,
+        title: p.title,
+        excerpt: p.excerpt,
+        categoryName: p.category?.name || defaultPosts[idx].categoryName,
+        readTimeMinutes: p.readTimeMinutes || defaultPosts[idx].readTimeMinutes,
+        publishedAt: p.publishedAt || defaultPosts[idx].publishedAt,
+        coverImage: p.coverImage || defaultPosts[idx].coverImage,
+      }))
+    : defaultPosts;
+
   return (
-    <section className="py-20 bg-surface-50 text-left">
+    <section className="w-full py-16 lg:py-24 bg-surface-subtle border-t border-border/50" id="tin-tuc-blog">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200/60">
-              Kiến Thức & Cẩm Nang
+          <div className="max-w-2xl text-left">
+            <span className="text-xs uppercase text-primary-vibrant tracking-wider font-bold">
+              GÓC CHUYÊN GIA & HỌC THUẬT
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight mt-3">
-              Bài Viết Mới Nhất Từ Ban Chuyên Môn
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
+              Tin tức, cẩm nang & kinh nghiệm học tiếng Anh
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
-              Cập nhật bí quyết luyện thi IELTS, phương pháp học tiếng Anh mầm non và cẩm nang xây dựng lộ trình du học.
-            </p>
           </div>
 
-          <Link href="/blog" className="shrink-0">
-            <Button variant="outline" size="sm">
-              <span>Xem Toàn Bộ Bài Viết</span>
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-vibrant transition-colors shrink-0"
+          >
+            <span>Xem tất cả bài viết</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {posts.slice(0, 3).map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
-            >
-              <div className="relative aspect-[16/10] bg-slate-100 overflow-hidden">
-                <Image
-                  src={post.featuredImage}
-                  alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-4 left-4 bg-brand-navy/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full">
-                  {post.category.name}
-                </div>
-              </div>
-
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
-                <div className="space-y-2">
-                  <div className="text-xs text-slate-400 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>
-                      {new Date(post.publishedAt).toLocaleDateString("vi-VN", {
-                        day: "2-digit",
-                        month: "2-digit",
-                        year: "numeric",
-                      })}
-                    </span>
-                  </div>
-
-                  <h3 className="font-extrabold text-lg text-brand-navy group-hover:text-brand-600 transition-colors line-clamp-2 leading-snug">
-                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-100">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-xs font-bold text-brand-600 hover:text-brand-800 flex items-center gap-1"
-                  >
-                    Đọc tiếp bài viết &rarr;
-                  </Link>
-                </div>
-              </div>
-            </article>
+        {/* 3 Blog Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          {displayPosts.map((post) => (
+            <BlogCard
+              key={post.slug}
+              slug={post.slug}
+              title={post.title}
+              excerpt={post.excerpt}
+              categoryName={post.categoryName}
+              coverImage={post.coverImage}
+              publishedAt={post.publishedAt}
+              readTimeMinutes={post.readTimeMinutes}
+            />
           ))}
         </div>
       </div>

@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "primary" | "secondary" | "success" | "warning" | "danger" | "info" | "neutral";
+  variant?: "primary" | "secondary" | "vibrant" | "success" | "warning" | "amber" | "danger" | "info" | "neutral";
   size?: "sm" | "md";
 }
 
@@ -14,7 +14,7 @@ export function Badge({
   children,
   ...props
 }: BadgeProps) {
-  const baseStyles = "inline-flex items-center font-medium rounded-full";
+  const baseStyles = "inline-flex items-center font-semibold rounded-full";
 
   const sizeStyles = {
     sm: "px-2.5 py-0.5 text-xs",
@@ -22,13 +22,15 @@ export function Badge({
   };
 
   const variantStyles = {
-    primary: "bg-brand-50 text-brand-700 border border-brand-200",
-    secondary: "bg-brand-navy text-white",
-    success: "bg-emerald-50 text-emerald-700 border border-emerald-200",
+    primary: "bg-primary-light text-primary border border-primary-highlight",
+    secondary: "bg-primary-deep text-white",
+    vibrant: "bg-primary-vibrant text-white",
+    success: "bg-emerald-50 text-growth-dark border border-emerald-200",
     warning: "bg-amber-50 text-amber-800 border border-amber-200",
-    danger: "bg-rose-50 text-rose-700 border border-rose-200",
+    amber: "bg-amber-100/80 text-amber-900 border border-amber-300/60",
+    danger: "bg-rose-50 text-error border border-rose-200",
     info: "bg-sky-50 text-sky-700 border border-sky-200",
-    neutral: "bg-slate-100 text-slate-700 border border-slate-200",
+    neutral: "bg-slate-100 text-text-default border border-border",
   };
 
   return (

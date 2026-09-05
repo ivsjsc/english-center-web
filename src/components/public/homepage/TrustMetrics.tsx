@@ -1,69 +1,63 @@
 import React from "react";
-import { Users, GraduationCap, Building2, Trophy } from "lucide-react";
 
 export function TrustMetrics() {
   const metrics = [
     {
-      icon: Users,
-      value: "4 - 60",
-      label: "Độ Tuổi Đào Tạo",
-      desc: "Lộ trình từ mầm non đến người đi làm",
-      color: "text-blue-600",
-      bg: "bg-blue-50",
+      value: "75.000+",
+      label: "Học viên tin chọn",
+      subtext: "Đã & đang theo học",
+      valueColor: "text-primary-deep",
     },
     {
-      icon: Trophy,
-      value: "CEFR",
-      label: "Khung Chuẩn Quốc Tế",
-      desc: "Đồng bộ đầu ra Cambridge & IELTS",
-      color: "text-amber-500",
-      bg: "bg-amber-50",
-    },
-    {
-      icon: GraduationCap,
       value: "100%",
-      label: "Giảng Viên Đạt Chuẩn Sư Phạm",
-      desc: "Có chứng chỉ TESOL, CELTA chuyên nghiệp",
-      color: "text-emerald-600",
-      bg: "bg-emerald-50",
+      label: "Chuẩn Quốc Tế",
+      subtext: "TESOL / CELTA",
+      valueColor: "text-primary-vibrant",
     },
     {
-      icon: Building2,
-      value: "Quy Mô",
-      label: "Cơ Sở Vật Chất Hiện Đại",
-      desc: "Phòng lab máy tính & không gian tương tác",
-      color: "text-purple-600",
-      bg: "bg-purple-50",
+      value: "35+",
+      label: "Cơ sở hiện đại",
+      subtext: "Tại các TP trọng điểm",
+      valueColor: "text-primary-deep",
+    },
+    {
+      value: "15+",
+      label: "Năm uy tín",
+      subtext: "Kinh nghiệm đào tạo",
+      valueColor: "text-primary-vibrant",
+    },
+    {
+      value: "98.6%",
+      label: "Đạt cam kết đầu ra",
+      subtext: "IELTS 6.5+ & Cambridge",
+      valueColor: "text-growth-dark",
+      colSpan: "col-span-2 md:col-span-1",
     },
   ];
 
   return (
-    <section className="relative -mt-10 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {metrics.map((m, idx) => {
-          const Icon = m.icon;
-          return (
+    <section className="w-full bg-surface py-8 sm:py-12 border-y border-border/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-5">
+          {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50/80 transition-colors text-left"
+              className={`bg-white p-4 sm:p-5 rounded-2xl border border-border shadow-sm hover:shadow-card-hover transition-all flex flex-col items-center text-center ${
+                item.colSpan || ""
+              }`}
             >
-              <div className={`p-3.5 rounded-2xl ${m.bg} ${m.color} shrink-0`}>
-                <Icon className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-black text-brand-navy tracking-tight">
-                  {m.value}
-                </div>
-                <div className="font-bold text-sm text-slate-800 mt-0.5">
-                  {m.label}
-                </div>
-                <div className="text-xs text-slate-500 mt-0.5 leading-snug">
-                  {m.desc}
-                </div>
-              </div>
+              <span className={`text-2xl sm:text-3xl lg:text-[34px] font-extrabold leading-tight ${item.valueColor}`}>
+                {item.value}
+              </span>
+              <span className="text-sm font-bold text-text-heading mt-1.5">
+                {item.label}
+              </span>
+              <span className="text-xs text-text-muted mt-0.5">
+                {item.subtext}
+              </span>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

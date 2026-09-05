@@ -1,61 +1,63 @@
 import React from "react";
-import { Sparkles, CheckCircle2, Phone } from "lucide-react";
-import { LeadForm } from "@/components/public/LeadForm";
+import { CheckCircle2, Phone, Sparkles } from "lucide-react";
+import { LeadForm } from "../LeadForm";
 
 export function ConsultationCTA() {
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-navy to-slate-900 text-white relative overflow-hidden text-left">
-      {/* Glow shapes */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-amber rounded-full blur-[140px]" />
-      </div>
+    <section className="w-full py-16 lg:py-24 bg-surface" id="dang-ky-tu-van-ngay">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-primary-deep via-[#0A329E] to-primary text-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            {/* Left Col: Benefits & Hotline */}
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-bold uppercase tracking-wider text-accent-amber mb-3">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>ƯU ĐÃI TUYỂN SINH THÁNG NÀY</span>
+                </span>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left information */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Chương Trình Đăng Ký Đặc Biệt</span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                  Đăng ký tư vấn & Thi thử trình độ miễn phí
+                </h2>
+
+                <p className="text-sm sm:text-base text-slate-200 mt-3 leading-relaxed">
+                  Nhận ngay suất kiểm tra toàn diện 4 kỹ năng cùng lộ trình học tập tối ưu hóa dành riêng cho bạn khi đăng ký hôm nay.
+                </p>
+
+                <div className="space-y-3.5 mt-8 text-white text-sm">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0 mt-0.5" />
+                    <span>Đánh giá 1-1 trực tiếp với Giám khảo bản ngữ / quốc tế</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0 mt-0.5" />
+                    <span>Nhận kết quả và bản đồ năng lực chi tiết trong 2 giờ</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0 mt-0.5" />
+                    <span>Trải nghiệm 1 buổi học thử phương pháp CenterCare miễn phí</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-white/15">
+                <span className="text-xs uppercase text-slate-300 block tracking-wider font-semibold">
+                  Cần hỗ trợ tư vấn trực tiếp?
+                </span>
+                <a
+                  href="tel:1900xxxx"
+                  className="text-xl sm:text-2xl font-extrabold text-accent-amber hover:text-white transition-colors flex items-center gap-2 mt-1"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Hotline: 1900 xxxx</span>
+                </a>
+              </div>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Nhận Ngay Học Bổng 25% & Bộ Quà Nhập Học Độc Quyền
-            </h2>
-
-            <p className="text-slate-300 text-base leading-relaxed">
-              Hãy để IVS Academy cùng bạn đồng hành trên con đường chinh phục tiếng Anh. Để lại thông tin ngay hôm nay để nhận được:
-            </p>
-
-            <div className="space-y-3 text-sm text-slate-200">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0" />
-                <span>01 Buổi đánh giá năng lực 4 kỹ năng chuẩn Cambridge/IELTS miễn phí</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0" />
-                <span>Học bổng ưu đãi đến 25% học phí khóa học đầu tiên</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0" />
-                <span>Tặng balo cao cấp + Bộ giáo trình bản quyền quốc tế</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-accent-amber shrink-0" />
-                <span>Cam kết chuẩn đầu ra bằng văn bản pháp lý minh bạch</span>
-              </div>
+            {/* Right Col: Consultation Form Container */}
+            <div className="lg:col-span-7">
+              <LeadForm variant="card" />
             </div>
-
-            <div className="pt-4 border-t border-white/10 flex items-center gap-4 text-xs text-slate-400">
-              <Phone className="w-4 h-4 text-accent-amber" />
-              <span>Hotline tư vấn tuyển sinh trực tiếp: <strong>1900 6886</strong> (8:00 - 21:30)</span>
-            </div>
-          </div>
-
-          {/* Right Lead Form Card */}
-          <div className="lg:col-span-6">
-            <LeadForm variant="card" />
           </div>
         </div>
       </div>

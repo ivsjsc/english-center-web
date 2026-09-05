@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Sparkles, CheckCircle2 } from "lucide-react";
+import { SlidersHorizontal, Headphones, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface RecommendedCourse {
@@ -24,7 +24,6 @@ export function CourseFinderSection() {
   const [age, setAge] = useState<string>("8");
   const [learningGoal, setLearningGoal] = useState<string>("cambridge");
   const [currentLevel, setCurrentLevel] = useState<string>("beginner");
-  const [learningFormat, setLearningFormat] = useState<string>("center");
   const [province, setProvince] = useState<string>("Hồ Chí Minh");
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +43,7 @@ export function CourseFinderSection() {
           age: parseInt(age, 10),
           learningGoal,
           currentLevel,
-          learningFormat,
+          learningFormat: "center",
           province,
         }),
       });
@@ -54,200 +53,189 @@ export function CourseFinderSection() {
         setRecommendations(data.courses || []);
       }
     } catch {
-      // fallback
+      // fallback handled gracefully
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 to-brand-navy text-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Khảo Sát Nhu Cầu Học Tập</span>
+    <section className="w-full py-12 sm:py-16 bg-surface">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-primary-light/50 border border-primary-highlight p-6 sm:p-10 rounded-3xl shadow-sm text-left">
+          {/* Header */}
+          <div className="max-w-3xl mb-8">
+            <div className="inline-flex items-center gap-2 text-primary-vibrant mb-2">
+              <SlidersHorizontal className="w-4 h-4" />
+              <span className="text-xs uppercase font-bold tracking-wider">
+                HỖ TRỢ ĐỊNH HƯỚNG THÔNG MINH
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-text-heading">
+              Tìm khóa học phù hợp nhất với bạn
+            </h2>
+            <p className="text-sm sm:text-base text-text-default mt-1.5">
+              Chỉ mất 30 giây lựa chọn tiêu chí để hệ thống gợi ý lộ trình và học phí tối ưu nhất.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
-            Tìm Khóa Học Phù Hợp Nhất Với Bạn
-          </h2>
-          <p className="text-slate-300 text-sm sm:text-base mt-2">
-            Chỉ với 30 giây khảo sát nhu cầu, hệ thống sẽ đề xuất lộ trình phù hợp nhất theo độ tuổi và mục tiêu phát triển.
-          </p>
-        </div>
 
-        {/* Finder Form Card */}
-        <div className="bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl max-w-5xl mx-auto border border-slate-100 mb-12">
+          {/* Form Controls */}
           <form onSubmit={handleSearch} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {/* Age */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-text-heading mb-1.5 uppercase tracking-wider">
                   1. Độ tuổi học viên
                 </label>
                 <select
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
+                  className="w-full h-12 px-4 rounded-xl bg-white border border-border text-text-heading text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-vibrant"
                 >
-                  <option value="5">Mầm non (4 - 6 tuổi)</option>
-                  <option value="8">Tiểu học (6 - 11 tuổi)</option>
-                  <option value="13">Thiếu niên (11 - 15 tuổi)</option>
-                  <option value="17">Học sinh THPT (15 - 18 tuổi)</option>
-                  <option value="25">Sinh viên & Đi làm (18+ tuổi)</option>
+                  <option value="5">4 - 6 Tuổi (Mầm non)</option>
+                  <option value="8">6 - 11 Tuổi (Tiểu học)</option>
+                  <option value="13">11 - 15 Tuổi (THCS)</option>
+                  <option value="17">15 - 18 Tuổi (THPT)</option>
+                  <option value="25">Sinh viên & Người đi làm</option>
                 </select>
               </div>
 
               {/* Goal */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-text-heading mb-1.5 uppercase tracking-wider">
                   2. Mục tiêu học tập
                 </label>
                 <select
                   value={learningGoal}
                   onChange={(e) => setLearningGoal(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
+                  className="w-full h-12 px-4 rounded-xl bg-white border border-border text-text-heading text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-vibrant"
                 >
-                  <option value="cambridge">Chứng chỉ Cambridge (Starters/Movers/Flyers)</option>
-                  <option value="ielts">Luyện thi IELTS 6.5 - 8.0+</option>
-                  <option value="communication">Giao tiếp công sở & phản xạ</option>
-                  <option value="study_abroad">Digital SAT & Học bổng du học</option>
-                  <option value="kids">Phát âm Phonics & phản xạ mầm non</option>
+                  <option value="cambridge">Lấy chứng chỉ Cambridge (Starters/Flyers)</option>
+                  <option value="ielts">Thi chứng chỉ IELTS (6.5 - 8.0+)</option>
+                  <option value="communication">Giao tiếp phản xạ chuẩn bản ngữ</option>
+                  <option value="toeic">Thi TOEIC đột phá điểm số</option>
+                  <option value="school">Bổ trợ tiếng Anh học đường</option>
                 </select>
               </div>
 
-              {/* Current Level */}
+              {/* Level */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-text-heading mb-1.5 uppercase tracking-wider">
                   3. Trình độ hiện tại
                 </label>
                 <select
                   value={currentLevel}
                   onChange={(e) => setCurrentLevel(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
+                  className="w-full h-12 px-4 rounded-xl bg-white border border-border text-text-heading text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-vibrant"
                 >
-                  <option value="beginner">Mới bắt đầu / Cần lấy lại gốc</option>
-                  <option value="intermediate">Đã có căn bản (A2 - B1)</option>
-                  <option value="advanced">Khá - Tự tin (B2 trở lên)</option>
-                </select>
-              </div>
-
-              {/* Format */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  4. Hình thức học
-                </label>
-                <select
-                  value={learningFormat}
-                  onChange={(e) => setLearningFormat(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
-                >
-                  <option value="center">Học tại trung tâm (Trực tiếp)</option>
-                  <option value="1on1">Lớp kèm 1-kèm-1</option>
-                  <option value="online">Học trực tuyến tương tác</option>
+                  <option value="zero">Mất gốc / Người mới bắt đầu</option>
+                  <option value="beginner">Căn bản (Nghe hiểu chậm)</option>
+                  <option value="intermediate">Trung cấp (Giao tiếp cơ bản)</option>
+                  <option value="advanced">Nâng cao (Cần luyện thi chuyên sâu)</option>
                 </select>
               </div>
 
               {/* Location */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  5. Khu vực thuận tiện
+                <label className="block text-xs font-bold text-text-heading mb-1.5 uppercase tracking-wider">
+                  4. Khu vực mong muốn học
                 </label>
                 <select
                   value={province}
                   onChange={(e) => setProvince(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none min-h-[44px]"
+                  className="w-full h-12 px-4 rounded-xl bg-white border border-border text-text-heading text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-vibrant"
                 >
                   <option value="Hồ Chí Minh">TP. Hồ Chí Minh</option>
-                  <option value="Hà Nội">Hà Nội</option>
-                  <option value="Đà Nẵng">Đà Nẵng</option>
+                  <option value="Hà Nội">TP. Hà Nội</option>
+                  <option value="Đà Nẵng">TP. Đà Nẵng</option>
+                  <option value="Cần Thơ">TP. Cần Thơ</option>
+                  <option value="Online">Lớp trực tuyến E-learning</option>
                 </select>
               </div>
             </div>
 
-            <div className="text-center pt-2">
+            {/* Action & Hotline note */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-primary-highlight">
+              <div className="flex items-center gap-2 text-text-default text-xs sm:text-sm">
+                <Headphones className="w-4 h-4 text-primary-vibrant shrink-0" />
+                <span>
+                  Cần hỗ trợ trực tiếp? Tổng đài miễn phí:{" "}
+                  <strong className="text-primary font-bold">1900 xxxx</strong> (08:00 - 21:30)
+                </span>
+              </div>
+
               <Button
                 type="submit"
-                variant="primary"
+                variant="deep"
                 size="lg"
                 isLoading={isLoading}
-                className="w-full sm:w-auto px-10 shadow-lg shadow-brand-600/30"
+                className="w-full sm:w-auto"
               >
-                <Search className="w-4 h-4" />
-                <span>Tìm Khóa Học Phù Hợp Ngay</span>
+                <span>Tìm khóa học phù hợp cho tôi</span>
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </form>
-        </div>
 
-        {/* Dynamic Results */}
-        {hasSearched && (
-          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                <span>Đề Xuất Khóa Học Dành Cho Bạn ({recommendations.length})</span>
+          {/* Results Display */}
+          {hasSearched && (
+            <div className="mt-8 pt-8 border-t border-primary-highlight">
+              <h3 className="text-lg font-bold text-text-heading mb-4">
+                Khóa học gợi ý cho bạn:
               </h3>
-            </div>
-
-            {recommendations.length === 0 ? (
-              <div className="bg-white/10 rounded-2xl p-8 text-center text-slate-300">
-                Không tìm thấy khóa học chính xác với tiêu chí này. Chuyên viên học thuật IVS sẽ hỗ trợ tư vấn lộ trình riêng cho bạn.
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {recommendations.map((c) => (
-                  <div
-                    key={c.id}
-                    className="bg-white text-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-100 flex flex-col justify-between"
-                  >
-                    <div className="relative aspect-[16/9] bg-slate-200">
-                      <Image
-                        src={c.featuredImage}
-                        alt={c.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      <div className="absolute top-3 left-3">
-                        <span className="px-2.5 py-1 rounded-full bg-emerald-600 text-white font-bold text-xs shadow-md">
-                          Phù hợp {c.matchScore}%
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+              {recommendations.length === 0 ? (
+                <div className="p-6 bg-white rounded-2xl border border-border text-center">
+                  <p className="text-sm text-text-muted">
+                    Để nhận lộ trình chính xác nhất theo nguyện vọng cá nhân, vui lòng{" "}
+                    <Link href="/placement-test" className="text-primary font-bold underline">
+                      Làm bài kiểm tra năng lực trực tuyến
+                    </Link>{" "}
+                    hoặc liên hệ hotline 1900 xxxx.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {recommendations.slice(0, 2).map((rec) => (
+                    <div
+                      key={rec.id}
+                      className="bg-white p-5 rounded-2xl border border-border shadow-sm flex flex-col justify-between"
+                    >
                       <div>
-                        <div className="text-[11px] font-bold text-brand-600 uppercase">
-                          {c.categoryName}
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="text-xs font-bold text-growth-dark bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                            Phù hợp {rec.matchScore}%
+                          </span>
+                          <span className="text-xs text-text-muted">{rec.categoryName}</span>
                         </div>
-                        <h4 className="font-bold text-base text-brand-navy line-clamp-2 mt-1">
-                          {c.name}
-                        </h4>
-                        <div className="mt-2 text-xs bg-amber-50 text-amber-900 p-2 rounded-lg border border-amber-200 font-medium">
-                          ✨ {c.matchReason}
-                        </div>
-                        <p className="text-xs text-slate-500 line-clamp-2 mt-2">
-                          {c.shortDescription}
+                        <h4 className="text-base font-bold text-text-heading">{rec.name}</h4>
+                        <p className="text-xs text-text-default mt-1 leading-relaxed">
+                          {rec.shortDescription}
+                        </p>
+                        <p className="text-xs text-primary font-medium mt-2 bg-primary-light/80 p-2 rounded-lg">
+                          💡 {rec.matchReason}
                         </p>
                       </div>
-
-                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span className="text-xs text-slate-500">{c.duration}</span>
-                        <Link href={`/courses/${c.slug}`}>
-                          <Button variant="accent" size="sm">
-                            Xem lộ trình &rarr;
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <Link
+                          href={`/courses/${rec.slug}`}
+                          className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
+                        >
+                          <span>Xem chi tiết khóa học</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </Link>
+                        <Link href="/placement-test">
+                          <Button variant="outline" size="sm">
+                            Đăng ký test thử
                           </Button>
                         </Link>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

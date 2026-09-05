@@ -151,20 +151,20 @@ export function LeadForm({
   }
 
   const containerClasses = {
-    card: "bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100",
+    card: "bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-border",
     plain: "p-0",
-    banner: "bg-brand-navy text-white p-6 sm:p-8 rounded-3xl",
+    banner: "bg-gradient-to-br from-primary-deep to-primary text-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl",
   };
 
   return (
     <div className={containerClasses[variant]}>
       {title && (
         <div className="mb-6 text-left">
-          <h3 className={`text-xl sm:text-2xl font-black tracking-tight ${variant === "banner" ? "text-white" : "text-brand-navy"}`}>
+          <h3 className={`text-xl sm:text-2xl font-bold tracking-tight ${variant === "banner" ? "text-white" : "text-primary-deep"}`}>
             {title}
           </h3>
           {subtitle && (
-            <p className={`text-xs sm:text-sm mt-1.5 ${variant === "banner" ? "text-slate-300" : "text-slate-500"}`}>
+            <p className={`text-xs sm:text-sm mt-1.5 ${variant === "banner" ? "text-slate-200" : "text-text-muted"}`}>
               {subtitle}
             </p>
           )}
