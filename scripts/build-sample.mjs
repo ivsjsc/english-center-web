@@ -88,6 +88,7 @@ async function main() {
       env: {
         ...process.env,
         NEXT_PUBLIC_DEPLOYMENT_MODE: "sample",
+        NEXT_PUBLIC_APP_URL: "https://sample.ivsacademy.edu.vn",
       },
     });
 

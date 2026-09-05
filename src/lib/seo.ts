@@ -24,6 +24,7 @@ export function constructMetadata({
   const url = `${BASE_URL}${canonicalPath}`;
 
   return {
+    metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description,
     keywords: keywords.join(", "),

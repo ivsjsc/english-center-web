@@ -13,6 +13,11 @@ import { LearningEcosystem } from "@/components/public/homepage/LearningEcosyste
 import { CenterFinderSection } from "@/components/public/homepage/CenterFinderSection";
 import { LatestBlogPosts } from "@/components/public/homepage/LatestBlogPosts";
 import { ConsultationCTA } from "@/components/public/homepage/ConsultationCTA";
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata = constructMetadata({
+  canonicalPath: "",
+});
 
 export const revalidate = 60; // ISR revalidation every 60s
 
