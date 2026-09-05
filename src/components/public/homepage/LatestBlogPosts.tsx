@@ -96,7 +96,7 @@ export function LatestBlogPosts({ posts = [] }: LatestBlogPostsProps) {
               title={post.title}
               excerpt={post.excerpt}
               categoryName={post.categoryName}
-              coverImage={post.coverImage}
+              coverImage={post.coverImage || undefined}
               publishedAt={post.publishedAt}
               readTimeMinutes={post.readTimeMinutes}
             />

@@ -5,9 +5,9 @@ import Image from "next/image";
 export interface BlogCardProps {
   slug: string;
   title: string;
-  excerpt?: string;
+  excerpt?: string | null;
   categoryName?: string;
-  coverImage?: string;
+  coverImage?: string | null;
   publishedAt?: string | Date;
   readTimeMinutes?: number;
 }

@@ -22,7 +22,7 @@ interface CourseDiscoveryProps {
   courses?: CourseItem[];
 }
 
-export function CourseDiscovery({ categories: _categories = [], courses = [] }: CourseDiscoveryProps) {
+export function CourseDiscovery({ categories = [], courses = [] }: CourseDiscoveryProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
 
   // Canonical default 8 courses from Stitch approved specification if db courses are fewer
@@ -140,11 +140,15 @@ export function CourseDiscovery({ categories: _categories = [], courses = [] }: 
 
   const tabs = [
     { id: "all", label: "Tất cả" },
-    { id: "smartkids", label: "Mầm non (4-6T)" },
-    { id: "superkids", label: "Tiểu học (6-11T)" },
-    { id: "young-leaders", label: "THCS (11-15T)" },
-    { id: "ielts", label: "IELTS & Luyện thi" },
-    { id: "giao-tiep", label: "Giao tiếp & Đi làm" },
+    ...(categories.length > 0
+      ? categories.map((c) => ({ id: c.slug, label: c.name }))
+      : [
+          { id: "smartkids", label: "Mầm non (4-6T)" },
+          { id: "superkids", label: "Tiểu học (6-11T)" },
+          { id: "young-leaders", label: "THCS (11-15T)" },
+          { id: "ielts", label: "IELTS & Luyện thi" },
+          { id: "giao-tiep", label: "Giao tiếp & Đi làm" },
+        ]),
   ];
 
   return (
@@ -197,7 +201,7 @@ export function CourseDiscovery({ categories: _categories = [], courses = [] }: 
               key={course.slug}
               slug={course.slug}
               title={course.title}
-              description={course.description}
+              description={course.description || ""}
               ageRange={course.ageRange}
               keyOutcome={course.keyOutcome}
               badgeColor={course.badgeColor}

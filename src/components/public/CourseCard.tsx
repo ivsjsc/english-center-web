@@ -7,10 +7,10 @@ export interface CourseCardProps {
   slug: string;
   title: string;
   description: string;
-  ageRange?: string;
-  categoryName?: string;
-  imageUrl?: string;
-  keyOutcome?: string;
+  ageRange?: string | null;
+  categoryName?: string | null;
+  imageUrl?: string | null;
+  keyOutcome?: string | null;
   badgeColor?: "primary" | "vibrant" | "amber" | "emerald" | "slate";
 }
 

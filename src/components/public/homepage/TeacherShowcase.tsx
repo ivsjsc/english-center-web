@@ -97,7 +97,7 @@ export function TeacherShowcase({ teachers = [] }: TeacherShowcaseProps) {
           {displayTeachers.map((teacher, idx) => (
             <TeacherCard
               key={idx}
-              name={teacher.name}
+              name={teacher.name || "Giảng viên IVS"}
               country={teacher.country}
               yearsExperience={teacher.yearsExperience}
               qualificationsSummary={teacher.qualificationsSummary}

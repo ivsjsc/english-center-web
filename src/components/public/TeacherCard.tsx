@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export interface TeacherCardProps {
   name: string;
-  avatarUrl?: string;
-  country?: string;
+  avatarUrl?: string | null;
+  country?: string | null;
   yearsExperience?: number;
-  qualificationsSummary?: string;
-  specialization?: string;
+  qualificationsSummary?: string | null;
+  specialization?: string | null;
 }
 
 export function TeacherCard({

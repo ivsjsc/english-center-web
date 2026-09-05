@@ -1,12 +1,11 @@
 {
   "/api/public-options/route": "app/api/public-options/route.js",
-  "/(public)/courses/page": "app/(public)/courses/page.js",
   "/(public)/page": "app/(public)/page.js",
   "/(public)/methodology/page": "app/(public)/methodology/page.js",
+  "/(public)/placement-test/page": "app/(public)/placement-test/page.js",
   "/(public)/teachers/page": "app/(public)/teachers/page.js",
   "/(public)/student-achievements/page": "app/(public)/student-achievements/page.js",
-  "/(public)/blog/page": "app/(public)/blog/page.js",
   "/(public)/centers/page": "app/(public)/centers/page.js",
-  "/(public)/about/page": "app/(public)/about/page.js",
-  "/(public)/placement-test/page": "app/(public)/placement-test/page.js"
+  "/(public)/blog/page": "app/(public)/blog/page.js",
+  "/(public)/about/page": "app/(public)/about/page.js"
 }
