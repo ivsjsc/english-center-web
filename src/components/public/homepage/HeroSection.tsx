@@ -133,7 +133,14 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent pointer-events-none" />
 
               {/* Floating CenterCare Suite Badge */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+              <a
+                href="https://center.ivslearning.io.vn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mở CenterCare by IVS"
+                title="CenterCare by IVS"
+                className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 transition-all hover:bg-white hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-vibrant focus-visible:ring-offset-2"
+              >
                 <div className="w-12 h-12 rounded-xl bg-primary-deep text-white flex items-center justify-center font-black text-sm shrink-0">
                   IVS
                 </div>
@@ -152,7 +159,7 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                       : "Báo cáo tiến độ học tập real-time & tương tác phụ huynh 24/7"}
                   </p>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Ambient Accents */}
