@@ -56,7 +56,7 @@ export function ContactForm() {
           Gửi Liên Hệ Thành Công!
         </h3>
         <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Cảm ơn bạn đã gửi tin nhắn đến AURA Academy. Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.
+          Cảm ơn bạn đã gửi tin nhắn đến IVS Academy. Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.
         </p>
       </div>
     );

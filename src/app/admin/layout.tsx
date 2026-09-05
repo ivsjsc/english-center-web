@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { getSession } from "@/lib/auth";
 import { AdminNav } from "./AdminNav";
-import { Shield, LogOut, ArrowLeft } from "lucide-react";
+import { LogOut, ArrowLeft } from "lucide-react";
 
 export default async function AdminLayout({
   children,
@@ -23,11 +22,11 @@ export default async function AdminLayout({
               {/* Brand Header */}
               <div className="p-6 border-b border-slate-800 flex items-center justify-between">
                 <Link href="/admin" className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-brand-600 text-white font-black text-xl flex items-center justify-center shadow-md">
-                    A
+                  <div className="w-9 h-9 rounded-xl bg-brand-600 text-accent-amber font-black text-xs flex items-center justify-center shadow-md">
+                    IVS
                   </div>
                   <div>
-                    <div className="font-bold text-white text-sm">AURA CRM</div>
+                    <div className="font-bold text-white text-sm">IVS Portal</div>
                     <div className="text-[10px] text-slate-400 font-mono">
                       v1.0 • {session.role}
                     </div>

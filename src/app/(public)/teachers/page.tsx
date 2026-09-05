@@ -4,12 +4,11 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
-import { Award, GraduationCap, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Award } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Đội Ngũ Giảng Viên Quốc Tế & Bản Ngữ",
-  description: "Đội ngũ chuyên gia học thuật, giảng viên bản ngữ và Việt Nam giàu kinh nghiệm, 100% chứng chỉ CELTA, DELTA, TESOL tại AURA Academy.",
+  description: "Đội ngũ chuyên gia học thuật, giảng viên bản ngữ và Việt Nam giàu kinh nghiệm, đạt chuẩn chứng chỉ quốc tế tại IVS Academy.",
   canonicalPath: "/teachers",
 });
 
@@ -35,7 +34,7 @@ export default async function TeachersPage() {
             Đội Ngũ Chuyên Gia & Giảng Viên Chuẩn Quốc Tế
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
-            Sức mạnh đào tạo của AURA đến từ đội ngũ thầy cô giáo tâm huyết, giỏi chuyên môn và am hiểu tâm lý học sinh. 100% giáo viên được tuyển chọn qua quy trình 5 bước nghiêm ngặt.
+            Sức mạnh đào tạo của IVS Academy đến từ đội ngũ thầy cô giáo tâm huyết, giỏi chuyên môn và am hiểu tâm lý học sinh. 100% giáo viên được tuyển chọn qua quy trình 5 bước nghiêm ngặt.
           </p>
         </div>
 

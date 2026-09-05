@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { getSession } from "@/lib/auth";
 import { hasPermission } from "@/lib/rbac";
-import { Settings, Save, ShieldCheck } from "lucide-react";
+import { Save } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default async function AdminSettingsPage() {

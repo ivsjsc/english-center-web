@@ -4,9 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
-import { constructMetadata } from "@/lib/seo";
-import { Award, GraduationCap, ArrowRight, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Award, CheckCircle2 } from "lucide-react";
 import { LeadForm } from "@/components/public/LeadForm";
 
 export async function generateMetadata({
@@ -81,7 +79,7 @@ export default async function TeacherDetailPage({
                 </div>
                 <div className="pt-2">
                   <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                    Giảng viên chuẩn NEAS & Cambridge
+                    Giảng viên chuyên môn chuẩn quốc tế
                   </span>
                 </div>
               </div>

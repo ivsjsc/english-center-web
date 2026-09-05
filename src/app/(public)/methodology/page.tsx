@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { ShieldCheck, Sparkles, BookOpen, BrainCircuit, Users2, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Phương Pháp Giảng Dạy Chuẩn NEAS Úc",
-  description: "Tìm hiểu triết lý giáo dục chủ động tương tác và phương pháp học tích hợp liên môn CLIL tại AURA Academy.",
+  title: "Phương Pháp Giảng Dạy Chuẩn Quốc Tế — IVS Academy",
+  description: "Tìm hiểu triết lý giáo dục chủ động tương tác và phương pháp học tích hợp liên môn CLIL tại IVS Academy.",
   canonicalPath: "/methodology",
 });
 
@@ -27,7 +27,7 @@ export default function MethodologyPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent-amber text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
-              <span>Tiêu Chuẩn Kiểm Định Quốc Tế NEAS (Úc)</span>
+              <span>Phương Pháp Sư Phạm Hiện Đại</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
@@ -35,7 +35,7 @@ export default function MethodologyPage() {
             </h1>
 
             <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
-              Tại AURA, chúng tôi tin rằng ngôn ngữ không phải là môn học để ghi nhớ công thức khô khan, mà là chiếc chìa khóa vạn năng để khám phá tri thức nhân loại và khẳng định bản sắc cá nhân.
+              Tại IVS Academy, chúng tôi tin rằng ngôn ngữ không phải là môn học để ghi nhớ công thức khô khan, mà là chiếc chìa khóa vạn năng để khám phá tri thức nhân loại và khẳng định bản sắc cá nhân.
             </p>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function MethodologyPage() {
               Học Tập Chủ Động & Trải Nghiệm Thực Tế (Active Learning)
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Mô hình lớp học đảo ngược (Flipped Classroom) giúp học viên chủ động chuẩn bị từ vựng và ngữ cảnh trước buổi học qua ứng dụng AURA LMS. Thời gian trên lớp dành trọn vẹn cho việc thảo luận, thực hành phản xạ và giải quyết vấn đề theo nhóm.
+              Mô hình lớp học đảo ngược (Flipped Classroom) giúp học viên chủ động chuẩn bị từ vựng và ngữ cảnh trước buổi học qua hệ thống học tập số IVS Learning. Thời gian trên lớp dành trọn vẹn cho việc thảo luận, thực hành phản xạ và giải quyết vấn đề theo nhóm.
             </p>
             <div className="space-y-2 pt-2 text-sm text-slate-700">
               <div className="flex items-center gap-2">
@@ -96,16 +96,16 @@ export default function MethodologyPage() {
               Học Tích Hợp Ngôn Ngữ & Nội Dung (CLIL)
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Phương pháp giáo dục tiên tiến nhất tại Châu Âu được AURA áp dụng vào toàn bộ hệ thống khóa học. Trẻ em và thanh thiếu niên học Khoa học, Địa lý, Thiên văn và Nghệ thuật bằng tiếng Anh, giúp tư duy song ngữ hình thành tự nhiên và vững bền.
+              Phương pháp giáo dục tiên tiến được IVS Academy ứng dụng trong các chương trình đào tạo. Học viên tiếp cận kiến thức Khoa học, Địa lý, Nghệ thuật và Đời sống bằng tiếng Anh, giúp tư duy song ngữ hình thành tự nhiên và vững bền.
             </p>
             <div className="space-y-2 pt-2 text-sm text-slate-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Mở rộng vốn từ vựng học thuật vượt trội so với sách giáo khoa</span>
+                <span>Mở rộng vốn từ vựng học thuật vượt trội so với lối học truyền thống</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Kích thích niềm say mê khám phá khoa học từ thuở ấu thơ</span>
+                <span>Kích thích niềm say mê khám phá tri thức và tư duy logic</span>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function MethodologyPage() {
             Trải Nghiệm Phương Pháp Giảng Dạy Chuẩn Quốc Tế Ngay Hôm Nay
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
-            Đăng ký tham dự buổi học thử miễn phí cùng giảng viên bản ngữ để cảm nhận sự khác biệt.
+            Đăng ký tham dự buổi học thử miễn phí cùng giảng viên giàu kinh nghiệm để cảm nhận sự khác biệt.
           </p>
           <div className="pt-2">
             <Link href="/placement-test">

@@ -6,11 +6,11 @@ import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, ArrowRight, Check } from "lucide-react";
+import { Clock, Users, Check } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Khóa Học Tiếng Anh Chuẩn Quốc Tế",
-  description: "Danh sách các khóa học tiếng Anh mầm non, thiếu nhi, thiếu niên, luyện thi IELTS và tiếng Anh giao tiếp tại AURA Academy.",
+  description: "Danh sách các khóa học tiếng Anh mầm non, thiếu nhi, thiếu niên, luyện thi IELTS và tiếng Anh giao tiếp tại IVS Academy.",
   canonicalPath: "/courses",
 });
 
@@ -54,7 +54,7 @@ export default async function CoursesPage({
             Chương Trình Đào Tạo Tiêu Chuẩn Quốc Tế
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
-            Được kiểm định chất lượng bởi NEAS Australia. Lộ trình học bài bản giúp học viên phát triển toàn diện 4 kỹ năng và tự tin chinh phục các kỳ thi quốc tế.
+            Lộ trình học bài bản theo khung chuẩn quốc tế CEFR giúp học viên phát triển toàn diện 4 kỹ năng và tự tin chinh phục các kỳ thi quốc tế.
           </p>
         </div>
 

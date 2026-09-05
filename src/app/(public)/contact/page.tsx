@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
 import { ContactForm } from "./ContactForm";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Liên Hệ & Hỗ Trợ — AURA Academy",
-  description: "Thông tin liên hệ, hotline tư vấn tuyển sinh và tiếp nhận phản ánh học viên tại Hệ thống Anh ngữ AURA Academy.",
+  title: "Liên Hệ & Hỗ Trợ — IVS Academy",
+  description: "Thông tin liên hệ, hotline tư vấn tuyển sinh và tiếp nhận phản ánh học viên tại Hệ thống Anh ngữ IVS Academy.",
   canonicalPath: "/contact",
 });
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
           {/* Left contact info */}
           <div className="lg:col-span-5 space-y-6">
             <span className="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
-              Kết Nối Cùng AURA
+              Kết Nối Cùng IVS Academy
             </span>
             <h1 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
               Chúng Tôi Luôn Sẵn Sàng Lắng Nghe & Hỗ Trợ
@@ -54,8 +54,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-400 font-semibold">Hộp thư điện tử:</div>
-                  <a href="mailto:contact@aura.edu.vn" className="text-base font-bold text-brand-navy hover:text-brand-600">
-                    contact@aura.edu.vn
+                  <a href="mailto:contact@ivs.edu.vn" className="text-base font-bold text-brand-navy hover:text-brand-600">
+                    contact@ivs.edu.vn
                   </a>
                   <div className="text-xs text-slate-500 mt-0.5">Tiếp nhận thông tin 24/7</div>
                 </div>

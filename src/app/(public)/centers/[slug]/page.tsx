@@ -6,15 +6,12 @@ import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata, generateLocalBusinessSchema } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/public/LeadForm";
 import {
   MapPin,
   Phone,
-  Mail,
   Clock,
   ExternalLink,
-  Building2,
   CheckCircle2,
 } from "lucide-react";
 
@@ -85,7 +82,7 @@ export default async function CenterDetailPage({
               <Badge variant="secondary" className="bg-white/10 text-white">
                 {center.province}
               </Badge>
-              <Badge variant="success">Chuẩn Kiểm Định NEAS</Badge>
+              <Badge variant="success">Cơ Sở Tiêu Chuẩn</Badge>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">

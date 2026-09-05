@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { FileText, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Điều Khoản Sử Dụng Dịch Vụ",
-  description: "Các điều khoản và điều kiện áp dụng khi sử dụng website và đăng ký học tại Hệ thống Anh ngữ AURA Academy.",
+  description: "Các điều khoản và điều kiện áp dụng khi sử dụng website và đăng ký học tại Hệ thống Anh ngữ IVS Academy.",
   canonicalPath: "/terms",
 });
 
@@ -41,21 +41,21 @@ export default function TermsPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">1. Chấp Nhận Điều Khoản</h2>
               <p>
-                Khi truy cập website hoặc gửi thông tin đăng ký tư vấn/thi xếp lớp tại AURA Academy, quý khách được xem là đã đọc, hiểu rõ và đồng ý tuân thủ toàn bộ các điều khoản được nêu tại đây.
+                Khi truy cập website hoặc gửi thông tin đăng ký tư vấn/thi xếp lớp tại IVS Academy, quý khách được xem là đã đọc, hiểu rõ và đồng ý tuân thủ toàn bộ các điều khoản được nêu tại đây.
               </p>
             </section>
 
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">2. Quyền Sở Hữu Trí Tuệ</h2>
               <p>
-                Toàn bộ nội dung giáo trình, đề thi thử, cấu trúc khóa học, hình ảnh, nhãn hiệu và bài viết trên website thuộc quyền sở hữu trí tuệ độc quyền của AURA English Academy hoặc các đối tác quốc tế được cấp phép. Nghiêm cấm mọi hành vi sao chép nhằm mục đích thương mại khi chưa có sự đồng ý bằng văn bản.
+                Toàn bộ nội dung giáo trình, đề thi thử, cấu trúc khóa học, hình ảnh, nhãn hiệu và bài viết trên website thuộc quyền sở hữu trí tuệ của IVS Academy hoặc các đơn vị cấp phép. Nghiêm cấm mọi hành vi sao chép nhằm mục đích thương mại khi chưa có sự đồng ý bằng văn bản.
               </p>
             </section>
 
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">3. Chính Sách Học Phí & Hoàn Trả</h2>
               <p>
-                Chính sách bảo lưu, chuyển nhượng khóa học hoặc hoàn phí được quy định chi tiết trong Hợp đồng Đào tạo ký kết trực tiếp giữa phụ huynh/học viên và Ban Quản lý Cơ sở của AURA khi hoàn tất thủ tục nhập học.
+                Chính sách bảo lưu, chuyển nhượng khóa học hoặc hoàn phí được quy định chi tiết trong Hợp đồng Đào tạo ký kết trực tiếp giữa phụ huynh/học viên và Ban Quản lý Cơ sở của IVS Academy khi hoàn tất thủ tục nhập học.
               </p>
             </section>
           </div>

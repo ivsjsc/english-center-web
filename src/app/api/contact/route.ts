@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: "Gửi phản hồi thành công! AURA sẽ liên hệ với bạn trong thời gian sớm nhất.",
+      message: "Gửi phản hồi thành công! IVS Academy sẽ liên hệ với bạn trong thời gian sớm nhất.",
     });
   } catch (error) {
     console.error("Contact submission error:", error);

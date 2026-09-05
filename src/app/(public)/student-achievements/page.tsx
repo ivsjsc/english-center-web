@@ -4,12 +4,11 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
-import { Trophy, Award, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Trophy, Award } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Bảng Vàng Thành Tích Học Viên",
-  description: "Vinh danh các học viên xuất sắc đạt IELTS 8.5, 15/15 Khiên Cambridge và học bổng du học quốc tế tại AURA Academy.",
+  description: "Vinh danh các học viên tiêu biểu đạt chứng chỉ quốc tế và học bổng du học tại IVS Academy.",
   canonicalPath: "/student-achievements",
 });
 
@@ -29,13 +28,13 @@ export default async function StudentAchievementsPage() {
           </div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200 mb-3">
             <Trophy className="w-4 h-4 text-amber-500" />
-            <span>5.200+ Học Viên Đạt Chuẩn Xuất Sắc</span>
+            <span>Vinh Danh Học Viên Tiêu Biểu</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
             Bảng Vàng Danh Dự & Câu Chuyện Thành Công
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
-            Mỗi số điểm cao là một hành trình nỗ lực không ngừng nghỉ của học viên cùng sự đồng hành sát sao của thầy cô AURA. Cùng lắng nghe câu chuyện bứt phá của các bạn!
+            Mỗi số điểm cao là một hành trình nỗ lực không ngừng nghỉ của học viên cùng sự đồng hành sát sao của thầy cô IVS Academy. Cùng lắng nghe câu chuyện bứt phá của các bạn!
           </p>
         </div>
 

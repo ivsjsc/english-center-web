@@ -7,7 +7,7 @@ import { CentersClientView } from "./CentersClientView";
 
 export const metadata: Metadata = constructMetadata({
   title: "Hệ Thống Cơ Sở Đào Tạo Toàn Quốc",
-  description: "Khám phá danh sách các cơ sở trung tâm Anh ngữ AURA Academy tại TP.HCM, Hà Nội, Đà Nẵng với cơ sở vật chất hiện đại đạt chuẩn NEAS.",
+  description: "Khám phá danh sách các cơ sở trung tâm Anh ngữ IVS Academy tại TP.HCM, Hà Nội, Đà Nẵng với cơ sở vật chất hiện đại, phòng lab tiêu chuẩn.",
   canonicalPath: "/centers",
 });
 
@@ -30,10 +30,10 @@ export default async function CentersPage() {
             <span className="text-slate-800 font-semibold">Hệ thống cơ sở</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-brand-navy tracking-tight">
-            Hệ Thống Cơ Sở AURA Academy Toàn Quốc
+            Hệ Thống Cơ Sở IVS Academy Toàn Quốc
           </h1>
           <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl">
-            Các cơ sở được xây dựng đồng bộ theo tiêu chuẩn kiểm định NEAS Australia với không gian học tập hiện đại, phòng lab máy tính, phòng thi IELTS và sân chơi sáng tạo.
+            Các cơ sở được xây dựng đồng bộ theo tiêu chuẩn hiện đại với không gian học tập sáng tạo, phòng lab máy tính và khu vực tự học tiện nghi.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🌱 Starting realistic seed for AURA English Academy...");
+  console.log("🌱 Starting realistic seed for IVS Academy...");
 
   // 1. Clean existing records (respecting relations)
   await prisma.auditLog.deleteMany();
@@ -36,7 +36,7 @@ async function main() {
 
   const superAdmin = await prisma.user.create({
     data: {
-      email: "superadmin@aura.edu.vn",
+      email: "superadmin@ivs.edu.vn",
       passwordHash,
       fullName: "Nguyễn Vũ Hoàng (Giám đốc học thuật)",
       phone: "0908123456",
@@ -46,7 +46,7 @@ async function main() {
 
   const admin = await prisma.user.create({
     data: {
-      email: "admin@aura.edu.vn",
+      email: "admin@ivs.edu.vn",
       passwordHash,
       fullName: "Trần Mai Anh (Quản lý vận hành)",
       phone: "0912345678",
@@ -56,7 +56,7 @@ async function main() {
 
   const consultant1 = await prisma.user.create({
     data: {
-      email: "tuvan.minhchau@aura.edu.vn",
+      email: "tuvan.minhchau@ivs.edu.vn",
       passwordHash,
       fullName: "Lê Minh Châu (Chuyên viên tư vấn)",
       phone: "0987654321",
@@ -66,7 +66,7 @@ async function main() {
 
   const consultant2 = await prisma.user.create({
     data: {
-      email: "tuvan.quanghuy@aura.edu.vn",
+      email: "tuvan.quanghuy@ivs.edu.vn",
       passwordHash,
       fullName: "Phạm Quang Huy (Chuyên viên tư vấn)",
       phone: "0978112233",
@@ -76,7 +76,7 @@ async function main() {
 
   const centerManager = await prisma.user.create({
     data: {
-      email: "manager.quan1@aura.edu.vn",
+      email: "manager.quan1@ivs.edu.vn",
       passwordHash,
       fullName: "Đỗ Kim Ngân (Giám đốc cơ sở Q1)",
       phone: "0933445566",
@@ -176,7 +176,7 @@ async function main() {
       status: "PUBLISHED",
       featured: true,
       ctaText: "Đăng ký học thử miễn phí",
-      seoTitle: "Khóa Học Tiếng Anh Mầm Non SmartKids (4-6 Tuổi) | AURA Academy",
+      seoTitle: "Khóa Học Tiếng Anh Mầm Non SmartKids (4-6 Tuổi) | IVS Academy",
       seoDescription: "Chương trình tiếng Anh mầm non 4-6 tuổi chuẩn Cambridge, phát triển toàn diện tư duy và phát âm chuẩn quốc tế từ bé.",
       curriculums: [
         { title: "Khởi động âm chuẩn Phonics", description: "Làm quen với 26 chữ cái và các âm cơ bản thông qua bài hát động tác vui nhộn.", sessionsCount: 6, orderIndex: 1 },
@@ -209,13 +209,13 @@ async function main() {
       numberOfSessions: 32,
       teachingMethod: "CLIL (Content and Language Integrated Learning)",
       classSize: "12 - 15 học viên",
-      learningMaterials: "Cambridge Primary English & Phần mềm luyện thi mô phỏng AURA SmartLMS",
+      learningMaterials: "Cambridge Primary English & Phần mềm luyện thi mô phỏng IVS SmartLMS",
       featuredImage: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80",
       status: "PUBLISHED",
       featured: true,
       ctaText: "Kiểm tra trình độ miễn phí",
-      seoTitle: "Khóa Học Tiếng Anh Tiểu Học SuperKids Cambridge | AURA Academy",
-      seoDescription: "Tiếng Anh tiểu học 6-11 tuổi luyện thi Cambridge Starters, Movers, Flyers. Học cùng giáo viên bản ngữ tại AURA.",
+      seoTitle: "Khóa Học Tiếng Anh Tiểu Học SuperKids Cambridge | IVS Academy",
+      seoDescription: "Tiếng Anh tiểu học 6-11 tuổi luyện thi Cambridge Starters, Movers, Flyers. Học cùng giáo viên bản ngữ tại IVS Academy.",
       curriculums: [
         { title: "Nâng cấp Ngữ pháp & Cấu trúc Câu Cơ bản", description: "Hệ thống hóa ngữ pháp tiểu học, làm chủ các thì cơ bản và mở rộng vốn từ vựng học đường.", sessionsCount: 8, orderIndex: 1 },
         { title: "Chiến thuật Đọc hiểu & Kỹ năng Viết đoạn", description: "Rèn luyện tư duy phân tích đoạn văn và kỹ thuật viết miêu tả ngắn theo chuẩn Cambridge.", sessionsCount: 8, orderIndex: 2 },
@@ -228,7 +228,7 @@ async function main() {
         { description: "Nâng cao điểm số môn tiếng Anh tại trường phổ thông lên mức 9.0+", orderIndex: 3 },
       ],
       faqs: [
-        { question: "Trung tâm có tổ chức thi lấy chứng chỉ Cambridge thật không?", answer: "AURA là đối tác đăng ký khảo thí chính thức của Cambridge Assessment English, học viên được thi ngay tại trung tâm với hội đồng thi tiêu chuẩn.", orderIndex: 1 },
+        { question: "Trung tâm có tổ chức thi lấy chứng chỉ Cambridge thật không?", answer: "IVS là đối tác đăng ký khảo thí chính thức của Cambridge Assessment English, học viên được thi ngay tại trung tâm với hội đồng thi tiêu chuẩn.", orderIndex: 1 },
       ],
     },
     {
@@ -246,12 +246,12 @@ async function main() {
       numberOfSessions: 32,
       teachingMethod: "Project-Based Learning & Academic Debate",
       classSize: "12 - 16 học viên",
-      learningMaterials: "Oxford Solutions & Bộ tài liệu tranh biện học thuật AURA",
+      learningMaterials: "Oxford Solutions & Bộ tài liệu học thuật chuyên sâu IVS",
       featuredImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80",
       status: "PUBLISHED",
       featured: true,
       ctaText: "Nhận tư vấn lộ trình học",
-      seoTitle: "Tiếng Anh Thiếu Niên Young Leaders (11-15 Tuổi) | AURA Academy",
+      seoTitle: "Tiếng Anh Thiếu Niên Young Leaders (11-15 Tuổi) | IVS Academy",
       seoDescription: "Phát triển tư duy phản biện và kỹ năng học thuật cho học sinh cấp 2, bước đệm hoàn hảo để chinh phục IELTS 7.0+.",
       curriculums: [
         { title: "Phương pháp Thuyết trình & Hùng biện tiếng Anh", description: "Làm chủ cấu trúc bài thuyết trình, ngôn ngữ cơ thể và kỹ thuật lôi cuốn người nghe.", sessionsCount: 8, orderIndex: 1 },
@@ -283,12 +283,12 @@ async function main() {
       numberOfSessions: 30,
       teachingMethod: "Scaffolding & Intensive 1-1 Feedback",
       classSize: "8 - 12 học viên",
-      learningMaterials: "Cambridge IELTS 16-19 + Kho đề thi thật AURA IELTS Bank độc quyền",
+      learningMaterials: "Cambridge IELTS 16-19 + Kho đề thi thật IVS IELTS Bank độc quyền",
       featuredImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
       status: "PUBLISHED",
       featured: true,
       ctaText: "Đăng ký thi thử IELTS miễn phí",
-      seoTitle: "Luyện Thi IELTS Chuyên Sâu Cam Kết Đầu Ra 6.5 - 7.5+ | AURA Academy",
+      seoTitle: "Luyện Thi IELTS Chuyên Sâu Cam Kết Đầu Ra 6.5 - 7.5+ | IVS Academy",
       seoDescription: "Khóa luyện thi IELTS chuyên sâu với đội ngũ giáo viên 8.5+ IELTS, chấm sửa Writing và Speaking 1-1 không giới hạn.",
       curriculums: [
         { title: "Writing Task 1 & Task 2 Mastery", description: "Bẻ khóa các dạng biểu đồ Task 1 và làm chủ tư duy lập luận logic 4 tiêu chí chấm điểm trong Task 2.", sessionsCount: 10, orderIndex: 1 },
@@ -302,7 +302,7 @@ async function main() {
         { description: "Khả năng viết bài luận chuẩn chỉnh đạt band 7.0+ mạch lạc và giàu sức thuyết phục", orderIndex: 3 },
       ],
       faqs: [
-        { question: "Nếu không đạt điểm mục tiêu có được học lại không?", answer: "AURA ký hợp đồng cam kết đầu ra bằng văn bản. Nếu học viên đi học đầy đủ và làm đủ bài tập mà không đạt điểm sẽ được học lại hoàn toàn miễn phí.", orderIndex: 1 },
+        { question: "Nếu không đạt điểm mục tiêu có được học lại không?", answer: "IVS ký hợp đồng cam kết đầu ra bằng văn bản. Nếu học viên đi học đầy đủ và làm đủ bài tập mà không đạt điểm sẽ được học lại hoàn toàn miễn phí.", orderIndex: 1 },
         { question: "Writing có được chấm chi tiết theo tiêu chuẩn giám khảo không?", answer: "Tất cả bài viết được chấm và sửa lỗi từng câu, chú giải lỗi Grammar, Vocabulary và Cohesion theo đúng Band Descriptors của Hội đồng Khảo thí Cambridge.", orderIndex: 2 },
       ],
     },
@@ -326,7 +326,7 @@ async function main() {
       status: "PUBLISHED",
       featured: true,
       ctaText: "Nhận lịch học linh hoạt",
-      seoTitle: "Tiếng Anh Giao Tiếp Người Đi Làm iTalk Business | AURA Academy",
+      seoTitle: "Tiếng Anh Giao Tiếp Người Đi Làm iTalk Business | IVS Academy",
       seoDescription: "Khóa học tiếng Anh công sở linh hoạt lịch học. Tự tin thuyết trình, đàm phán và gửi email chuẩn quốc tế.",
       curriculums: [
         { title: "Nghệ thuật Viết Email & Báo cáo Chuyên nghiệp", description: "Quy chuẩn viết thư tín thương mại, đề xuất dự án và xử lý từ chối khéo léo.", sessionsCount: 8, orderIndex: 1 },
@@ -340,7 +340,7 @@ async function main() {
         { description: "Mở rộng cơ hội thăng tiến lên các vị trí quản lý cấp cao trong các tập đoàn đa quốc gia", orderIndex: 3 },
       ],
       faqs: [
-        { question: "Nếu bận công tác đột xuất có bị mất buổi học không?", answer: "Hệ thống AURA Flex cho phép học viên hủy hoặc dời lịch học trước 2 giờ mà không bị trừ buổi.", orderIndex: 1 },
+        { question: "Nếu bận công tác đột xuất có bị mất buổi học không?", answer: "Hệ thống IVS Flex cho phép học viên hủy hoặc dời lịch học trước 2 giờ mà không bị trừ buổi.", orderIndex: 1 },
       ],
     },
     {
@@ -363,7 +363,7 @@ async function main() {
       status: "PUBLISHED",
       featured: false,
       ctaText: "Liên hệ tư vấn doanh nghiệp",
-      seoTitle: "Đào Tạo Tiếng Anh Doanh Nghiệp May Đo Theo Ngành | AURA Academy",
+      seoTitle: "Đào Tạo Tiếng Anh Doanh Nghiệp May Đo Theo Ngành | IVS Academy",
       seoDescription: "Giải pháp đào tạo tiếng Anh doanh nghiệp chất lượng cao, tối ưu chi phí và nâng cao năng suất làm việc quốc tế.",
       curriculums: [
         { title: "Đánh giá Năng lực Ban đầu (Pre-Assessment)", description: "Kiểm tra trình độ toàn bộ nhân sự theo khung chuẩn CEFR và phân nhóm năng lực tối ưu.", sessionsCount: 4, orderIndex: 1 },
@@ -375,7 +375,7 @@ async function main() {
         { description: "Đồng bộ hóa chuẩn mực giao tiếp tiếng Anh chuyên nghiệp trên toàn công ty", orderIndex: 2 },
       ],
       faqs: [
-        { question: "Giáo viên có thể đến dạy trực tiếp tại văn phòng công ty không?", answer: "AURA cung cấp cả hai hình thức: giáo viên đến giảng dạy tại văn phòng quý công ty hoặc học viên đến các cơ sở hiện đại của AURA.", orderIndex: 1 },
+        { question: "Giáo viên có thể đến dạy trực tiếp tại văn phòng công ty không?", answer: "IVS cung cấp cả hai hình thức: giáo viên đến giảng dạy tại văn phòng quý công ty hoặc học viên đến các cơ sở hiện đại của IVS Academy.", orderIndex: 1 },
       ],
     },
     {
@@ -393,13 +393,13 @@ async function main() {
       numberOfSessions: 24,
       teachingMethod: "Adaptive Digital Problem Solving",
       classSize: "8 - 10 học viên",
-      learningMaterials: "Bluebook CollegeBoard + Bộ đề độc quyền AURA SAT Experts",
+      learningMaterials: "Bluebook CollegeBoard + Bộ đề độc quyền IVS SAT Experts",
       featuredImage: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop&q=80",
       status: "PUBLISHED",
       featured: false,
       ctaText: "Đăng ký test SAT thử",
-      seoTitle: "Luyện Thi Digital SAT 1500+ Du Học Mỹ | AURA Academy",
-      seoDescription: "Chương trình luyện thi Digital SAT điểm cao săn học bổng đại học Mỹ hàng đầu thế giới cùng AURA Academy.",
+      seoTitle: "Luyện Thi Digital SAT 1500+ Du Học Mỹ | IVS Academy",
+      seoDescription: "Chương trình luyện thi Digital SAT điểm cao săn học bổng đại học Mỹ hàng đầu thế giới cùng IVS Academy.",
       curriculums: [
         { title: "Reading & Writing Module: Rhetoric & Syntax", description: "Phân tích cấu trúc luận đề, bẫy từ vựng ngữ cảnh và logic suy luận văn bản phức tạp.", sessionsCount: 12, orderIndex: 1 },
         { title: "Math Module: Advanced Algebra & Geometry", description: "Tối ưu hóa thời gian tính toán với máy tính Desmos và bẫy đề toán khó.", sessionsCount: 12, orderIndex: 2 },
@@ -432,7 +432,7 @@ async function main() {
       status: "PUBLISHED",
       featured: false,
       ctaText: "Đặt lịch tư vấn 1-kèm-1",
-      seoTitle: "Lớp Tiếng Anh Kèm Riêng 1 Kèm 1 Cấp Tốc | AURA Academy",
+      seoTitle: "Lớp Tiếng Anh Kèm Riêng 1 Kèm 1 Cấp Tốc | IVS Academy",
       seoDescription: "Khóa học tiếng Anh kèm riêng 1 kèm 1 chất lượng cao. Học trực tiếp với giáo viên bản ngữ giàu kinh nghiệm.",
       curriculums: [
         { title: "Phỏng vấn & Thiết kế Lộ trình May đo", description: "Giám đốc học thuật trực tiếp kiểm tra và lên giáo trình riêng trong 24 giờ.", sessionsCount: 2, orderIndex: 1 },
@@ -462,12 +462,12 @@ async function main() {
       numberOfSessions: 24,
       teachingMethod: "Foundational Grammar & Phonetic Drills",
       classSize: "10 - 14 học viên",
-      learningMaterials: "Grammar in Use Cambridge & AURA Pre-IELTS Vocab",
+      learningMaterials: "Grammar in Use Cambridge & IVS Pre-IELTS Vocab",
       featuredImage: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&auto=format&fit=crop&q=80",
       status: "PUBLISHED",
       featured: false,
       ctaText: "Đăng ký xếp lớp cơ bản",
-      seoTitle: "Khóa Học IELTS Foundation Cho Người Mất Gốc | AURA Academy",
+      seoTitle: "Khóa Học IELTS Foundation Cho Người Mất Gốc | IVS Academy",
       seoDescription: "Xây gốc tiếng Anh chuẩn học thuật, phát âm chuẩn IPA và tự tin đạt band 4.5-5.0 IELTS trong 3 tháng.",
       curriculums: [
         { title: "Chuẩn hóa Hệ thống Ngữ âm IPA", description: "Sửa triệt để phát âm sai, nối âm, nuốt âm và trọng âm từ cơ bản.", sessionsCount: 6, orderIndex: 1 },
@@ -502,7 +502,7 @@ async function main() {
       status: "PUBLISHED",
       featured: false,
       ctaText: "Đăng ký trải nghiệm STEAM",
-      seoTitle: "Khóa Học SmartKids Discovery Khoa Học STEAM | AURA Academy",
+      seoTitle: "Khóa Học SmartKids Discovery Khoa Học STEAM | IVS Academy",
       seoDescription: "Tiếng Anh mầm non kết hợp khoa học STEAM cho bé 5-6 tuổi. Khám phá thế giới tự nhiên cùng giáo viên nước ngoài.",
       curriculums: [
         { title: "Khám phá Cơ thể & Giác quan của Bé", description: "Bé học gọi tên các bộ phận và làm thí nghiệm cảm giác kỳ thú.", sessionsCount: 6, orderIndex: 1 },
@@ -542,8 +542,8 @@ async function main() {
   // 5. Centers (4 strategic campuses)
   const centersData = [
     {
-      slug: "aura-nguyen-thi-minh-khai-q1",
-      name: "Cơ Sở AURA Quận 1 — Flagship Campus",
+      slug: "ivs-nguyen-thi-minh-khai-q1",
+      name: "Cơ Sở IVS Quận 1 — Flagship Campus",
       province: "Hồ Chí Minh",
       district: "Quận 1",
       ward: "Phường Đa Kao",
@@ -551,22 +551,22 @@ async function main() {
       latitude: 10.7712,
       longitude: 106.6908,
       phone: "028 3822 6886",
-      email: "q1@aura.edu.vn",
+      email: "q1@ivs.edu.vn",
       openingHours: "07:30 - 21:30 (Thứ 2 - Chủ Nhật)",
-      description: "Cơ sở cờ đầu với không gian học tập hiện đại đạt chuẩn quốc tế NEAS. Tòa nhà 7 tầng trang bị phòng lab máy tính Apple, thư viện hơn 10.000 đầu sách tiếng Anh và khu vực tương tác sáng tạo cho trẻ nhỏ.",
-      facilities: "Phòng thi IELTS máy tính, Thư viện AURA Hub, Khu vui chơi SmartKids, Phòng lab Multimedia, Căng tin học viên, Bãi đỗ xe ô tô",
+      description: "Cơ sở cờ đầu với không gian học tập hiện đại đạt chuẩn cơ sở vật chất chất lượng cao. Tòa nhà 7 tầng trang bị phòng lab máy tính Apple, thư viện hơn 10.000 đầu sách tiếng Anh và khu vực tương tác sáng tạo cho trẻ nhỏ.",
+      facilities: "Phòng thi IELTS máy tính, Thư viện IVS Hub, Khu vui chơi SmartKids, Phòng lab Multimedia, Căng tin học viên, Bãi đỗ xe ô tô",
       GoogleMapsURL: "https://maps.google.com/?q=10.7712,106.6908",
       active: true,
-      seoTitle: "Trung Tâm Tiếng Anh AURA Quận 1 TP.HCM | Flagship Campus",
-      seoDescription: "Cơ sở tiếng Anh AURA Nguyễn Thị Minh Khai Quận 1. Đạt chuẩn NEAS, phòng thi IELTS máy tính hiện đại.",
+      seoTitle: "Trung Tâm Tiếng Anh IVS Quận 1 TP.HCM | Flagship Campus",
+      seoDescription: "Cơ sở tiếng Anh IVS Nguyễn Thị Minh Khai Quận 1. Trang bị phòng thi IELTS máy tính hiện đại.",
       images: [
-        { imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80", caption: "Sảnh đón tiếp và tư vấn AURA Flagship Quận 1", isCover: true, orderIndex: 1 },
+        { imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80", caption: "Sảnh đón tiếp và tư vấn IVS Flagship Quận 1", isCover: true, orderIndex: 1 },
         { imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80", caption: "Phòng học tương tác đa phương tiện", isCover: false, orderIndex: 2 },
       ],
     },
     {
-      slug: "aura-cong-hoa-tan-binh",
-      name: "Cơ Sở AURA Tân Bình — Cộng Hòa Campus",
+      slug: "ivs-cong-hoa-tan-binh",
+      name: "Cơ Sở IVS Tân Bình — Cộng Hòa Campus",
       province: "Hồ Chí Minh",
       district: "Quận Tân Bình",
       ward: "Phường 13",
@@ -574,21 +574,21 @@ async function main() {
       latitude: 10.8016,
       longitude: 106.6453,
       phone: "028 3810 6886",
-      email: "tanbinh@aura.edu.vn",
+      email: "tanbinh@ivs.edu.vn",
       openingHours: "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
       description: "Tọa lạc ngay mặt tiền tuyến đường sầm uất Cộng Hòa, thuận tiện đưa đón học sinh các trường tiểu học và THCS lân cận. Cơ sở sở hữu khu vực luyện thi Cambridge chuyên biệt và sân chơi khoa học ngoài trời.",
       facilities: "Phòng học SmartScreen 85 inch, Góc đọc sách Reader Club, Phòng chờ phụ huynh sang trọng, Wifi tốc độ cao",
       GoogleMapsURL: "https://maps.google.com/?q=10.8016,106.6453",
       active: true,
-      seoTitle: "Trung Tâm Tiếng Anh AURA Cộng Hòa Tân Bình | AURA Academy",
+      seoTitle: "Trung Tâm Tiếng Anh IVS Cộng Hòa Tân Bình | IVS Academy",
       seoDescription: "Trung tâm tiếng Anh trẻ em và luyện thi IELTS tại Tân Bình. Cơ sở vật chất chuẩn quốc tế, giáo viên bản ngữ giàu kinh nghiệm.",
       images: [
         { imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop&q=80", caption: "Không gian lớp học SuperKids Tân Bình", isCover: true, orderIndex: 1 },
       ],
     },
     {
-      slug: "aura-cau-giay-ha-noi",
-      name: "Cơ Sở AURA Cầu Giấy — Hà Nội Campus",
+      slug: "ivs-cau-giay-ha-noi",
+      name: "Cơ Sở IVS Cầu Giấy — Hà Nội Campus",
       province: "Hà Nội",
       district: "Quận Cầu Giấy",
       ward: "Phường Dịch Vọng",
@@ -596,21 +596,21 @@ async function main() {
       latitude: 21.0368,
       longitude: 105.7925,
       phone: "024 3793 6886",
-      email: "caugiay@aura.edu.vn",
+      email: "caugiay@ivs.edu.vn",
       openingHours: "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
       description: "Trung tâm quy mô lớn tại trung tâm giáo dục Cầu Giấy Hà Nội, phục vụ nhu cầu học tiếng Anh học thuật và săn học bổng du học của học sinh, sinh viên thủ đô.",
       facilities: "Hội trường hội thảo 150 chỗ, Phòng thi thử IELTS cách âm, Phòng STEM Maker, Khu thể thao nhỏ",
       GoogleMapsURL: "https://maps.google.com/?q=21.0368,105.7925",
       active: true,
-      seoTitle: "Trung Tâm Anh Ngữ AURA Cầu Giấy Hà Nội | Luyện Thi IELTS & Trẻ Em",
-      seoDescription: "Cơ sở AURA Cầu Giấy Hà Nội - Đào tạo tiếng Anh chuẩn quốc tế cho mọi lứa tuổi.",
+      seoTitle: "Trung Tâm Anh Ngữ IVS Cầu Giấy Hà Nội | Luyện Thi IELTS & Trẻ Em",
+      seoDescription: "Cơ sở IVS Cầu Giấy Hà Nội - Đào tạo tiếng Anh chuẩn quốc tế cho mọi lứa tuổi.",
       images: [
-        { imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80", caption: "Khuôn viên học tập sáng tạo AURA Cầu Giấy", isCover: true, orderIndex: 1 },
+        { imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80", caption: "Khuôn viên học tập sáng tạo IVS Cầu Giấy", isCover: true, orderIndex: 1 },
       ],
     },
     {
-      slug: "aura-hai-chau-da-nang",
-      name: "Cơ Sở AURA Đà Nẵng — Hải Châu Campus",
+      slug: "ivs-hai-chau-da-nang",
+      name: "Cơ Sở IVS Đà Nẵng — Hải Châu Campus",
       province: "Đà Nẵng",
       district: "Quận Hải Châu",
       ward: "Phường Thạch Thang",
@@ -618,16 +618,16 @@ async function main() {
       latitude: 16.0748,
       longitude: 108.2195,
       phone: "0236 388 6886",
-      email: "danang@aura.edu.vn",
+      email: "danang@ivs.edu.vn",
       openingHours: "08:00 - 21:00 (Thứ 2 - Chủ Nhật)",
       description: "Không gian học tập xanh mát bên dòng sông Hàn, môi trường lý tưởng khơi nguồn cảm hứng học ngoại ngữ cho học viên miền Trung.",
-      facilities: "Vườn tiếng Anh ngoài trời, Không gian thuyết trình AURA Talk, Phòng tự học mở 24/7 cho học viên",
+      facilities: "Vườn tiếng Anh ngoài trời, Không gian thuyết trình IVS Talk, Phòng tự học mở 24/7 cho học viên",
       GoogleMapsURL: "https://maps.google.com/?q=16.0748,108.2195",
       active: true,
-      seoTitle: "Trung Tâm Tiếng Anh AURA Hải Châu Đà Nẵng | AURA Academy",
-      seoDescription: "Hệ thống trung tâm Anh ngữ AURA Đà Nẵng. Cam kết chất lượng giảng dạy hàng đầu miền Trung.",
+      seoTitle: "Trung Tâm Tiếng Anh IVS Hải Châu Đà Nẵng | IVS Academy",
+      seoDescription: "Hệ thống trung tâm Anh ngữ IVS Đà Nẵng. Cam kết chất lượng giảng dạy hàng đầu miền Trung.",
       images: [
-        { imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=80", caption: "Cơ sở AURA Hải Châu Đà Nẵng", isCover: true, orderIndex: 1 },
+        { imageUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=80", caption: "Cơ sở IVS Academy Hải Châu Đà Nẵng", isCover: true, orderIndex: 1 },
       ],
     },
   ];
@@ -745,7 +745,7 @@ async function main() {
   const achievementsData = [
     { studentName: "Trần Minh Anh", score: "IELTS 8.5 Overall", certificateType: "IELTS", story: "Học sinh lớp 12 chuyên Anh đạt điểm số kỷ lục (Listening 9.0, Reading 9.0) và giành học bổng 100% ĐH Sydney sau khóa IELTS Mastery.", avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&auto=format&fit=crop&q=80", year: 2025, featured: true },
     { studentName: "Lê Hoàng Gia Hưng", score: "Flyers 15/15 Khiên", certificateType: "CAMBRIDGE", story: "Cậu bé 9 tuổi đạt trọn vẹn 15 Khiên kỳ thi Cambridge Flyers nhờ phản xạ giao tiếp tự nhiên cùng thầy cô tại cơ sở Quận 1.", avatar: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=300&auto=format&fit=crop&q=80", year: 2025, featured: true },
-    { studentName: "Nguyễn Đặng Phương Thảo", score: "IELTS 8.0 (Speaking 8.5)", certificateType: "IELTS", story: "Từ người e ngại khi phát âm, Phương Thảo bứt phá Speaking 8.5 và hiện là trợ giảng học thuật tại AURA.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80", year: 2025, featured: true },
+    { studentName: "Nguyễn Đặng Phương Thảo", score: "IELTS 8.0 (Speaking 8.5)", certificateType: "IELTS", story: "Từ người e ngại khi phát âm, Phương Thảo bứt phá Speaking 8.5 và hiện là trợ giảng học thuật tại IVS Academy.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80", year: 2025, featured: true },
     { studentName: "Vũ Bảo Khang", score: "SAT 1540 / 1600", certificateType: "SAT", story: "Chinh phục điểm số top 1% toàn cầu trong kỳ thi Digital SAT, nhận thư mời nhập học từ 4 trường đại học Top 30 Mỹ.", avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=300&auto=format&fit=crop&q=80", year: 2025, featured: true },
     { studentName: "Phạm Hải Đăng", score: "IELTS 7.5 Sau 3 Tháng", certificateType: "IELTS", story: "Người đi làm bận rộn tăng từ 5.5 lên 7.5 IELTS chỉ sau 1 khóa học chuyên sâu, xuất sắc bảo vệ luận văn Thạc sĩ quốc tế.", avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&auto=format&fit=crop&q=80", year: 2024, featured: false },
     { studentName: "Đỗ Mai Chi", score: "Movers 15/15 Khiên", certificateType: "CAMBRIDGE", story: "Học viên tiêu biểu của khóa SuperKids Primary đạt điểm số tuyệt đối kỳ thi Cambridge Movers.", avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&auto=format&fit=crop&q=80", year: 2024, featured: false },
@@ -763,7 +763,7 @@ async function main() {
     {
       authorName: "Chị Hoàng Thị Bích Thủy",
       relationship: "Phụ huynh bé Gia Hưng (Cambridge Flyers 15/15 Khiên)",
-      quote: "Điều tôi thích nhất ở AURA là thầy cô luôn kiên nhẫn khích lệ con tự nói. Trước đây bé rất nhút nhát, sau 2 năm học ở AURA bé đã chủ động bắt chuyện với người nước ngoài ở sân bay và đạt điểm tuyệt đối 15 Khiên.",
+      quote: "Điều tôi thích nhất ở IVS Academy là thầy cô luôn kiên nhẫn khích lệ con tự nói. Trước đây bé rất nhút nhát, sau 2 năm học ở IVS Academy bé đã chủ động bắt chuyện với người nước ngoài ở sân bay và đạt điểm tuyệt đối 15 Khiên.",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: true,
@@ -771,7 +771,7 @@ async function main() {
     {
       authorName: "Anh Nguyễn Quang Vinh",
       relationship: "Giám Đốc Dự Án — TechCorp Vietnam (Học viên iTalk)",
-      quote: "Lịch học linh hoạt của AURA là cứu cánh cho người bận rộn như tôi. Giảng viên dạy rất thực chiến, các tình huống đàm phán hợp đồng và xử lý khủng hoảng được mô phỏng ngay trong lớp giúp tôi tự tin họp với ban điều hành Singapore.",
+      quote: "Lịch học linh hoạt của IVS Academy là cứu cánh cho người bận rộn như tôi. Giảng viên dạy rất thực chiến, các tình huống đàm phán hợp đồng và xử lý khủng hoảng được mô phỏng ngay trong lớp giúp tôi tự tin họp với ban điều hành Singapore.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: true,
@@ -779,7 +779,7 @@ async function main() {
     {
       authorName: "Bạn Trần Minh Anh",
       relationship: "Cựu học viên IELTS 8.5 — Sinh viên ĐH Sydney",
-      quote: "Thầy David và thầy Trí tại AURA sửa bài Writing cực kỳ chi tiết, chỉ ra từng lỗi tư duy và cách diễn đạt gượng gạo. Nhờ môi trường học thuật chuyên sâu này mà mình đạt 8.5 ngay trong lần thi đầu.",
+      quote: "Thầy David và thầy Trí tại IVS Academy sửa bài Writing cực kỳ chi tiết, chỉ ra từng lỗi tư duy và cách diễn đạt gượng gạo. Nhờ môi trường học thuật chuyên sâu này mà mình đạt 8.5 ngay trong lần thi đầu.",
       avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: true,
@@ -787,7 +787,7 @@ async function main() {
     {
       authorName: "Bác Đặng Văn Hùng",
       relationship: "Phụ huynh em Vũ Bảo Khang (SAT 1540)",
-      quote: "Đội ngũ chuyên gia du học của AURA đã đồng hành rất tận tâm cùng gia đình trong suốt 1 năm chuẩn bị hồ sơ. Khang không chỉ đạt điểm SAT vượt kỳ vọng mà còn trưởng thành rõ rệt về tư duy độc lập.",
+      quote: "Đội ngũ chuyên gia du học của IVS Academy đã đồng hành rất tận tâm cùng gia đình trong suốt 1 năm chuẩn bị hồ sơ. Khang không chỉ đạt điểm SAT vượt kỳ vọng mà còn trưởng thành rõ rệt về tư duy độc lập.",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: true,
@@ -795,7 +795,7 @@ async function main() {
     {
       authorName: "Chị Lê Thu Trang",
       relationship: "Phụ huynh bé Bảo Ngọc (Lớp SmartKids Mầm Non)",
-      quote: "Bé nhà tôi mỗi tuần đều mong đến ngày được đi học ở AURA để gặp cô Mai và thầy Ben. Cơ sở vật chất sạch sẽ, các cô trợ giảng chăm sóc bé chu đáo như người nhà.",
+      quote: "Bé nhà tôi mỗi tuần đều mong đến ngày được đi học ở IVS Academy để gặp cô Mai và thầy Ben. Cơ sở vật chất sạch sẽ, các cô trợ giảng chăm sóc bé chu đáo như người nhà.",
       avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: true,
@@ -811,7 +811,7 @@ async function main() {
     {
       authorName: "Chị Phan Ngọc Hạnh",
       relationship: "Trưởng phòng Nhân sự Công ty Cổ phần LogiTrans",
-      quote: "Chương trình tiếng Anh doanh nghiệp của AURA mang lại hiệu quả rõ rệt. Năng suất xử lý email quốc tế của đội ngũ nhân viên tăng gấp đôi sau 4 tháng đào tạo.",
+      quote: "Chương trình tiếng Anh doanh nghiệp của IVS Academy mang lại hiệu quả rõ rệt. Năng suất xử lý email quốc tế của đội ngũ nhân viên tăng gấp đôi sau 4 tháng đào tạo.",
       avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: false,
@@ -819,7 +819,7 @@ async function main() {
     {
       authorName: "Anh Đào Minh Quân",
       relationship: "Học viên Lớp 1-on-1 Cấp Tốc",
-      quote: "Chỉ với 30 giờ kèm 1-1, thầy cô đã giúp tôi lấy lại toàn bộ kiến thức phát âm và vượt qua kỳ phỏng vấn visa định cư Mỹ xuất sắc. Vô cùng biết ơn AURA!",
+      quote: "Chỉ với 30 giờ kèm 1-1, thầy cô đã giúp tôi lấy lại toàn bộ kiến thức phát âm và vượt qua kỳ phỏng vấn visa định cư Mỹ xuất sắc. Vô cùng biết ơn IVS!",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
       rating: 5,
       featured: false,
@@ -866,7 +866,7 @@ Nhiều thí sinh quá lạm dụng từ 'khủng' mà bỏ quên tính tự nhi
       categoryId: blogCatMap.get("kinh-nghiem-luyen-ielts")!,
       featuredImage: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80",
       tags: "IELTS Writing, Luyện thi IELTS, Kinh nghiệm thi IELTS",
-      seoTitle: "Cách Tăng 1 Band IELTS Writing Task 2 Trong 30 Ngày | AURA Academy",
+      seoTitle: "Cách Tăng 1 Band IELTS Writing Task 2 Trong 30 Ngày | IVS Academy",
       seoDescription: "Hướng dẫn chi tiết chiến thuật nâng band IELTS Writing Task 2 với cấu trúc PEEL chuẩn Cambridge.",
     },
     {
@@ -888,7 +888,7 @@ Kết quả được tính bằng biểu tượng 'Khiên'. Trẻ đạt từ 10
       categoryId: blogCatMap.get("tieng-anh-tre-em-mam-non")!,
       featuredImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80",
       tags: "Cambridge YLE, Starters, Movers, Flyers, Tiếng Anh Tiểu Học",
-      seoTitle: "Chứng Chỉ Cambridge Starters Movers Flyers Là Gì? | AURA Academy",
+      seoTitle: "Chứng Chỉ Cambridge Starters Movers Flyers Là Gì? | IVS Academy",
       seoDescription: "Tìm hiểu chi tiết về kỳ thi Cambridge tiếng Anh tiểu học và cách tính điểm Khiên chuẩn xác.",
     },
     {
@@ -911,7 +911,7 @@ Kết quả được tính bằng biểu tượng 'Khiên'. Trẻ đạt từ 10
       categoryId: blogCatMap.get("tieng-anh-cong-so")!,
       featuredImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80",
       tags: "Tiếng Anh Công Sở, Đàm Phán Thương Mại, Giao Tiếp Quốc Tế",
-      seoTitle: "Mẫu Câu Tiếng Anh Đàm Phán Thương Mại Chuyên Nghiệp | AURA",
+      seoTitle: "Mẫu Câu Tiếng Anh Đàm Phán Thương Mại Chuyên Nghiệp | IVS",
       seoDescription: "Tổng hợp các mẫu câu tiếng Anh giao tiếp công sở giúp bạn tự tin đàm phán hợp đồng với đối tác.",
     },
     {
@@ -928,8 +928,8 @@ Hội đồng tuyển sinh các trường đại học Mỹ (Holistic Admissions
       categoryId: blogCatMap.get("hoc-bong-du-hoc")!,
       featuredImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80",
       tags: "Săn Học Bổng Mỹ, Du Học, Hồ Sơ Du Học, Digital SAT",
-      seoTitle: "Cẩm Nang Săn Học Bổng Đại Học Mỹ Toàn Phần | AURA Academy",
-      seoDescription: "Chia sẻ kinh nghiệm chuẩn bị hồ sơ săn học bổng du học Mỹ từ chuyên gia tư vấn giáo dục AURA.",
+      seoTitle: "Cẩm Nang Săn Học Bổng Đại Học Mỹ Toàn Phần | IVS Academy",
+      seoDescription: "Chia sẻ kinh nghiệm chuẩn bị hồ sơ săn học bổng du học Mỹ từ chuyên gia tư vấn giáo dục IVS.",
     },
     {
       slug: "phuong-phap-day-tieng-anh-cho-tre-mam-non-khong-ap-luc",
@@ -941,7 +941,7 @@ Giai đoạn 4-6 tuổi được các nhà khoa học gọi là 'cửa sổ vàn
       categoryId: blogCatMap.get("tieng-anh-tre-em-mam-non")!,
       featuredImage: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&auto=format&fit=crop&q=80",
       tags: "Tiếng Anh Mầm Non, Giáo Dục Sớm, Song Ngữ",
-      seoTitle: "Phương Pháp Dạy Tiếng Anh Mầm Non Hiệu Quả | AURA Academy",
+      seoTitle: "Phương Pháp Dạy Tiếng Anh Mầm Non Hiệu Quả | IVS Academy",
       seoDescription: "Bí quyết giúp trẻ mầm non yêu thích tiếng Anh một cách tự nhiên từ các chuyên gia giáo dục sớm.",
     },
     {
@@ -958,7 +958,7 @@ Part 3 được xem là phần thử thách nhất trong kỳ thi Speaking vì �
       categoryId: blogCatMap.get("kinh-nghiem-luyen-ielts")!,
       featuredImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
       tags: "IELTS Speaking, Part 3, Mẹo thi IELTS",
-      seoTitle: "Cách Trả Lời IELTS Speaking Part 3 Đạt Điểm 7.5+ | AURA",
+      seoTitle: "Cách Trả Lời IELTS Speaking Part 3 Đạt Điểm 7.5+ | IVS",
       seoDescription: "Chiến thuật bẻ khóa Part 3 IELTS Speaking với công thức AREA giúp bạn tự tin đạt điểm cao.",
     },
     {
@@ -971,7 +971,7 @@ Gửi một chiếc email xin phép rõ ràng và lịch sự thể hiện tác 
       categoryId: blogCatMap.get("tieng-anh-cong-so")!,
       featuredImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop&q=80",
       tags: "Tiếng Anh Công Sở, Email Tiếng Anh",
-      seoTitle: "Mẫu Email Xin Nghỉ Phép Tiếng Anh Chuẩn Công Sở | AURA",
+      seoTitle: "Mẫu Email Xin Nghỉ Phép Tiếng Anh Chuẩn Công Sở | IVS",
       seoDescription: "Mẫu email xin nghỉ phép bằng tiếng Anh trang trọng và lịch sự dành cho người đi làm.",
     },
     {
@@ -984,7 +984,7 @@ IELTS và TOEFL đều là hai thước đo chuẩn mực kiểm tra năng lực
       categoryId: blogCatMap.get("hoc-bong-du-hoc")!,
       featuredImage: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80",
       tags: "IELTS vs TOEFL, Du Học, Luyện Thi",
-      seoTitle: "Nên Thi IELTS Hay TOEFL Để Đi Du Học? | AURA Academy",
+      seoTitle: "Nên Thi IELTS Hay TOEFL Để Đi Du Học? | IVS Academy",
       seoDescription: "So sánh chi tiết bài thi IELTS và TOEFL giúp bạn lựa chọn chứng chỉ phù hợp nhất với kế hoạch tương lai.",
     },
     {
@@ -996,9 +996,9 @@ NEAS (National ELT Accreditation Scheme) là tổ chức kiểm định độc l
       `,
       categoryId: blogCatMap.get("tieng-anh-tre-em-mam-non")!,
       featuredImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80",
-      tags: "Tiêu chuẩn NEAS, Chất Lượng Giáo Dục, AURA Academy",
-      seoTitle: "Chứng Nhận NEAS Quốc Tế Trong Đào Tạo Anh Ngữ | AURA",
-      seoDescription: "Tìm hiểu ý nghĩa chứng nhận kiểm định chất lượng giáo dục NEAS độc quyền tại AURA Academy.",
+      tags: "Tiêu chuẩn NEAS, Chất Lượng Giáo Dục, IVS Academy",
+      seoTitle: "Chứng Nhận NEAS Quốc Tế Trong Đào Tạo Anh Ngữ | IVS",
+      seoDescription: "Tìm hiểu ý nghĩa chứng nhận kiểm định chất lượng giáo dục NEAS độc quyền tại IVS Academy Academy.",
     },
     {
       slug: "5-ung-dung-luyen-nghe-tieng-anh-moi-ngay-cho-nguoi-ban-ron",
@@ -1010,7 +1010,7 @@ Muốn cải thiện kỹ năng nghe, bạn không cần phải dành hàng gi�
       categoryId: blogCatMap.get("tieng-anh-cong-so")!,
       featuredImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80",
       tags: "Luyện Nghe Tiếng Anh, Podcast, Tự Học Tiếng Anh",
-      seoTitle: "App Luyện Nghe Tiếng Anh Cho Người Đi Làm | AURA Academy",
+      seoTitle: "App Luyện Nghe Tiếng Anh Cho Người Đi Làm | IVS Academy",
       seoDescription: "Top 5 ứng dụng và kênh podcast luyện nghe tiếng Anh tốt nhất dành cho người bận rộn.",
     },
     {
@@ -1023,7 +1023,7 @@ Muốn cải thiện kỹ năng nghe, bạn không cần phải dành hàng gi�
       categoryId: blogCatMap.get("tieng-anh-cong-so")!,
       featuredImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80",
       tags: "Phỏng Vấn Tiếng Anh, Tuyển Dụng, Kỹ Năng Nghề Nghiệp",
-      seoTitle: "Mẹo Trả Lời Phỏng Vấn Tiếng Anh Xuất Sắc | AURA Academy",
+      seoTitle: "Mẹo Trả Lời Phỏng Vấn Tiếng Anh Xuất Sắc | IVS Academy",
       seoDescription: "Hướng dẫn cách đặt câu hỏi ngược ấn tượng với nhà tuyển dụng quốc tế ở cuối buổi phỏng vấn.",
     },
     {
@@ -1031,12 +1031,12 @@ Muốn cải thiện kỹ năng nghe, bạn không cần phải dành hàng gi�
       title: "Lộ Trình Tự Học Digital SAT Từ Con Số 0 Lên 1500+ Trong 6 Tháng",
       excerpt: "Chi tiết từng giai đoạn ôn tập và cách làm quen với thuật toán thích ứng trên phần mềm Bluebook.",
       content: `
-Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và khả năng quản lý áp lực đồng hồ đếm ngược. Cùng xây dựng lộ trình 6 tháng bài bản cùng cựu thủ khoa AURA!
+Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và khả năng quản lý áp lực đồng hồ đếm ngược. Cùng xây dựng lộ trình 6 tháng bài bản cùng cựu thủ khoa IVS Academy!
       `,
       categoryId: blogCatMap.get("hoc-bong-du-hoc")!,
       featuredImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
       tags: "Digital SAT, Lộ Trình Ôn Thi, Du Học Mỹ",
-      seoTitle: "Lộ Trình Tự Học Digital SAT 1500+ Chi Tiết | AURA Academy",
+      seoTitle: "Lộ Trình Tự Học Digital SAT 1500+ Chi Tiết | IVS Academy",
       seoDescription: "Bật mí lộ trình 6 tháng chinh phục kỳ thi Digital SAT điểm cao săn học bổng danh giá.",
     },
   ];
@@ -1049,10 +1049,10 @@ Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và kh
   // 10. News Articles (4 press & campus event releases)
   const newsData = [
     {
-      slug: "aura-dat-chung-nhan-kiem-dinh-quoc-te-neas-nam-thu-5-lien-tiep",
-      title: "Hệ Thống AURA Academy Được Vinh Danh Đạt Chuẩn Kiểm Định NEAS Quốc Tế Năm Thứ 5 Liên Tiếp",
-      excerpt: "Tổ chức NEAS Australia chính thức tái chứng nhận chất lượng giáo dục xuất sắc trên toàn bộ hệ thống cơ sở AURA.",
-      content: "Hôm nay, đại diện tổ chức NEAS Australia đã trao quyết định tái chứng nhận kiểm định chất lượng đào tạo Anh ngữ quốc tế cho Hệ thống Anh ngữ AURA Academy. Đây là minh chứng cho cam kết bền bỉ về chất lượng giảng dạy và dịch vụ học viên tiêu chuẩn cao.",
+      slug: "ivs-academy-khai-giang-nam-hoc-moi-2026",
+      title: "Hệ Thống IVS Academy Khai Giảng Năm Học Mới & Công Bố Học Bổng Ươm Mầm Tài Năng 2026",
+      excerpt: "Toàn bộ hệ thống cơ sở IVS Academy đồng loạt đón chào các tân học viên và khởi động chương trình phát triển năng lực ngôn ngữ toàn diện.",
+      content: "Ngày hội khai giảng năm học mới tại IVS Academy đã diễn ra trang trọng với chuỗi hoạt động trải nghiệm phương pháp học chủ động và trao học bổng khuyến học cho học viên đạt thành tích xuất sắc.",
       featuredImage: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=80",
       published: true,
     },
@@ -1060,15 +1060,15 @@ Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và kh
       slug: "khai-truong-co-so-flagship-quan-1-khong-gian-hoc-tap-cong-nghe-cao",
       title: "Khai Trương Flagship Campus Quận 1 — Không Gian Học Tập Sáng Tạo Đa Phương Tiện",
       excerpt: "Cơ sở mới với diện tích hơn 2.500m2 sàn trang bị phòng lab máy tính Apple và thư viện mở đón chào các tân học viên.",
-      content: "Nhằm đáp ứng nhu cầu học tập ngày càng tăng của học viên khu vực trung tâm TP.HCM, AURA chính thức đưa vào vận hành tòa nhà Flagship Campus tại 189 Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1 với nhiều ưu đãi học bổng lên tới 35%.",
+      content: "Nhằm đáp ứng nhu cầu học tập ngày càng tăng của học viên khu vực trung tâm TP.HCM, IVS chính thức đưa vào vận hành tòa nhà Flagship Campus tại 189 Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1 với nhiều ưu đãi học bổng lên tới 35%.",
       featuredImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop&q=80",
       published: true,
     },
     {
       slug: "trao-quy-hoc-bong-tai-nang-tre-tri-gia-2-ty-dong-cho-hoc-sinh-viet-nam",
-      title: "Quỹ Học Bổng 'AURA Young Leaders 2026' Trị Giá 2 Tỷ Đồng Dành Cho Học Sinh Tài Năng",
+      title: "Quỹ Học Bổng 'IVS Young Leaders 2026' Trị Giá 2 Tỷ Đồng Dành Cho Học Sinh Tài Năng",
       excerpt: "Chương trình tài trợ 100% học phí các khóa luyện thi IELTS và SAT cho học sinh có thành tích xuất sắc và hoàn cảnh hiếu học.",
-      content: "Nhằm ươm mầm tài năng trẻ và chắp cánh ước mơ du học, AURA Foundation công bố khởi động chương trình học bổng thường niên dành cho học sinh THCS và THPT trên toàn quốc.",
+      content: "Nhằm ươm mầm tài năng trẻ và chắp cánh ước mơ du học, IVS Academy công bố khởi động chương trình học bổng thường niên dành cho học sinh THCS và THPT trên toàn quốc.",
       featuredImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop&q=80",
       published: true,
     },
@@ -1076,7 +1076,7 @@ Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và kh
       slug: "ngay-hoi-hoi-thao-phuong-phap-day-con-song-ngu-cung-chuyen-gia-uc",
       title: "Ngày Hội Hội Thảo: 'Bí Quyết Nuôi Con Song Ngữ Tự Nhiên' Cùng Chuyên Gia Giáo Dục Úc",
       excerpt: "Hơn 300 phụ huynh đã tham gia buổi tọa đàm bổ ích và nhận những lời khuyên thực tiễn từ chuyên gia ngôn ngữ học.",
-      content: "Sáng ngày 15/08, hội trường AURA Cầu Giấy Hà Nội đã diễn ra buổi tọa đàm chuyên đề cùng Giáo sư David Harrison và Thạc sĩ Nguyễn Thùy Linh, chia sẻ phương pháp tương tác tiếng Anh cùng con tại nhà.",
+      content: "Sáng ngày 15/08, hội trường IVS Cầu Giấy Hà Nội đã diễn ra buổi tọa đàm chuyên đề cùng Giáo sư David Harrison và Thạc sĩ Nguyễn Thùy Linh, chia sẻ phương pháp tương tác tiếng Anh cùng con tại nhà.",
       featuredImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop&q=80",
       published: true,
     },
@@ -1164,11 +1164,11 @@ Kỳ thi Digital SAT đòi hỏi tư duy giải quyết vấn đề nhanh và kh
 
   // 12. Site Settings
   const siteSettings = [
-    { key: "SITE_NAME", value: "AURA English Academy", description: "Tên thương hiệu trung tâm" },
+    { key: "SITE_NAME", value: "IVS Academy", description: "Tên thương hiệu trung tâm" },
     { key: "HOTLINE", value: "1900 6886", description: "Tổng đài tư vấn miễn phí" },
-    { key: "EMAIL_CONTACT", value: "contact@aura.edu.vn", description: "Email tiếp nhận liên hệ" },
-    { key: "ZALO_URL", value: "https://zalo.me/auraenglish", description: "Kênh chat Zalo Official" },
-    { key: "MESSENGER_URL", value: "https://m.me/auraenglishacademy", description: "Kênh chat Facebook Messenger" },
+    { key: "EMAIL_CONTACT", value: "contact@ivs.edu.vn", description: "Email tiếp nhận liên hệ" },
+    { key: "ZALO_URL", value: "https://zalo.me/ivsacademy", description: "Kênh chat Zalo Official" },
+    { key: "MESSENGER_URL", value: "https://m.me/ivsacademy", description: "Kênh chat Facebook Messenger" },
     { key: "ANNOUNCEMENT_BANNER", value: "Ưu đãi mừng năm học mới: Tặng ngay học bổng 25% + Bộ quà tặng nhập học khi đăng ký trước ngày 30/09!", description: "Thông báo thanh thông tin đầu trang" },
   ];
 

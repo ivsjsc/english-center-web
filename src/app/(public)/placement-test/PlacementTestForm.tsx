@@ -72,7 +72,7 @@ export function PlacementTestForm({ centers }: { centers: CenterOption[] }) {
           Đặt Lịch Thi Xếp Lớp Thành Công!
         </h3>
         <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-          Bộ phận khảo thí của AURA đã ghi nhận lịch hẹn của bạn vào ngày{" "}
+          Bộ phận khảo thí của IVS Academy đã ghi nhận lịch hẹn của bạn vào ngày{" "}
           <strong>{formData.preferredDate}</strong> ({formData.preferredTimeSlot}). Chúng tôi sẽ gửi tin nhắn SMS xác nhận và địa điểm chi tiết.
         </p>
         <div className="pt-2">
@@ -196,7 +196,7 @@ export function PlacementTestForm({ centers }: { centers: CenterOption[] }) {
               className="mt-0.5 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300"
             />
             <span>
-              Tôi đồng ý cho AURA xử lý thông tin để xếp lịch và nhận kết quả thi theo{" "}
+              Tôi đồng ý cho IVS Academy xử lý thông tin để xếp lịch và nhận kết quả thi theo{" "}
               <Link href="/personal-data-policy" className="text-brand-600 underline font-semibold">
                 Nghị định 13/2023/NĐ-CP
               </Link>.

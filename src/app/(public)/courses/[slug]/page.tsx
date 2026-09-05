@@ -6,18 +6,13 @@ import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata, generateCourseSchema, generateFAQSchema } from "@/lib/seo";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import { LeadForm } from "@/components/public/LeadForm";
 import {
-  Clock,
-  Users,
   Award,
   BookOpen,
-  Calendar,
   CheckCircle2,
   HelpCircle,
-  Sparkles,
 } from "lucide-react";
 
 export async function generateMetadata({
@@ -184,7 +179,7 @@ export default async function CourseDetailPage({
               </h2>
 
               <div className="grid grid-cols-1 gap-4">
-                {course.outcomes.map((item, idx) => (
+                {course.outcomes.map((item) => (
                   <div
                     key={item.id}
                     className="flex items-start gap-3 p-4 rounded-2xl bg-emerald-50/60 border border-emerald-100"

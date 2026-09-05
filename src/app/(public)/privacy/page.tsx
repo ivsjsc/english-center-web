@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { ShieldCheck, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Chính Sách Bảo Mật Thông Tin",
-  description: "Chính sách bảo mật thông tin cá nhân của học viên và khách hàng tại Hệ thống Anh ngữ AURA Academy.",
+  description: "Chính sách bảo mật thông tin cá nhân của học viên và khách hàng tại Hệ thống Anh ngữ IVS Academy.",
   canonicalPath: "/privacy",
 });
 
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">1. Mục Đích Thu Thập Thông Tin</h2>
               <p>
-                AURA Academy thu thập thông tin cá nhân của học viên và phụ huynh nhằm mục đích:
+                IVS Academy thu thập thông tin cá nhân của học viên và phụ huynh nhằm mục đích:
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Tư vấn lộ trình học tập, xếp lớp và kiểm tra năng lực tiếng Anh phù hợp.</li>
@@ -61,14 +61,14 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">3. Thời Gian Lưu Trữ</h2>
               <p>
-                Dữ liệu cá nhân sẽ được lưu trữ an toàn trên hệ thống máy chủ của AURA cho đến khi có yêu cầu hủy bỏ từ phía chủ thể dữ liệu hoặc theo quy định lưu trữ hồ sơ của ngành giáo dục.
+                Dữ liệu cá nhân sẽ được lưu trữ an toàn trên hệ thống máy chủ của IVS Academy cho đến khi có yêu cầu hủy bỏ từ phía chủ thể dữ liệu hoặc theo quy định lưu trữ hồ sơ của ngành giáo dục.
               </p>
             </section>
 
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">4. Cam Kết Không Chia Sẻ Dữ Liệu</h2>
               <p>
-                AURA cam kết không bán, cho thuê hoặc chia sẻ dữ liệu cá nhân của học viên cho bất kỳ bên thứ ba nào vì mục đích thương mại khi chưa có sự đồng ý bằng văn bản của chủ thể dữ liệu.
+                IVS Academy cam kết không bán, cho thuê hoặc chia sẻ dữ liệu cá nhân của học viên cho bất kỳ bên thứ ba nào vì mục đích thương mại khi chưa có sự đồng ý bằng văn bản của chủ thể dữ liệu.
               </p>
             </section>
 
@@ -78,8 +78,8 @@ export default function PrivacyPolicyPage() {
                 Mọi thắc mắc hoặc yêu cầu chỉnh sửa/xóa dữ liệu cá nhân, quý khách vui lòng liên hệ:
               </p>
               <div className="bg-surface-50 p-4 rounded-xl border border-slate-200 text-xs space-y-1">
-                <div>Đơn vị: <strong>Bộ Phận DPO — AURA English Academy</strong></div>
-                <div>Email: <strong>privacy@aura.edu.vn</strong> | Hotline: <strong>1900 6886</strong></div>
+                <div>Đơn vị: <strong>Bộ Phận DPO — IVS Academy</strong></div>
+                <div>Email: <strong>privacy@ivs.edu.vn</strong> | Hotline: <strong>1900 6886</strong></div>
                 <div>Địa chỉ: 189 Nguyễn Thị Minh Khai, Phường Đa Kao, Quận 1, TP.HCM</div>
               </div>
             </section>

@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { constructMetadata } from "@/lib/seo";
-import { ShieldCheck, AlertTriangle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Chính Sách Xử Lý & Bảo Vệ Dữ Liệu Cá Nhân (Nghị Định 13)",
-  description: "Quy định về việc bảo vệ và xử lý dữ liệu cá nhân theo Nghị định số 13/2023/NĐ-CP của Chính phủ tại AURA Academy.",
+  description: "Quy định về việc bảo vệ và xử lý dữ liệu cá nhân theo Nghị định số 13/2023/NĐ-CP của Chính phủ tại IVS Academy.",
   canonicalPath: "/personal-data-policy",
 });
 
@@ -34,7 +34,7 @@ export default function PersonalDataPolicyPage() {
               Chính Sách Xử Lý Dữ Liệu Cá Nhân Theo Nghị Định 13/2023/NĐ-CP
             </h1>
             <p className="text-xs text-slate-500 mt-2">
-              Áp dụng cho toàn bộ học viên, phụ huynh và khách hàng đăng ký dịch vụ tại AURA Academy.
+              Áp dụng cho toàn bộ học viên, phụ huynh và khách hàng đăng ký dịch vụ tại IVS Academy.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function PersonalDataPolicyPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">1. Nguyên Tắc Xử Lý Dữ Liệu</h2>
               <p>
-                AURA Academy cam kết tuân thủ đầy đủ các nguyên tắc bảo vệ dữ liệu cá nhân theo quy định pháp luật Việt Nam:
+                IVS Academy cam kết tuân thủ đầy đủ các nguyên tắc bảo vệ dữ liệu cá nhân theo quy định pháp luật Việt Nam:
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Dữ liệu chỉ được thu thập khi có sự đồng thuận rõ ràng của chủ thể dữ liệu (hoặc người giám hộ hợp pháp đối với trẻ em dưới 16 tuổi).</li>
@@ -72,7 +72,7 @@ export default function PersonalDataPolicyPage() {
             <section className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900">4. Quy Trình Tiếp Nhận Yêu Cầu Của Khách Hàng</h2>
               <p>
-                Để thực hiện bất kỳ quyền nào nêu trên, khách hàng gửi yêu cầu qua email <strong>privacy@aura.edu.vn</strong> kèm bản chụp CCCD/hộ chiếu để xác thực danh tính. Chúng tôi sẽ phản hồi bằng văn bản trong thời hạn 72 giờ làm việc.
+                Để thực hiện bất kỳ quyền nào nêu trên, khách hàng gửi yêu cầu qua email <strong>privacy@ivs.edu.vn</strong> kèm bản chụp CCCD/hộ chiếu để xác thực danh tính. Chúng tôi sẽ phản hồi bằng văn bản trong thời hạn 72 giờ làm việc.
               </p>
             </section>
           </div>

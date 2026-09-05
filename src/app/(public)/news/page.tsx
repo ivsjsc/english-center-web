@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
-  title: "Tin Tức & Sự Kiện — AURA Academy",
-  description: "Tin tức hoạt động, sự kiện khai trương, lễ trao chứng chỉ Cambridge và chương trình học bổng tại AURA Academy.",
+  title: "Tin Tức & Sự Kiện — IVS Academy",
+  description: "Tin tức hoạt động, sự kiện khai trương, lễ trao chứng chỉ năng lực và chương trình học bổng tại IVS Academy.",
   canonicalPath: "/news",
 });
 

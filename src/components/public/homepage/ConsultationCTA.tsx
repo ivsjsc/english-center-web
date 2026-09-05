@@ -25,7 +25,7 @@ export function ConsultationCTA() {
             </h2>
 
             <p className="text-slate-300 text-base leading-relaxed">
-              Hãy để AURA cùng bạn đồng hành trên con đường chinh phục tiếng Anh. Để lại thông tin ngay hôm nay để nhận được:
+              Hãy để IVS Academy cùng bạn đồng hành trên con đường chinh phục tiếng Anh. Để lại thông tin ngay hôm nay để nhận được:
             </p>
 
             <div className="space-y-3 text-sm text-slate-200">

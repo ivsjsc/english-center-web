@@ -12,7 +12,6 @@ import {
   Search,
   Building2,
   Clock,
-  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

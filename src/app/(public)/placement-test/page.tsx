@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { constructMetadata } from "@/lib/seo";
 import { PlacementTestForm } from "./PlacementTestForm";
-import { ShieldCheck, Award, Clock, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Award, Clock } from "lucide-react";
 
 export const metadata: Metadata = constructMetadata({
   title: "Đăng Ký Thi Thử & Xếp Lớp Tiếng Anh Chuẩn Quốc Tế",
-  description: "Đánh giá chính xác 4 kỹ năng Nghe - Nói - Đọc - Viết cùng hội đồng chuyên môn AURA. Nhận kết quả và tư vấn lộ trình học ngay trong ngày.",
+  description: "Đánh giá chính xác 4 kỹ năng Nghe - Nói - Đọc - Viết cùng hội đồng chuyên môn IVS Academy. Nhận kết quả và tư vấn lộ trình học ngay trong ngày.",
   canonicalPath: "/placement-test",
 });
 
@@ -38,7 +38,7 @@ export default async function PlacementTestPage() {
               Kiểm Tra Năng Lực 4 Kỹ Năng Chuẩn Cambridge & IELTS
             </h1>
             <p className="text-slate-600 text-base leading-relaxed">
-              Bài thi xếp lớp tại AURA được xây dựng dựa trên ngân hàng câu hỏi khảo thí Cambridge và IELTS, giúp xác định chính xác trình độ hiện tại và điểm nghẽn kiến thức cần khắc phục.
+              Bài thi xếp lớp tại IVS Academy được xây dựng dựa trên ngân hàng câu hỏi định hướng chuẩn mực Cambridge và IELTS, giúp xác định chính xác trình độ hiện tại và điểm nghẽn kiến thức cần khắc phục.
             </p>
 
             <div className="space-y-4 pt-2">

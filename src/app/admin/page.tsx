@@ -8,13 +8,9 @@ import {
   Calendar,
   CheckCircle2,
   TrendingUp,
-  Award,
-  Building2,
   Globe,
-  Clock,
   ArrowRight,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 export default async function AdminDashboardPage() {
   const session = await getSession();
@@ -34,8 +30,6 @@ export default async function AdminDashboardPage() {
     totalLeads,
     recentLeads,
     allLeads,
-    courses,
-    centers,
   ] = await Promise.all([
     prisma.lead.count({
       where: { createdAt: { gte: startOfToday } },
@@ -64,8 +58,6 @@ export default async function AdminDashboardPage() {
         centerId: true,
       },
     }),
-    prisma.course.findMany({ select: { id: true, name: true } }),
-    prisma.center.findMany({ select: { id: true, name: true, district: true } }),
   ]);
 
   // Conversion rate
