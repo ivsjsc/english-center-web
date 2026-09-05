@@ -1,7 +1,8 @@
 import { z } from "zod";
 
-// Vietnamese phone regex: 10 digits starting with 03, 05, 07, 08, 09
-export const VN_PHONE_REGEX = /(0[3|5|7|8|9])+([0-9]{8})\b/;
+// Vietnamese mobile phone regex: exactly 10 digits starting with 03, 05, 07, 08, 09
+export const VN_PHONE_REGEX = /^0[35789][0-9]{8}$/;
+
 
 export const leadRegistrationSchema = z.object({
   fullName: z
