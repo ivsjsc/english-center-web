@@ -1,0 +1,425 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ==========================================
+// USER & RBAC
+// ==========================================
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  passwordHash String
+  fullName     String
+  phone        String?
+  role         String         @default("CONSULTANT") // SUPER_ADMIN, ADMIN, CONTENT_EDITOR, CONSULTANT, CENTER_MANAGER
+  active       Boolean        @default(true)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  leads        Lead[]         @relation("AssignedLeads")
+  activities   LeadActivity[]
+  auditLogs    AuditLog[]
+
+  @@index([email])
+  @@index([role])
+}
+
+// ==========================================
+// COURSE DOMAIN
+// ==========================================
+
+model CourseCategory {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  icon        String?
+  sortOrder   Int      @default(0)
+  active      Boolean  @default(true)
+  courses     Course[]
+
+  @@index([slug])
+}
+
+model Course {
+  id                String             @id @default(cuid())
+  slug              String             @unique
+  name              String
+  shortDescription  String
+  description       String
+  categoryId        String
+  category          CourseCategory     @relation(fields: [categoryId], references: [id])
+  targetAudience    String             // e.g., "Trẻ 4 - 6 tuổi", "Học sinh THCS & THPT", "Người đi làm"
+  minimumAge        Int                @default(4)
+  maximumAge        Int                @default(99)
+  level             String             // "Beginner", "Intermediate", "Advanced", "All Levels"
+  CEFRLevel         String?            // "Pre-A1", "A1", "A2", "B1", "B2", "C1"
+  duration          String             // e.g., "3 tháng / Khóa"
+  numberOfSessions  Int                @default(24)
+  teachingMethod    String             // e.g., "Active Learning & Critical Thinking"
+  classSize         String             @default("10 - 15 học viên")
+  learningMaterials String?
+  featuredImage     String
+  status            String             @default("PUBLISHED") // DRAFT, PUBLISHED, ARCHIVED
+  featured          Boolean            @default(false)
+  ctaText           String             @default("Đăng ký tư vấn ngay")
+  seoTitle          String?
+  seoDescription    String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  curriculums       CourseCurriculum[]
+  outcomes          CourseOutcome[]
+  faqs              CourseFAQ[]
+  centerCourses     CenterCourse[]
+  teacherCourses    TeacherCourse[]
+  leads             Lead[]
+  achievements      StudentAchievement[]
+  testimonials      Testimonial[]
+
+  @@index([slug])
+  @@index([status])
+  @@index([categoryId])
+  @@index([minimumAge, maximumAge])
+}
+
+model CourseCurriculum {
+  id             String   @id @default(cuid())
+  courseId       String
+  course         Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  title          String
+  description    String
+  sessionsCount  Int      @default(4)
+  orderIndex     Int      @default(0)
+
+  @@index([courseId])
+}
+
+model CourseOutcome {
+  id          String   @id @default(cuid())
+  courseId    String
+  course      Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  description String
+  orderIndex  Int      @default(0)
+
+  @@index([courseId])
+}
+
+model CourseFAQ {
+  id         String   @id @default(cuid())
+  courseId   String
+  course     Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  question   String
+  answer     String
+  orderIndex Int      @default(0)
+
+  @@index([courseId])
+}
+
+// ==========================================
+// TEACHER DOMAIN
+// ==========================================
+
+model Teacher {
+  id              String                 @id @default(cuid())
+  slug            String                 @unique
+  name            String
+  title           String                 // e.g. "Senior Academic Coordinator & IELTS Specialist"
+  bio             String
+  avatar          String
+  yearsExperience Int                    @default(5)
+  featured        Boolean                @default(false)
+  active          Boolean                @default(true)
+  qualifications  TeacherQualification[]
+  teacherCourses  TeacherCourse[]
+
+  @@index([slug])
+  @@index([featured])
+}
+
+model TeacherQualification {
+  id        String  @id @default(cuid())
+  teacherId String
+  teacher   Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  name      String  // e.g. "Master of TESOL - University of Queensland"
+  issuer    String  // University of Queensland
+  year      Int?
+
+  @@index([teacherId])
+}
+
+model TeacherCourse {
+  teacherId String
+  courseId  String
+  teacher   Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  course    Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@id([teacherId, courseId])
+}
+
+// ==========================================
+// CENTER DOMAIN
+// ==========================================
+
+model Center {
+  id             String         @id @default(cuid())
+  slug           String         @unique
+  name           String
+  province       String         // e.g., "Hồ Chí Minh", "Hà Nội", "Đà Nẵng"
+  district       String         // e.g., "Quận 1", "Quận Cầu Giấy"
+  ward           String?
+  address        String
+  latitude       Float?
+  longitude      Float?
+  phone          String
+  email          String
+  openingHours   String         @default("08:00 - 21:30 (Thứ 2 - Chủ Nhật)")
+  description    String
+  facilities     String         // Comma-separated or JSON list of amenities
+  GoogleMapsURL  String
+  active         Boolean        @default(true)
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  images         CenterImage[]
+  centerCourses  CenterCourse[]
+  leads          Lead[]
+  placementTests PlacementTestBooking[]
+
+  @@index([slug])
+  @@index([province])
+  @@index([district])
+  @@index([active])
+}
+
+model CenterImage {
+  id         String  @id @default(cuid())
+  centerId   String
+  center     Center  @relation(fields: [centerId], references: [id], onDelete: Cascade)
+  imageUrl   String
+  caption    String?
+  isCover    Boolean @default(false)
+  orderIndex Int     @default(0)
+
+  @@index([centerId])
+}
+
+model CenterCourse {
+  centerId String
+  courseId String
+  center   Center @relation(fields: [centerId], references: [id], onDelete: Cascade)
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@id([centerId, courseId])
+}
+
+// ==========================================
+// LEAD MANAGEMENT & CRM
+// ==========================================
+
+model Lead {
+  id             String         @id @default(cuid())
+  fullName       String
+  phone          String
+  email          String?
+  studentAge     Int?
+  courseId       String?
+  course         Course?        @relation(fields: [courseId], references: [id])
+  centerId       String?
+  center         Center?        @relation(fields: [centerId], references: [id])
+  message        String?
+  source         String         @default("WEBSITE") // WEBSITE, FACEBOOK, GOOGLE_ADS, ZALO, DIRECT
+  UTMSource      String?
+  UTMMedium      String?
+  UTMCampaign    String?
+  UTMContent     String?
+  UTMTerm        String?
+  status         String         @default("NEW") // NEW, CONTACTED, APPOINTMENT, PLACEMENT_TEST, ENROLLED, LOST
+  assignedUserId String?
+  assignedUser   User?          @relation("AssignedLeads", fields: [assignedUserId], references: [id])
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  activities     LeadActivity[]
+
+  @@index([phone])
+  @@index([status])
+  @@index([createdAt])
+  @@index([courseId])
+  @@index([centerId])
+  @@index([assignedUserId])
+}
+
+model LeadActivity {
+  id             String   @id @default(cuid())
+  leadId         String
+  lead           Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
+  action         String   // STATUS_CHANGE, NOTE_ADDED, CONSULTANT_ASSIGNED, CALL_MADE
+  previousStatus String?
+  newStatus      String?
+  note           String?
+  createdAt      DateTime @default(now())
+
+  @@index([leadId])
+  @@index([createdAt])
+}
+
+model PlacementTestBooking {
+  id                String   @id @default(cuid())
+  fullName          String
+  phone             String
+  email             String?
+  studentAge        Int
+  centerId          String?
+  center            Center?  @relation(fields: [centerId], references: [id])
+  preferredDate     DateTime
+  preferredTimeSlot String   // "09:00 - 10:30", "14:00 - 15:30", "18:00 - 19:30"
+  status            String   @default("PENDING") // PENDING, CONFIRMED, COMPLETED, CANCELLED
+  note              String?
+  createdAt         DateTime @default(now())
+
+  @@index([phone])
+  @@index([status])
+  @@index([centerId])
+}
+
+// ==========================================
+// ACHIEVEMENTS & TESTIMONIALS
+// ==========================================
+
+model StudentAchievement {
+  id              String   @id @default(cuid())
+  studentName     String
+  courseId        String?
+  course          Course?  @relation(fields: [courseId], references: [id])
+  score           String   // e.g. "IELTS 8.5", "Flyers 15/15 Khiên", "SAT 1520"
+  certificateType String   // "IELTS", "CAMBRIDGE", "TOEIC", "SAT"
+  story           String
+  avatar          String
+  year            Int      @default(2025)
+  featured        Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  @@index([featured])
+  @@index([certificateType])
+}
+
+model Testimonial {
+  id           String   @id @default(cuid())
+  authorName   String
+  relationship String   // e.g., "Phụ huynh bé Gia Hưng (Cambridge Starter)", "Học viên IELTS 8.0"
+  quote        String
+  avatar       String
+  rating       Int      @default(5)
+  courseId     String?
+  course       Course?  @relation(fields: [courseId], references: [id])
+  featured     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+
+  @@index([featured])
+}
+
+// ==========================================
+// BLOG & NEWS
+// ==========================================
+
+model BlogCategory {
+  id          String     @id @default(cuid())
+  slug        String     @unique
+  name        String
+  description String?
+  posts       BlogPost[]
+
+  @@index([slug])
+}
+
+model BlogPost {
+  id             String       @id @default(cuid())
+  slug           String       @unique
+  title          String
+  excerpt        String
+  content        String
+  categoryId     String
+  category       BlogCategory @relation(fields: [categoryId], references: [id])
+  authorName     String       @default("Ban Chuyên Môn AURA")
+  featuredImage  String
+  tags           String?      // comma-separated
+  published      Boolean      @default(true)
+  publishedAt    DateTime     @default(now())
+  seoTitle       String?
+  seoDescription String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@index([slug])
+  @@index([published, publishedAt])
+  @@index([categoryId])
+}
+
+model NewsArticle {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  excerpt       String
+  content       String
+  featuredImage String
+  published     Boolean  @default(true)
+  publishedAt   DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published, publishedAt])
+}
+
+// ==========================================
+// SYSTEM, CMS & AUDIT
+// ==========================================
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@index([key])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  fullName  String
+  phone     String
+  email     String?
+  subject   String
+  message   String
+  status    String   @default("UNREAD") // UNREAD, READ, RESPONDED
+  createdAt DateTime @default(now())
+
+  @@index([status])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  action    String   // USER_LOGIN, LEAD_STATUS_UPDATE, COURSE_UPDATE, etc.
+  entity    String   // Lead, Course, Center, User
+  entityId  String?
+  details   String?  // JSON or summary description
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([entity])
+  @@index([createdAt])
+}
