@@ -22,7 +22,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="bg-accent-amber text-slate-900 font-bold px-2 py-0.5 rounded text-[10px] tracking-wide uppercase">
-              IVS Academy
+              Website Mẫu
             </span>
             <span className="text-slate-200">
               Hệ thống Anh ngữ Quốc tế — Tiêu chuẩn khảo thí Cambridge & IELTS
