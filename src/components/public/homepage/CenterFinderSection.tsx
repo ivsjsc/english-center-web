@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { CenterCard } from "@/components/public/CenterCard";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface CenterItem {
   id?: string;
@@ -17,7 +18,40 @@ interface CenterFinderSectionProps {
 }
 
 export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) {
+  const isSample = isSampleDeployment();
   const [selectedCity, setSelectedCity] = useState<string>("all");
+
+  // Sample mode: neutral UI demonstration data only.
+  // No fake addresses, no fake phone numbers, no invented campus locations.
+  const sampleCenters = [
+    {
+      name: "Cơ sở minh họa 01",
+      address: "Thông tin địa điểm sẽ được cập nhật khi triển khai chính thức",
+      province: "Hà Nội",
+      phone: "Đang cập nhật",
+      openingHours: "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
+      roomCountText: "Giao diện minh họa",
+      statusText: "Minh họa",
+    },
+    {
+      name: "Cơ sở minh họa 02",
+      address: "Thông tin địa điểm sẽ được cập nhật khi triển khai chính thức",
+      province: "Hồ Chí Minh",
+      phone: "Đang cập nhật",
+      openingHours: "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
+      roomCountText: "Giao diện minh họa",
+      statusText: "Minh họa",
+    },
+    {
+      name: "Cơ sở minh họa 03",
+      address: "Thông tin địa điểm sẽ được cập nhật khi triển khai chính thức",
+      province: "Đà Nẵng",
+      phone: "Đang cập nhật",
+      openingHours: "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
+      roomCountText: "Giao diện minh họa",
+      statusText: "Minh họa",
+    },
+  ];
 
   const defaultCenters = [
     {
@@ -49,17 +83,20 @@ export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) 
     },
   ];
 
-  const displayCenters = centers.length >= 3
-    ? centers.map((c) => ({
-        name: c.name,
-        address: c.address,
-        province: c.province,
-        phone: c.phone || "1900 xxxx",
-        openingHours: c.operatingHours || "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
-        roomCountText: "Cơ sở chuẩn quốc tế",
-        statusText: "Đang mở cửa",
-      }))
-    : defaultCenters;
+  // In sample mode: always use neutral demonstration data
+  const displayCenters = isSample
+    ? sampleCenters
+    : centers.length >= 3
+      ? centers.map((c) => ({
+          name: c.name,
+          address: c.address,
+          province: c.province,
+          phone: c.phone || "1900 xxxx",
+          openingHours: c.operatingHours || "08:00 - 21:30 (Thứ 2 - Chủ Nhật)",
+          roomCountText: "Cơ sở chuẩn quốc tế",
+          statusText: "Đang mở cửa",
+        }))
+      : defaultCenters;
 
   const filteredCenters = selectedCity === "all"
     ? displayCenters
@@ -67,13 +104,21 @@ export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) 
         c.province?.toLowerCase().includes(selectedCity.toLowerCase())
       );
 
-  const cityTabs = [
-    { id: "all", label: "Tất cả (35+)" },
-    { id: "Hà Nội", label: "Hà Nội (12)" },
-    { id: "Hồ Chí Minh", label: "TP. Hồ Chí Minh (15)" },
-    { id: "Đà Nẵng", label: "Đà Nẵng (4)" },
-    { id: "Cần Thơ", label: "Cần Thơ (4)" },
-  ];
+  // Sample mode: neutral city tabs without fake campus counts
+  const cityTabs = isSample
+    ? [
+        { id: "all", label: "Tất cả" },
+        { id: "Hà Nội", label: "Hà Nội" },
+        { id: "Hồ Chí Minh", label: "TP. Hồ Chí Minh" },
+        { id: "Đà Nẵng", label: "Đà Nẵng" },
+      ]
+    : [
+        { id: "all", label: "Tất cả (35+)" },
+        { id: "Hà Nội", label: "Hà Nội (12)" },
+        { id: "Hồ Chí Minh", label: "TP. Hồ Chí Minh (15)" },
+        { id: "Đà Nẵng", label: "Đà Nẵng (4)" },
+        { id: "Cần Thơ", label: "Cần Thơ (4)" },
+      ];
 
   return (
     <section className="w-full py-16 lg:py-24 bg-surface" id="he-thong-co-so">
@@ -81,14 +126,23 @@ export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs uppercase text-primary-vibrant tracking-wider font-bold">
-            MẠNG LƯỚI TOÀN QUỐC
+            {isSample ? "MINH HỌA GIAO DIỆN" : "MẠNG LƯỚI TOÀN QUỐC"}
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
-            Hệ thống 35+ Cơ sở chuẩn Cambridge
+            {isSample ? "Hệ thống cơ sở" : "Hệ thống 35+ Cơ sở chuẩn Cambridge"}
           </h2>
           <p className="text-sm sm:text-base text-text-default mt-2">
-            Dễ dàng lựa chọn cơ sở gần nhất với vị trí của bạn để thuận tiện đưa đón và học tập.
+            {isSample
+              ? "Giao diện minh họa chức năng tìm kiếm và lựa chọn cơ sở."
+              : "Dễ dàng lựa chọn cơ sở gần nhất với vị trí của bạn để thuận tiện đưa đón và học tập."}
           </p>
+          {isSample && (
+            <div className="mt-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
+                Dữ liệu minh họa — Thông tin cơ sở sẽ được cập nhật khi triển khai chính thức
+              </span>
+            </div>
+          )}
         </div>
 
         {/* City Filter Pills */}
@@ -120,6 +174,7 @@ export function CenterFinderSection({ centers = [] }: CenterFinderSectionProps) 
               openingHours={center.openingHours}
               roomCountText={center.roomCountText}
               statusText={center.statusText}
+              isSample={isSample}
             />
           ))}
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface TestimonialItem {
   id?: string;
@@ -14,6 +15,8 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ testimonials = [] }: TestimonialsProps) {
+  const isSample = isSampleDeployment();
+
   const defaultTestimonials = [
     {
       name: "Chị Nguyễn Thu Thủy",
@@ -66,6 +69,13 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
             Phụ huynh & Học viên nói gì về chúng tôi?
           </h2>
+          {isSample && (
+            <div className="mt-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
+                Nhận xét mẫu minh họa giao diện — Sẽ cập nhật theo phản hồi thực tế có xác nhận
+              </span>
+            </div>
+          )}
         </div>
 
         {/* 3 Testimonial Cards */}

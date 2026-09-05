@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isSampleDeployment } from "./deployment";
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://ivs.edu.vn";
 const SITE_NAME = process.env.NEXT_PUBLIC_COMPANY_NAME || "IVS Academy";
@@ -20,6 +21,11 @@ export function constructMetadata({
   canonicalPath = "",
   noIndex = false,
 }: SEOProps = {}): Metadata {
+  const isSample = isSampleDeployment();
+
+  // In sample mode: force noindex on ALL pages — this is a Website Mẫu with demo content.
+  const shouldNoIndex = isSample ? true : noIndex;
+
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Đào Tạo Ngoại Ngữ & Kỹ Năng Quốc Tế`;
   const url = `${BASE_URL}${canonicalPath}`;
 
@@ -54,11 +60,13 @@ export function constructMetadata({
       images: [image.startsWith("http") ? image : `${BASE_URL}${image}`],
     },
     robots: {
-      index: !noIndex,
-      follow: !noIndex,
+      index: !shouldNoIndex,
+      follow: !shouldNoIndex,
+      ...(isSample ? { noarchive: true } : {}),
       googleBot: {
-        index: !noIndex,
-        follow: !noIndex,
+        index: !shouldNoIndex,
+        follow: !shouldNoIndex,
+        ...(isSample ? { noarchive: true } : {}),
       },
     },
   };
@@ -67,6 +75,21 @@ export function constructMetadata({
 // JSON-LD Structured Data Generators
 
 export function generateOrganizationSchema() {
+  const isSample = isSampleDeployment();
+
+  if (isSample) {
+    // In sample mode: emit only verified brand-level data.
+    // Do NOT emit fake telephone, email, or physical address into structured data.
+    return {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      name: SITE_NAME,
+      url: BASE_URL,
+      logo: `${BASE_URL}/images/logo.png`,
+      description: "Website Mẫu — Giao diện minh họa hệ thống đào tạo Ngoại ngữ & Kỹ năng tại Việt Nam.",
+    };
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
@@ -122,6 +145,11 @@ export function generateLocalBusinessSchema(center: {
   longitude?: number | null;
   slug: string;
 }) {
+  // In sample mode: do NOT emit fake LocalBusiness locations into structured data.
+  if (isSampleDeployment()) {
+    return null;
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "EducationalOrganization"],

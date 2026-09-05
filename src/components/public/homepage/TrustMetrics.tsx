@@ -13,9 +13,9 @@ export function TrustMetrics() {
           valueColor: "text-primary-deep",
         },
         {
-          value: "100%",
-          label: "Giáo Viên Đạt Chuẩn",
-          subtext: "Bằng cấp sư phạm chuyên môn",
+          value: "Tiêu chuẩn",
+          label: "Đội Ngũ Sư Phạm",
+          subtext: "Đạt chuẩn sư phạm chuyên môn",
           valueColor: "text-primary-vibrant",
         },
         {
@@ -97,7 +97,7 @@ export function TrustMetrics() {
         </div>
         {isSample && (
           <p className="text-center text-[11px] text-text-muted mt-4">
-            * Chỉ số thể hiện định hướng tiêu chuẩn đào tạo sư phạm của hệ thống IVS Academy (Website Mẫu).
+            * Chỉ số thể hiện định hướng tiêu chuẩn đào tạo sư phạm của hệ thống (Website Mẫu — dữ liệu minh họa).
           </p>
         )}
       </div>

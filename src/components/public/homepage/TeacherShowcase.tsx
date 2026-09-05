@@ -81,7 +81,9 @@ export function TeacherShowcase({ teachers = [] }: TeacherShowcaseProps) {
               Giảng viên bản ngữ tâm huyết & tài năng
             </h2>
             <p className="text-sm sm:text-base text-text-default mt-2">
-              100% giáo viên sở hữu bằng cử nhân/thạc sĩ quốc tế cùng các chứng chỉ giảng dạy sư phạm danh giá.
+              {isSample
+                ? "Giao diện minh họa hồ sơ đội ngũ giảng viên — Sẽ cập nhật theo danh sách nhân sự chính thức."
+                : "100% giáo viên sở hữu bằng cử nhân/thạc sĩ quốc tế cùng các chứng chỉ giảng dạy sư phạm danh giá."}
             </p>
             {isSample && (
               <div className="mt-3">

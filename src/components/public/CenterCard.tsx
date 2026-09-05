@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { isSampleDeployment } from "@/lib/deployment";
 
 export interface CenterCardProps {
   name: string;
@@ -9,6 +10,7 @@ export interface CenterCardProps {
   statusText?: string;
   roomCountText?: string;
   mapUrl?: string;
+  isSample?: boolean;
 }
 
 export function CenterCard({
@@ -19,7 +21,9 @@ export function CenterCard({
   statusText = "Đang mở cửa",
   roomCountText = "Cơ sở tiêu chuẩn quốc tế",
   mapUrl,
+  isSample: isSampleProp,
 }: CenterCardProps) {
+  const isSample = isSampleProp ?? isSampleDeployment();
   const googleMapSearchUrl =
     mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + " " + address)}`;
 
@@ -43,12 +47,16 @@ export function CenterCard({
 
           <p className="flex items-center gap-2.5">
             <Phone className="w-4 h-4 text-text-muted shrink-0" />
-            <a
-              href={`tel:${phone.replace(/\s+/g, "")}`}
-              className="text-text-default hover:text-primary font-medium transition-colors"
-            >
-              {phone}
-            </a>
+            {isSample ? (
+              <span className="text-text-muted text-xs">{phone}</span>
+            ) : (
+              <a
+                href={`tel:${phone.replace(/\s+/g, "")}`}
+                className="text-text-default hover:text-primary font-medium transition-colors"
+              >
+                {phone}
+              </a>
+            )}
           </p>
 
           <p className="flex items-center gap-2.5">
@@ -62,15 +70,18 @@ export function CenterCard({
         <span className="text-xs text-text-muted truncate">
           {roomCountText}
         </span>
-        <a
-          href={googleMapSearchUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-vibrant hover:underline shrink-0"
-        >
-          <span>Chỉ đường</span>
-          <Navigation className="w-3.5 h-3.5" />
-        </a>
+        {/* In sample mode: do NOT render Google Maps directions to invented addresses */}
+        {!isSample && (
+          <a
+            href={googleMapSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-vibrant hover:underline shrink-0"
+          >
+            <span>Chỉ đường</span>
+            <Navigation className="w-3.5 h-3.5" />
+          </a>
+        )}
       </div>
     </div>
   );

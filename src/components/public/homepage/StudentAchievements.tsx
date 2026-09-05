@@ -18,6 +18,47 @@ interface StudentAchievementsProps {
 
 export function StudentAchievements({ achievements = [] }: StudentAchievementsProps) {
   const isSample = isSampleDeployment();
+
+  // Sample mode: anonymized demo entries that are clearly illustrative
+  const sampleAchievements = [
+    {
+      name: "Học viên A",
+      school: "Giao diện minh họa",
+      examType: "IELTS OVERALL",
+      score: "X.X",
+      scoreColor: "text-primary-deep",
+      quote: "Đây là nội dung minh họa giao diện hiển thị nhận xét của học viên. Thành tích thực tế sẽ được cập nhật khi triển khai chính thức.",
+      avatarUrl: "https://placehold.co/400x400/e2e8f0/64748b?text=A",
+    },
+    {
+      name: "Học viên B",
+      school: "Giao diện minh họa",
+      examType: "CAMBRIDGE FLYERS",
+      score: "—",
+      scoreColor: "text-growth-dark",
+      quote: "Đây là nội dung minh họa giao diện hiển thị nhận xét của học viên. Thành tích thực tế sẽ được cập nhật khi triển khai chính thức.",
+      avatarUrl: "https://placehold.co/400x400/dbeafe/3b82f6?text=B",
+    },
+    {
+      name: "Học viên C",
+      school: "Giao diện minh họa",
+      examType: "TOEIC L/R",
+      score: "—",
+      scoreColor: "text-primary-deep",
+      quote: "Đây là nội dung minh họa giao diện hiển thị nhận xét của học viên. Thành tích thực tế sẽ được cập nhật khi triển khai chính thức.",
+      avatarUrl: "https://placehold.co/400x400/f0fdf4/16a34a?text=C",
+    },
+    {
+      name: "Học viên D",
+      school: "Giao diện minh họa",
+      examType: "IELTS",
+      score: "—",
+      scoreColor: "text-primary-vibrant",
+      quote: "Đây là nội dung minh họa giao diện hiển thị nhận xét của học viên. Thành tích thực tế sẽ được cập nhật khi triển khai chính thức.",
+      avatarUrl: "https://placehold.co/400x400/fef3c7/d97706?text=D",
+    },
+  ];
+
   const defaultAchievements = [
     {
       name: "Nguyễn Hoàng Minh",
@@ -57,17 +98,20 @@ export function StudentAchievements({ achievements = [] }: StudentAchievementsPr
     },
   ];
 
-  const displayAchievements = achievements.length >= 4
-    ? achievements.slice(0, 4).map((a, idx) => ({
-        name: a.studentName || defaultAchievements[idx].name,
-        school: a.school || defaultAchievements[idx].school,
-        examType: a.examType || defaultAchievements[idx].examType,
-        score: a.score || defaultAchievements[idx].score,
-        scoreColor: defaultAchievements[idx].scoreColor,
-        quote: a.testimonial || defaultAchievements[idx].quote,
-        avatarUrl: a.studentAvatar || defaultAchievements[idx].avatarUrl,
-      }))
-    : defaultAchievements;
+  // In sample mode: always use anonymized demo data
+  const displayAchievements = isSample
+    ? sampleAchievements
+    : achievements.length >= 4
+      ? achievements.slice(0, 4).map((a, idx) => ({
+          name: a.studentName || defaultAchievements[idx].name,
+          school: a.school || defaultAchievements[idx].school,
+          examType: a.examType || defaultAchievements[idx].examType,
+          score: a.score || defaultAchievements[idx].score,
+          scoreColor: defaultAchievements[idx].scoreColor,
+          quote: a.testimonial || defaultAchievements[idx].quote,
+          avatarUrl: a.studentAvatar || defaultAchievements[idx].avatarUrl,
+        }))
+      : defaultAchievements;
 
   return (
     <section className="w-full py-16 lg:py-24 bg-surface-subtle border-y border-border/50" id="thanh-tich-hoc-vien">
@@ -75,18 +119,22 @@ export function StudentAchievements({ achievements = [] }: StudentAchievementsPr
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs uppercase text-primary-vibrant tracking-wider font-bold">
-            BẢNG VÀNG DANH DỰ
+            {isSample ? "MINH HỌA GIAO DIỆN" : "BẢNG VÀNG DANH DỰ"}
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
-            Thành tích vượt trội của học viên IVS Academy
+            {isSample
+              ? "Giao diện bảng thành tích học viên"
+              : "Thành tích vượt trội của học viên IVS Academy"}
           </h2>
           <p className="text-sm sm:text-base text-text-default mt-2">
-            Mỗi điểm số ấn tượng là một câu chuyện nỗ lực, niềm tự hào của học viên và sự đồng hành bền bỉ từ thầy cô.
+            {isSample
+              ? "Minh họa cách hiển thị bảng thành tích. Dữ liệu thực tế sẽ được cập nhật khi triển khai chính thức."
+              : "Mỗi điểm số ấn tượng là một câu chuyện nỗ lực, niềm tự hào của học viên và sự đồng hành bền bỉ từ thầy cô."}
           </p>
           {isSample && (
             <div className="mt-3">
               <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
-                Dữ liệu mẫu minh họa giao diện — Sẽ cập nhật theo bảng vàng chính thức
+                Dữ liệu minh họa giao diện — Không phải thành tích thực tế
               </span>
             </div>
           )}

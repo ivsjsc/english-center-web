@@ -3,12 +3,28 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Compass, Check, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { isSampleDeployment } from "@/lib/deployment";
 
 interface HeroSectionProps {
   onOpenConsultation?: () => void;
 }
 
 export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
+  const isSample = isSampleDeployment();
+
+  // Sample mode trust points: neutral language, no unverified statistics
+  const trustPoints = isSample
+    ? [
+        "Định hướng chuẩn quốc tế",
+        "Chương trình đào tạo đa cấp độ",
+        "Lộ trình cá nhân hóa",
+      ]
+    : [
+        "Hơn 98% đạt cam kết",
+        "Chuẩn Quốc tế công nhận",
+        "Lộ trình cá nhân hóa",
+      ];
+
   return (
     <section className="relative w-full bg-gradient-to-b from-[#EFF4FF] via-surface to-surface overflow-hidden pb-14 pt-8 lg:pt-14 lg:pb-24">
       {/* Soft Ambient Background Elements */}
@@ -25,7 +41,9 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-primary-highlight shadow-sm text-primary">
               <ShieldCheck className="w-4 h-4 text-primary-vibrant shrink-0" />
               <span className="text-xs uppercase font-bold tracking-wider">
-                Hệ Thống Anh Ngữ Quốc Tế Chuẩn Cambridge & IELTS
+                {isSample
+                  ? "Website Mẫu — Minh Họa Hệ Thống Anh Ngữ Quốc Tế"
+                  : "Hệ Thống Anh Ngữ Quốc Tế Chuẩn Cambridge & IELTS"}
               </span>
             </div>
 
@@ -54,7 +72,9 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-text-default leading-relaxed max-w-2xl">
-              Chương trình đào tạo tiếng Anh chuẩn quốc tế cho mọi lứa tuổi từ 4-18+, người đi làm và luyện thi chứng chỉ. 100% giáo viên bản ngữ/quốc tế giàu kinh nghiệm cùng phương pháp phản xạ chủ động.
+              {isSample
+                ? "Giao diện minh họa chương trình đào tạo tiếng Anh cho mọi lứa tuổi từ 4-18+. Thiết kế hệ thống định hướng chuẩn quốc tế với phương pháp học tập chủ động."
+                : "Chương trình đào tạo tiếng Anh chuẩn quốc tế cho mọi lứa tuổi từ 4-18+, người đi làm và luyện thi chứng chỉ. 100% giáo viên bản ngữ/quốc tế giàu kinh nghiệm cùng phương pháp phản xạ chủ động."}
             </p>
 
             {/* Dual CTAs */}
@@ -88,24 +108,14 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
 
             {/* 3 Micro Trust Points */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-2 gap-x-4 pt-4 text-xs font-semibold text-text-default w-full border-t border-slate-200/80">
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-emerald-100 text-growth-dark flex items-center justify-center font-bold text-xs shrink-0">
-                  <Check className="w-3 h-3 stroke-[3]" />
-                </span>
-                <span>Hơn 98% đạt cam kết</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-emerald-100 text-growth-dark flex items-center justify-center font-bold text-xs shrink-0">
-                  <Check className="w-3 h-3 stroke-[3]" />
-                </span>
-                <span>Chuẩn Quốc tế công nhận</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded-full bg-emerald-100 text-growth-dark flex items-center justify-center font-bold text-xs shrink-0">
-                  <Check className="w-3 h-3 stroke-[3]" />
-                </span>
-                <span>Lộ trình cá nhân hóa</span>
-              </div>
+              {trustPoints.map((point, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-emerald-100 text-growth-dark flex items-center justify-center font-bold text-xs shrink-0">
+                    <Check className="w-3 h-3 stroke-[3]" />
+                  </span>
+                  <span>{point}</span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -133,11 +143,13 @@ export function HeroSection({ onOpenConsultation }: HeroSectionProps) {
                       CenterCare™ Hệ Thống Quản Lý
                     </span>
                     <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-growth-dark text-[10px] font-bold border border-emerald-200 shrink-0">
-                      Live
+                      {isSample ? "Demo" : "Live"}
                     </span>
                   </div>
                   <p className="text-xs text-text-muted truncate mt-0.5">
-                    Báo cáo tiến độ học tập real-time & tương tác phụ huynh 24/7
+                    {isSample
+                      ? "Giao diện minh họa hệ thống quản lý & đồng hành học tập"
+                      : "Báo cáo tiến độ học tập real-time & tương tác phụ huynh 24/7"}
                   </p>
                 </div>
               </div>

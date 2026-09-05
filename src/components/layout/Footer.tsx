@@ -29,12 +29,16 @@ export function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm text-text-default leading-relaxed">
-              Hệ thống Anh ngữ Quốc tế tiên phong phương pháp giảng dạy tích hợp chuẩn Cambridge. Đào tạo toàn diện tư duy ngôn ngữ và kỹ năng học thuật cho tương lai.
+              {isSample
+                ? "Website Mẫu — Giao diện minh họa hệ thống Anh ngữ Quốc tế. Nội dung và thông tin liên hệ sẽ được cập nhật khi triển khai chính thức."
+                : "Hệ thống Anh ngữ Quốc tế tiên phong phương pháp giảng dạy tích hợp chuẩn Cambridge. Đào tạo toàn diện tư duy ngôn ngữ và kỹ năng học thuật cho tương lai."}
             </p>
 
             <div className="pt-1">
               <span className="inline-block px-3 py-1 rounded-full bg-primary-light text-primary border border-primary-highlight text-xs font-semibold">
-                Chuẩn khảo thí Cambridge & CEFR
+                {isSample
+                  ? "Website Mẫu — Giao Diện Minh Họa"
+                  : "Chuẩn khảo thí Cambridge & CEFR"}
               </span>
             </div>
           </div>
@@ -136,32 +140,55 @@ export function Footer() {
               Hệ Thống Cơ Sở
             </h3>
             <div className="space-y-1.5 text-xs sm:text-sm text-text-default">
-              <p>
-                <strong className="text-text-heading">Hà Nội:</strong> Hệ thống phòng học chuẩn quốc tế
-              </p>
-              <p>
-                <strong className="text-text-heading">TP. Hồ Chí Minh:</strong> Cơ sở hiện đại tại các quận trung tâm
-              </p>
-              <p>
-                <strong className="text-text-heading">Đà Nẵng & Cần Thơ:</strong> Cơ sở vệ tinh khu vực
-              </p>
-              <p className="pt-1">
-                <Link href="/centers" className="text-primary font-semibold hover:underline flex items-center gap-1 text-xs">
-                  <span>Khám phá chi tiết cơ sở gần bạn &rarr;</span>
-                </Link>
-              </p>
+              {isSample ? (
+                <>
+                  <p className="text-text-muted italic">
+                    Thông tin hệ thống cơ sở sẽ được cập nhật khi triển khai chính thức.
+                  </p>
+                  <p className="pt-1">
+                    <Link href="/centers" className="text-primary font-semibold hover:underline flex items-center gap-1 text-xs">
+                      <span>Xem giao diện minh họa cơ sở &rarr;</span>
+                    </Link>
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    <strong className="text-text-heading">Hà Nội:</strong> Hệ thống phòng học chuẩn quốc tế
+                  </p>
+                  <p>
+                    <strong className="text-text-heading">TP. Hồ Chí Minh:</strong> Cơ sở hiện đại tại các quận trung tâm
+                  </p>
+                  <p>
+                    <strong className="text-text-heading">Đà Nẵng & Cần Thơ:</strong> Cơ sở vệ tinh khu vực
+                  </p>
+                  <p className="pt-1">
+                    <Link href="/centers" className="text-primary font-semibold hover:underline flex items-center gap-1 text-xs">
+                      <span>Khám phá chi tiết cơ sở gần bạn &rarr;</span>
+                    </Link>
+                  </p>
+                </>
+              )}
               <div className="pt-2 space-y-1 border-t border-slate-200 mt-2">
                 <p className="flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-primary" />
-                  <a href="tel:1900xxxx" className="hover:text-primary font-semibold">
-                    Hotline: 1900 xxxx (08:00 - 21:30)
-                  </a>
+                  {isSample ? (
+                    <span className="text-text-muted">Hotline: Đang cập nhật</span>
+                  ) : (
+                    <a href="tel:1900xxxx" className="hover:text-primary font-semibold">
+                      Hotline: 1900 xxxx (08:00 - 21:30)
+                    </a>
+                  )}
                 </p>
                 <p className="flex items-center gap-1.5">
                   <Mail className="w-3.5 h-3.5 text-primary" />
-                  <a href="mailto:admissions@ivs.edu.vn" className="hover:text-primary">
-                    admissions@ivs.edu.vn
-                  </a>
+                  {isSample ? (
+                    <span className="text-text-muted">Email: Đang cập nhật</span>
+                  ) : (
+                    <a href="mailto:admissions@ivs.edu.vn" className="hover:text-primary">
+                      admissions@ivs.edu.vn
+                    </a>
+                  )}
                 </p>
               </div>
             </div>
@@ -172,6 +199,7 @@ export function Footer() {
         <div className="pt-6 border-t border-slate-200/90 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted">
           <span>
             © {new Date().getFullYear()} IVS Academy. Tất cả các quyền được bảo lưu.
+            {isSample && " — Website Mẫu (Giao diện minh họa)"}
           </span>
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 font-medium">

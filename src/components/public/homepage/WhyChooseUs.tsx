@@ -1,11 +1,14 @@
 import React from "react";
 import { Award, Brain, MessageSquare, Smartphone, Users, Building2 } from "lucide-react";
+import { isSampleDeployment } from "@/lib/deployment";
 
 export function WhyChooseUs() {
+  const isSample = isSampleDeployment();
+
   const pillars = [
     {
       icon: Award,
-      title: "100% Giảng Viên Chuẩn Sư Phạm",
+      title: isSample ? "Đội Ngũ Giảng Viên Đạt Chuẩn" : "100% Giảng Viên Chuẩn Sư Phạm",
       description:
         "Đội ngũ giáo viên quốc tế & Việt Nam giàu năng lượng với chứng chỉ giảng dạy quốc tế TESOL, CELTA hoặc Thạc sĩ chuyên ngành được xác thực minh bạch.",
       iconColor: "text-primary",
@@ -45,9 +48,10 @@ export function WhyChooseUs() {
     },
     {
       icon: Building2,
-      title: "Cơ Sở Vật Chất Chuẩn Cambridge",
-      description:
-        "100% phòng học trang bị bảng tương tác thông minh, thư viện mở đa phương tiện và không gian an toàn, truyền cảm hứng học tập tối đa.",
+      title: isSample ? "Cơ Sở Vật Chất Chuẩn Quốc Tế" : "Cơ Sở Vật Chất Chuẩn Cambridge",
+      description: isSample
+        ? "Phòng học trang bị bảng tương tác thông minh, thư viện mở đa phương tiện và không gian an toàn, truyền cảm hứng học tập tối đa."
+        : "100% phòng học trang bị bảng tương tác thông minh, thư viện mở đa phương tiện và không gian an toàn, truyền cảm hứng học tập tối đa.",
       iconColor: "text-growth-dark",
       iconBg: "bg-emerald-50",
     },
@@ -62,11 +66,20 @@ export function WhyChooseUs() {
             GIÁ TRỊ KHÁC BIỆT
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-text-heading mt-1">
-            Tại sao 75.000+ Phụ huynh & Học viên tin chọn IVS?
+            {isSample
+              ? "Tại sao chọn IVS?"
+              : "Tại sao 75.000+ Phụ huynh & Học viên tin chọn IVS?"}
           </h2>
           <p className="text-sm sm:text-base text-text-default mt-2">
             Chúng tôi không chỉ dạy ngôn ngữ mà mở ra tư duy toàn cầu với chuẩn mực học thuật quốc tế cao nhất.
           </p>
+          {isSample && (
+            <div className="mt-3">
+              <span className="inline-block px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 text-xs font-semibold">
+                Nội dung minh họa định hướng giá trị — Website Mẫu
+              </span>
+            </div>
+          )}
         </div>
 
         {/* 6 Core Value Cards */}
